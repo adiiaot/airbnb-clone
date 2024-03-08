@@ -1,0 +1,140 @@
+<!-- <h1 class="font-bold text-red-500 text-5lg my-10">Home Page</h1>
+<li><a routerLink="/wishlist" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-600 font-bold">Wishlist</a></li>
+<li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-600 font-bold">Login</a></li> -->
+<div id="home" (scroll)="al($event, 'ola')" class="relative overflow-scroll h-screen">
+
+    <!-- mobile view header -->
+    <div class="fixed w-full bg-slate-300 top-0">
+        <div class="flex justify-evenly p-3 items-center lg:hidden">
+            <div class="h-14 w-[80%] bg-blue-40">
+                <input class="h-full w-full rounded-full shadow-md shadow-slate-300 border border-slate-300" />
+            </div>
+            <div class="w-[20%] bg-yellow-40 flex items-center justify-center">
+                <div class="size-12 rounded-full bg-red-200"></div>
+            </div>
+        </div>
+        <div class="h-20 w-full bg-red-400"></div>
+    </div>
+
+    <!-- desktop view header -->
+    <div class="fixed transition-all w-full bg-white top-0 py-5 px-10 hidden lg:block">
+        <!-- AirBNB logo: left -->
+        <div class="float-left bg-blue-600 w-40 h-20"></div>
+        <!-- Web - AirBNB your home: right -->
+        <div class="float-right bg-blue-60 flex gap-3 items-center">
+            <div>
+                <a class="text-base font-medium">Airbnb your home</a>
+            </div>
+            <div class="size-5 rounded-full bg-red-400"></div>
+            <div class="w-20 aspect-video rounded-full border border-slate-300 hover:shadow-md shadow-slate-300"></div>
+        </div>
+        <!-- middle locations: middle -->
+        <div [ngClass]="{'scale-x-50 scale-y-75 -top-5 relative': !showBottomNav}"
+            class="transition-all slow-resize w-2/3 mx-auto space-y-5 bg-green-30">
+            <!-- locations items links-->
+            <div [ngClass]="{'hidden': !showBottomNav}"
+                class="h-10 w-2/3 mx-auto bg-green-40 flex justify-center items-center gap-1">
+                <div (click)="location = 'stays'" [ngClass]="{'font-bold text-slate-950': location === 'stays'}"
+                    class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
+                    <p class="">Stays</p>
+                </div>
+                <div (click)="location = 'experiences'"
+                    [ngClass]="{'font-bold text-slate-950': location === 'experiences'}"
+                    class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
+                    <p class="">Experiences</p>
+                </div>
+                <div (click)="location = 'online experiences'"
+                    [ngClass]="{'font-bold text-slate-950': location === 'online experiences'}"
+                    class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
+                    <p class="">Online Experiences</p>
+                </div>
+            </div>
+            <!-- location collapsible search bar -->
+            <div [ngClass]="{'w-full absolute aspect-video top-0 h-10': !showBottomNav}"
+                class="h-16 w-full mx-auto bg-white rounded-full border border-slate-200 shadow-md shadow-slate-200 flex">
+
+                @if (showBottomNav) {
+                <div
+                    class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-8 py-2 flex flex-col items-start justify-center">
+                    <p class="text-slate-900 text-xs font-medium">Where</p>
+                    <p class="text-slate-400 text-sm font-normal">Search destinations</p>
+                </div>
+                <div
+                    class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center">
+                    <p class="text-slate-900 text-xs font-medium">Check in</p>
+                    <p class="text-slate-400 text-sm font-normal">Add dates</p>
+                </div>
+                <div
+                    class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center">
+                    <p class="text-slate-900 text-xs font-medium">Check out</p>
+                    <p class="text-slate-400 text-sm font-normal">Add dates</p>
+                </div>
+                <div
+                    class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 pl-8 pr-2 py-2 flex items-center justify-between">
+                    <div>
+                        <p class="text-slate-900 text-xs font-medium">Who</p>
+                        <p class="text-slate-400 text-sm font-normal">Add guestd</p>
+                    </div>
+                    <div class="h-full aspect-square rounded-full bg-pink-500"></div>
+
+                </div>
+                }
+                @else {
+                <p class="text-center font-bold text-4lg flex items-center justify-center bg-red-40 w-full">Another Item: Olalekan</p>
+                }
+
+            </div>
+        </div>
+        <div [ngClass]="{'-mt-5': !showBottomNav}"
+            class="h-20 px-5 py-2 bg-white border-t-2 border-slate-300 w-full mt-5 flex justify-between">
+            <!-- scrollable location items -->
+            <div class="w-[73%] h-full bg-red-30 flex items-center gap-5 overflow-auto">
+                @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]; track i) {
+                <div class="min-w-10 h-10 bg-slate-400 rounded-md font-bold text-2lg flex items-center justify-center">
+                    {{i}}</div>
+                }
+            </div>
+            <div class="w-[25%] h-full bg-red-40 flex justify-between">
+                <div class="w-[30%] h-full border-2 rounded-md"></div>
+                <div class="w-[60%] h-full border-2 rounded-md"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile view bottom nav bar -->
+    <div [ngClass]="{'-bottom-16': !showBottomNav}" class="lg:hidden fixed w-full bg-red-80 bottom-0 transition-all ">
+        <div [ngClass]="{'hidden': hideMore}" class="h-10 w-20 mx-auto my-5 rounded-full bg-black"></div>
+        <div class="h-16 bg-pink-500 w-full flex gap-5 justify-center items-center">
+            <div class="size-10 bg-red-400 flex items-center justify-center">
+                <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"
+                    class="text-blue-600 font-bold">E</a>
+            </div>
+            <div class="size-10 bg-red-400 flex items-center justify-center">
+                <a routerLink="/wishlist" routerLinkActive="active" ariaCurrentWhenActive="page"
+                    class="text-blue-600 font-bold">W</a>
+            </div>
+            <div class="size-10 bg-red-400 flex items-center justify-center">
+                <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+                    class="text-blue-600 font-bold">L</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- desktop view hide more -->
+    <div class="hidden lg:block fixed w-full bg-red-80 bottom-0 transition-all ">
+        <div class="h-14 w-28 mx-auto my-5 rounded-full bg-black hover:scale-105"></div>
+    </div>
+
+
+    <div id="track" class="bg-slate-50 flex flex-wrap justify-evenly  pt-40 lg:pt-60">
+        @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]; track i) {
+        <li
+            class="h-40 w-2/3 lg:w-[22%] lg:aspect-square lg:h-auto x mx-auto rounded-lg bg-slate-200 my-5 odd:bg-slate-400 flex items-center justify-center text-center font-bold text-4lg">
+            {{i}}</li>
+        }
+    </div>
+
+
+
+
+</div>
