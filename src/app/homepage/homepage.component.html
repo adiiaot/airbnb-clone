@@ -168,10 +168,10 @@
             </div>
         </div>
         <div class="flex flex-wrap justify-evenly">
-            @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]; track i) {
+            @for (house of houseListings; track house) {
             <li
                 class="w-[90%] aspect-square xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl bg-slate-200 my-5 odd:bg-slate-400 flex items-center justify-center text-center font-bold text-xl">
-                <app-houseitem ></app-houseitem>
+                <app-houseitem [house]="house"></app-houseitem>
             </li>
             }
         </div>
