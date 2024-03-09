@@ -3,7 +3,7 @@
 <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-600 font-bold">Login</a></li> -->
 <div id="home" (scroll)="al($event, 'ola')" class="relative overflow-scroll h-screen">
     <!-- mobile view header -->
-    <div class="fixed z-10 bg-white w-full shadow-md shadow-slate-100 top-0">
+    <div class="fixed z-10 bg-white w-full shadow-md shadow-slate-100 top-0 xl:hidden">
         <div class="flex justify-evenly p-3 items-center xl:hidden">
             <!-- search box -->
             <div
@@ -114,7 +114,7 @@
                     @for (i of items; track i) {
                     <swiper-slide>
                         <div id="{{ i }}"
-                            class="max-w-16 h-16 bg-slate-400 rounded-md font-bold text-2xl flex items-center justify-center">
+                            class="max-w-16 h-16 bg-slate-40 rounded-md font-bold text-2xl flex items-center justify-center">
                             {{ i }}
                         </div>
                     </swiper-slide>
@@ -154,13 +154,14 @@
 
     <!-- main scrollable content -->
     <div id="track" class="bg-white pt-40 xl:pt-60">
-        <div class="w-[90%] mx-auto rounded-xl border border-stone-400 p-3 flex justify-between items-center">
+        <!-- taxes toggle -->
+        <div (click)="totalprice = !totalprice" class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center">
             <div class="space-y-1">
                 <p class="text-sm font-bold text-gray-700">Display total price</p>
                 <p class="text-sm text-slate-400 font-normal">Include all fees, before taxes</p>
             </div>
             <div [ngClass]="{'bg-stone-300': !totalprice}" class="relative w-14 h-9 bg-black rounded-full">
-                <div (click)="totalprice = !totalprice" [ngClass]="{'right-0 border-gray-950': totalprice}"
+                <div [ngClass]="{'right-0 border-gray-950': totalprice}"
                     class="transition-all absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
                     <div *ngIf="totalprice" class="size-5 rounded-full bg-red-400"></div>
                 </div>
@@ -170,7 +171,7 @@
             @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]; track i) {
             <li
                 class="w-[90%] aspect-square xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl bg-slate-200 my-5 odd:bg-slate-400 flex items-center justify-center text-center font-bold text-xl">
-                <app-houseitem></app-houseitem>
+                <app-houseitem ></app-houseitem>
             </li>
             }
         </div>
