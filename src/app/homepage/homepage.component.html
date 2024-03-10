@@ -160,19 +160,19 @@
                 <p class="text-sm font-bold text-gray-700">Display total price</p>
                 <p class="text-sm text-slate-400 font-normal">Include all fees, before taxes</p>
             </div>
+            <!-- toggle switch -->
             <div [ngClass]="{'bg-stone-300': !totalprice}" class="relative w-14 h-9 bg-black rounded-full">
                 <div [ngClass]="{'right-0 border-gray-950': totalprice}"
-                    class="transition-all absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
+                    class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
                     <div *ngIf="totalprice" class="size-5 rounded-full bg-red-400"></div>
                 </div>
             </div>
         </div>
         <div class="flex flex-wrap justify-evenly">
             @for (house of houseListings; track house) {
-            <li
-                class="w-[90%] aspect-square xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl bg-slate-200 my-5 odd:bg-slate-400 flex items-center justify-center text-center font-bold text-xl">
-                <app-houseitem [house]="house"></app-houseitem>
-            </li>
+            <div class="w-[90%] aspect-square xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl bg-slate-200 my-5 odd:bg-slate-400 font-bold text-xl overflow-hidden border-2">
+                <app-houseitem (housedetails)="Getdata($event)" [house]="house"></app-houseitem>
+            </div>
             }
         </div>
     </div>

@@ -1,2 +1,4 @@
-<h1>{{house.location}}</h1>
-<img src="{{house.src}}" />
+<div (click)="showmore(house)" class="relative size-full bg-red-40 overflow-hidden">
+    <h1 class="absolute top-5 left-5" >{{house.location}}</h1>
+    <img src="{{house.src}}" class="size-full object-cover" />
+</div>

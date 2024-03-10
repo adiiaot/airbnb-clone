@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Input, Output } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HouseitemComponent } from '../houseitem/houseitem.component';
 import { HouseListings } from '../houselistings';
+// import logo from '../../assets/images/airbnb.png'
 
 
 
@@ -15,8 +16,9 @@ import { HouseListings } from '../houselistings';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomepageComponent {
-
   // @Input() houseListings!: HouseListings
+
+  @Output() house = new EventEmitter<HouseListings> ();
 
   houseListings = [
     {
@@ -101,6 +103,9 @@ export class HomepageComponent {
   next = true
   prev = false
   totalprice = false
+
+  constructor(private router: Router) { }
+
   al(event: Event, param: string) {
     event.target?.addEventListener('scroll', () => {
       let el = document.getElementById('track');
@@ -141,5 +146,13 @@ export class HomepageComponent {
     this._scrollnext = tmp.toString()
     this._scrollnext = (parseInt(this._scrollprev) - 9).toString()
     // if (parseInt(this._scrollnext) >= this.items.length) this.next = false
+  }
+
+  Getdata(data: HouseListings) {
+    alert(JSON.stringify(data))
+    // window.open("login")
+    this.router.navigateByUrl("/rooms")
+    this.house.emit(data)
+   
   }
 }

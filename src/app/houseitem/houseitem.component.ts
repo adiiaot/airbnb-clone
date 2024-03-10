@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HouseListings } from '../houselistings';
 
 @Component({
@@ -11,5 +11,10 @@ import { HouseListings } from '../houselistings';
 export class HouseitemComponent {
 
   @Input() house!: HouseListings ;
+  @Output() housedetails = new EventEmitter<HouseListings> ();
+
+  showmore(details: HouseListings) {
+   this.housedetails.emit(this.house)
+  }
 
 }
