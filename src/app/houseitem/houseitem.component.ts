@@ -10,11 +10,11 @@ import { HouseListings } from '../houselistings';
 })
 export class HouseitemComponent {
 
-  @Input() house!: HouseListings ;
-  @Output() housedetails = new EventEmitter<HouseListings> ();
+  @Input() houseId!: number ;
+  @Output() housedetails = new EventEmitter<number> ();
 
-  showmore(details: HouseListings) {
-   this.housedetails.emit(this.house)
+  showmore(id: number) {
+   this.housedetails.emit(this.houseId)
   }
 
 }

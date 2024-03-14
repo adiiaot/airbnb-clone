@@ -148,7 +148,7 @@ export class HomepageComponent {
     // if (parseInt(this._scrollnext) >= this.items.length) this.next = false
   }
 
-  Getdata(data: HouseListings) {
+  Getdata(data: number) {
     this.router.navigateByUrl("/rooms/ola")
     // this.house.emit(data)
    
