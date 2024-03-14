@@ -149,10 +149,8 @@ export class HomepageComponent {
   }
 
   Getdata(data: HouseListings) {
-    alert(JSON.stringify(data))
-    // window.open("login")
     this.router.navigateByUrl("/rooms/ola")
-    this.house.emit(data)
+    // this.house.emit(data)
    
   }
 }

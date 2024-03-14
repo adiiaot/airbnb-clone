@@ -171,6 +171,7 @@
         <div class="flex flex-wrap justify-evenly">
             @for (house of houseListings; track house) {
             <div class="w-[90%] aspect-square xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl bg-slate-200 my-5 odd:bg-slate-400 font-bold text-xl overflow-hidden border-2">
+                <!-- {{index}} -->
                 <app-houseitem (housedetails)="Getdata($event)" [house]="house"></app-houseitem>
             </div>
             }

@@ -8,13 +8,12 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
-export class RoomsComponent {
-  // id!: string | null
-  // constructor(private route: ActivatedRoute) {}
-  // ngOnInit(): void {
-  //   if (!(this.route.snapshot.paramMap.get('id'))) return
-  //   this.id = this.route.snapshot.paramMap.get('id')
+export class RoomsComponent implements OnInit {
+  id!: any
+  constructor(private route: ActivatedRoute) {}
 
-  
-  // }
+  ngOnInit(): void {
+  //  alert(this.id)
+   alert(this.route.snapshot.paramMap.get("id"))
+  }
 }
