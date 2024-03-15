@@ -56,8 +56,6 @@ export class HomepageComponent {
   }
 
   Getdata(data: number) {
-    this.router.navigateByUrl("/rooms/ola")
-    // this.house.emit(data)
-   
+    this.router.navigateByUrl(`/rooms/${data}`)
   }
 }
