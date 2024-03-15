@@ -34,7 +34,7 @@ export class HomepageComponent {
   // houseListings = this.houseListings?.getHouses()
   houseListings = this.houses.getHouses()
 
-  al(event: Event, param: string) {
+  showElement(event: Event) {
     event.target?.addEventListener('scroll', () => {
       let el = document.getElementById('track');
       if (!el) return;
@@ -55,7 +55,7 @@ export class HomepageComponent {
     });
   }
 
-  Getdata(data: number) {
-    this.router.navigateByUrl(`/rooms/${data}`)
+  roomNavigate(roomId: number) {
+    this.router.navigateByUrl(`/rooms/${roomId}`)
   }
 }

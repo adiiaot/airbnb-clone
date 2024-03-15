@@ -8,20 +8,21 @@ import { HouseListings } from '../houselistings';
   standalone: true,
   imports: [],
   templateUrl: './rooms.component.html',
-  styleUrl: './rooms.component.css'
+  styleUrl: './rooms.component.css',
 })
 export class RoomsComponent implements OnInit {
-  room!: any
-  constructor(private route: ActivatedRoute, private houses: HouselistingsService) {}
+  room!: any;
+  constructor(
+    private route: ActivatedRoute,
+    private houses: HouselistingsService
+  ) {}
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get("id")
-    if ((typeof id === "string")) {
-      this.room = this.houses.getHouses()[parseInt(id)]
+    let id = this.route.snapshot.paramMap.get('id');
+    if (typeof id === 'string') {
+      this.room = this.houses.getHouses()[parseInt(id)];
     } else {
-      this.room = ""
+      this.room = '';
     }
-    // alert(JSON.stringify(this.room))
   }
-  // alert(this.room)
 }

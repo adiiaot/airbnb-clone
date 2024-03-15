@@ -1,5 +1,12 @@
-<div (click)="showmore(houseId)" class="relative-z-10 size-full bg-red-40 overflow-hidden flex items-center justify-center">
+<div (click)="showmore(houseId)" class="relative-z-10 size-full bg-red-40 overflow-hidden">
     <!-- <h1 class="absolute top-5 left-5 z-10" >{{house.location}}</h1> -->
     <!-- <img src="{{}}" class="size-full object-cover" /> -->
-    <h1 class="text-xl">Item Id: #{{houseId}}</h1>
+    <!-- <h1 class="text-xl">Item Id: #{{houseId}}</h1> -->
+    <swiper-container slides-per-view="1" speed="200" css-mode="true" class="size-full overflow-hidden" >
+        @for (i of house.photos; track i) {
+        <swiper-slide>
+           <img src="{{i}}" class="size-full object-cover" />
+        </swiper-slide>
+        }
+    </swiper-container>
 </div>

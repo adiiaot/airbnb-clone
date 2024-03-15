@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HouseListings } from './houselistings';
+// import house1 from '../assets/images/house1.jfif';
 
 @Injectable({
   providedIn: 'root',
@@ -8,81 +9,75 @@ export class HouselistingsService {
   getHouses(): HouseListings[] {
     return [
       {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
+        photos: ['../assets/images/house1.jfif', '../assets/images/house2.jfif','../assets/images/house3.jfif','../assets/images/house4.jfif','../assets/images/house5.jfif','../assets/images/house6.jfif','../assets/images/house7.jfif','../assets/images/house8.jfif' ] ,
         location: 'Lagos',
         starRating: '4.5',
         favorite: true,
         price: '450',
       },
       {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Abuja',
-        starRating: '4.0',
-        favorite: true,
-        price: '4500',
-      },
-      {
-        src: '../../assets/images/airbnb.png',
+        photos: ['../assets/images/house8.jfif', '../assets/images/house7.jfif','../assets/images/house6.jfif','../assets/images/house5.jfif','../assets/images/house4.jfif','../assets/images/house3.jfif','../assets/images/house2.jfif','../assets/images/house1.jfif' ] ,
         location: 'Ogun',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
-      },
-      {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Ibadan',
-        starRating: '3.5',
-        favorite: false,
+        starRating: '4.5',
+        favorite: true,
         price: '450',
       },
       {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Osogbo',
-        starRating: '3.5',
+        photos: ['../assets/images/house1.jfif', '../assets/images/house5.jfif','../assets/images/house2.jfif','../assets/images/house6.jfif','../assets/images/house3.jfif','../assets/images/house7.jfif','../assets/images/house4.jfif','../assets/images/house8.jfif' ] ,
+        location: 'Awka',
+        starRating: '4.5',
         favorite: true,
-        price: '750',
+        price: '450',
       },
       {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Kaduna',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
+        photos: ['../assets/images/house2.jfif', '../assets/images/house4.jfif','../assets/images/house6.jfif','../assets/images/house8.jfif','../assets/images/house1.jfif','../assets/images/house3.jfif','../assets/images/house5.jfif','../assets/images/house7.jfif' ] ,
+        location: 'Lafenwa',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
       },
       {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Zamfara',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
-      },
-      {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Abakaliki',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
-      },
-      {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Imo',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
-      },
-      {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
-        location: 'Abia',
-        starRating: '3.5',
-        favorite: false,
-        price: '1750',
-      },
-      {
-        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
+        photos: ['../assets/images/house1.jfif', '../assets/images/house2.jfif','../assets/images/house3.jfif','../assets/images/house4.jfif','../assets/images/house5.jfif','../assets/images/house8.jfif','../assets/images/house7.jfif','../assets/images/house6.jfif' ] ,
         location: 'Jigawa',
-        starRating: '4.8',
-        favorite: false,
-        price: '7750',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
+      },
+
+      {
+        photos: ['../assets/images/house1.jfif', '../assets/images/house1.jfif','../assets/images/house1.jfif','../assets/images/house1.jfif','../assets/images/house1.jfif','../assets/images/house1.jfif','../assets/images/house1.jfif','../assets/images/house1.jfif' ] ,
+        location: 'Taraba',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
+      },
+      {
+        photos: ['../assets/images/house8.jfif', '../assets/images/house7.jfif','../assets/images/house6.jfif','../assets/images/house5.jfif','../assets/images/house4.jfif','../assets/images/house3.jfif','../assets/images/house2.jfif','../assets/images/house1.jfif' ] ,
+        location: 'Osun',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
+      },
+      {
+        photos: ['../assets/images/house1.jfif', '../assets/images/house5.jfif','../assets/images/house2.jfif','../assets/images/house6.jfif','../assets/images/house3.jfif','../assets/images/house7.jfif','../assets/images/house4.jfif','../assets/images/house8.jfif' ] ,
+        location: 'Ibadan',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
+      },
+      {
+        photos: ['../assets/images/house2.jfif', '../assets/images/house4.jfif','../assets/images/house6.jfif','../assets/images/house8.jfif','../assets/images/house1.jfif','../assets/images/house3.jfif','../assets/images/house5.jfif','../assets/images/house7.jfif' ] ,
+        location: 'Yobe',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
+      },
+      {
+        photos: ['../assets/images/house1.jfif', '../assets/images/house2.jfif','../assets/images/house3.jfif','../assets/images/house4.jfif','../assets/images/house5.jfif','../assets/images/house8.jfif','../assets/images/house7.jfif','../assets/images/house6.jfif' ] ,
+        location: 'Damaturu',
+        starRating: '4.5',
+        favorite: true,
+        price: '450',
       },
     ];
   }

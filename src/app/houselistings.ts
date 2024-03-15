@@ -1,5 +1,5 @@
 export interface HouseListings {
-    src:string,
+    photos: string[],
     location: string,
     starRating: string
     favorite: boolean,
