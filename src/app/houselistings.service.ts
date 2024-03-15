@@ -77,6 +77,13 @@ export class HouselistingsService {
         favorite: false,
         price: '1750',
       },
+      {
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSv6CyqS-g3kJDKjhit7sQ-Us0somkda0X5w&usqp=CAU',
+        location: 'Jigawa',
+        starRating: '4.8',
+        favorite: false,
+        price: '7750',
+      },
     ];
   }
 }

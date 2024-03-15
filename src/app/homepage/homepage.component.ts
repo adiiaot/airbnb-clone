@@ -3,6 +3,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, inject, Input, Output 
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HouseitemComponent } from '../houseitem/houseitem.component';
 import { HouseListings } from '../houselistings';
+import { HouselistingsService } from '../houselistings.service';
 // import logo from '../../assets/images/airbnb.png'
 
 
@@ -28,9 +29,10 @@ export class HomepageComponent {
   items = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
   totalprice = false
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private houses: HouselistingsService) { }
   // houseListings = inject(HouselistingsService);
   // houseListings = this.houseListings?.getHouses()
+  houseListings = this.houses.getHouses()
 
   al(event: Event, param: string) {
     event.target?.addEventListener('scroll', () => {
