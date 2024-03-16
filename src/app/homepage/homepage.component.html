@@ -23,14 +23,18 @@
         </div>
         <!-- list items scroll container -->
         <ul class="">
-            <swiper-container slides-per-view="5" speed="500" css-mode="true" auto-height="true" class="">
+            <swiper-container slides-per-view="5" speed="500" css-mode="true">
                 @for (i of views; track i) {
                 <swiper-slide class="mx-2">
-                    <div id="{{ i }}"
-                        class="relative w-24 border-b-2 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                        <div class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
-                        <div class="size-10 bg-red-200"></div>
-                        <p class="text-xs font-semibold bg-red-30">{{i.text}}</p>
+                    <div id="{{ i }}" (click)="activeViews = i.text"
+                        class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
+                        <div [ngClass]="{'hidden': !(activeViews === i.text)}"
+                            class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
+                        <div class="size-10 bg-red-20 rounded-full flex items-center justify-center">
+                            <img src="{{i.icon}}" class="size-6" />
+                        </div>
+                        <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
+                            class="text-xs font-medium bg-red-30 text-slate-500">{{i.text}}</p>
                     </div>
                 </swiper-slide>
                 }
@@ -131,7 +135,8 @@
     </div>
 
     <!-- mobile view bottom nav bar -->
-    <div [ngClass]="{ '-bottom-16': !showBottomNav }" class="xl:hidden slow-resize fixed z-50 w-full bg-red-80 bottom-0 transition-all">
+    <div [ngClass]="{ '-bottom-16': !showBottomNav }"
+        class="xl:hidden slow-resize fixed z-50 w-full bg-red-80 bottom-0 transition-all">
         <div [ngClass]="{ 'hidden': hideMore }" class="h-10 w-20 mx-auto my-5 rounded-full bg-black"></div>
         <div class="h-16 bg-slate-50 border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center">
             <div class="size-10 bg-red-40 flex items-center justify-center">
@@ -155,9 +160,10 @@
     </div>
 
     <!-- main scrollable content -->
-    <div id="track" class="bg-white pt-40 xl:pt-60">
+    <div id="track" class="bg-white pt-44 xl:pt-60">
         <!-- taxes toggle -->
-        <div (click)="totalprice = !totalprice" class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center">
+        <div (click)="totalprice = !totalprice"
+            class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5">
             <div class="space-y-1">
                 <p class="text-sm font-bold text-gray-700">Display total price</p>
                 <p class="text-sm text-slate-400 font-normal">Include all fees, before taxes</p>
@@ -172,7 +178,8 @@
         </div>
         <div class="flex flex-wrap justify-evenly bg-white space-y-14">
             @for (house of houseListings; track house) {
-            <div class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl overflow-hidden">
+            <div
+                class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl overflow-hidden">
                 <!-- id: {{$index}}
                 count: {{$count}}
                 first : {{$first}}

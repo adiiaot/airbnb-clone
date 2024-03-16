@@ -2,7 +2,7 @@
     <div [ngClass]="{'hidden': !house.favorite}" class="absolute bg-red-40 z-10 top-3 left-3">
         <p class="px-2 py-1 text-sm font-bold rounded-full bg-white border border-white text-gray-950">Guest favorite</p>
     </div>
-    <swiper-container slides-per-view="1" speed="200" css-mode="true" class="w-full aspect-square overflow-hidden" >
+    <swiper-container slides-per-view="1" speed="200" css-mode="true" class="w-full aspect-square overflow-hidden rounded-xl" >
         @for (i of house.photos; track i) {
         <swiper-slide>
            <img src="{{i}}" class="size-full object-cover" />

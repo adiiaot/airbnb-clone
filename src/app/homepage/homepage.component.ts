@@ -8,6 +8,7 @@ import { HouselistingsService } from '../houselistings.service';
 
 
 
+
 @Component({
   selector: 'app-homepage',
   standalone: true,
@@ -27,25 +28,26 @@ export class HomepageComponent {
   hideMore = true;
   location: 'stays' | 'experiences' | 'online experiences' = 'stays';
   views = [
-    {icon: "", text: "Amazing views"},
-    {icon: "", text: "Surfing"},
-    {icon: "", text: "Trending"},
-    {icon: "", text: "New"},
-    {icon: "", text: "Earth homes"},
-    {icon: "", text: "Farms"},
-    {icon: "", text: "Islands"},
-    {icon: "", text: "Beachfront"},
-    {icon: "", text: "Design"},
-    {icon: "", text: "Cabins"},
-    {icon: "", text: "Campers"},
-    {icon: "", text: "Amazing pools"},
-    {icon: "", text: "OMG!"},
-    {icon: "", text: "Arctic"},
-    {icon: "", text: "Caves"},
-    {icon: "", text: "Tropical"},
-    {icon: "", text: "Rooms"},
-    {icon: "", text: "Lakes"},
+    {icon: "../../assets/images/amazing_views.jpg", text: "Amazing views"},
+    {icon: "../../assets/images/surfing.jpg", text: "Surfing"},
+    {icon: "../../assets/images/trending.jpg", text: "Trending"},
+    {icon: "../../assets/images/new.jpg", text: "New"},
+    {icon: "../../assets/images/earth_homes.jpg", text: "Earth homes"},
+    {icon: "../../assets/images/farms.jpg", text: "Farms"},
+    {icon: "../../assets/images/islands.jpg", text: "Islands"},
+    {icon: "../../assets/images/beachfront.jpg", text: "Beachfront"},
+    {icon: "../../assets/images/design.jpg", text: "Design"},
+    {icon: "../../assets/images/cabins.jpg", text: "Cabins"},
+    {icon: "../../assets/images/campers.jpg", text: "Campers"},
+    {icon: "../../assets/images/amazing_pools.jpg", text: "Amazing pools"},
+    {icon: "../../assets/images/omg.jpg", text: "OMG!"},
+    {icon: "../../assets/images/arctic.jpg", text: "Arctic"},
+    {icon: "../../assets/images/caves.jpg", text: "Caves"},
+    {icon: "../../assets/images/tropical.jpg", text: "Tropical"},
+    {icon: "../../assets/images/rooms.jpg", text: "Rooms"},
+    {icon: "../../assets/images/lake.jpg", text: "Lakes"},
   ]
+  activeViews: string = "Amazing views";
   totalprice = false
 
   constructor(private router: Router, private houses: HouselistingsService) { }
