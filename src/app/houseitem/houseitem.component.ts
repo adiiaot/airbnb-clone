@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HouseListings } from '../houselistings';
 import { HouselistingsService } from '../houselistings.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-houseitem',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './houseitem.component.html',
   styleUrl: './houseitem.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

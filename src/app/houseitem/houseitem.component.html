@@ -1,12 +1,23 @@
-<div (click)="showmore(houseId)" class="relative-z-10 size-full bg-red-40 overflow-hidden">
-    <!-- <h1 class="absolute top-5 left-5 z-10" >{{house.location}}</h1> -->
-    <!-- <img src="{{}}" class="size-full object-cover" /> -->
-    <!-- <h1 class="text-xl">Item Id: #{{houseId}}</h1> -->
-    <swiper-container slides-per-view="1" speed="200" css-mode="true" class="size-full overflow-hidden" >
+<div (click)="showmore(houseId)" class="relative size-full bg-red-40 overflow-hidden">
+    <div [ngClass]="{'hidden': !house.favorite}" class="absolute bg-red-40 z-10 top-3 left-3">
+        <p class="px-2 py-1 text-sm font-bold rounded-full bg-white border border-white text-gray-950">Guest favorite</p>
+    </div>
+    <swiper-container slides-per-view="1" speed="200" css-mode="true" class="w-full aspect-square overflow-hidden" >
         @for (i of house.photos; track i) {
         <swiper-slide>
            <img src="{{i}}" class="size-full object-cover" />
         </swiper-slide>
         }
     </swiper-container>
+    <div class="flex justify-between mt-2">
+        <div class="space-y-1">
+            <p class="text-base font-bold">{{house.location}}, Nigeria</p>
+            <p class="text-sm font-light text-slate-500">Ocean and Sea Views</p>
+            <p class="text-sm font-light text-slate-500">Sep 18 - 23</p>
+            <p class="text-base font-medium text-slate-800"> <span class="text-base font-bold text-black">${{house.price}}</span> night</p>
+        </div>
+        <div>
+            <p class="text-base">{{house.starRating}}</p>
+        </div>
+    </div>
 </div>
