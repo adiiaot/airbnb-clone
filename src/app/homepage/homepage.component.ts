@@ -47,7 +47,7 @@ export class HomepageComponent {
     {icon: "../../assets/images/rooms.jpg", text: "Rooms"},
     {icon: "../../assets/images/lake.jpg", text: "Lakes"},
   ]
-  activeViews: string = "Amazing views";
+  activeViews: string = "all";
   totalprice = false
 
   constructor(private router: Router, private houses: HouselistingsService) { }
@@ -78,5 +78,15 @@ export class HomepageComponent {
 
   roomNavigate(roomId: number) {
     this.router.navigateByUrl(`/rooms/${roomId}`)
+  }
+
+  filterViews(view: string) {
+    if (view === "all") {
+      this.activeViews = "all"
+      this.houseListings = this.houses.getHouses()
+      return 
+    }
+    this.activeViews = view
+    this.houseListings = this.houses.getHouses().filter(items => items.views.toLowerCase() === view.toLowerCase())
   }
 }

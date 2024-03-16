@@ -24,9 +24,21 @@
         <!-- list items scroll container -->
         <ul class="">
             <swiper-container slides-per-view="5" speed="500" css-mode="true">
+                <swiper-slide class="mx-2">
+                    <div id="all" (click)="filterViews('all')"
+                        class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
+                        <div [ngClass]="{'hidden': !(activeViews === 'all')}"
+                            class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
+                        <div class="size-10 bg-red-20 rounded-full flex items-center justify-center">
+                            <!-- <img src="{{i.icon}}" class="size-6" /> -->
+                        </div>
+                        <p [ngClass]="{'text-slate-950 font-bold': activeViews === 'all'}"
+                            class="text-xs font-medium bg-red-30 text-slate-500">All</p>
+                    </div>
+                </swiper-slide>
                 @for (i of views; track i) {
                 <swiper-slide class="mx-2">
-                    <div id="{{ i }}" (click)="activeViews = i.text"
+                    <div id="{{ i }}" (click)="filterViews(i.text)"
                         class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
                         <div [ngClass]="{'hidden': !(activeViews === i.text)}"
                             class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
@@ -189,6 +201,13 @@
                 <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index"></app-houseitem>
             </div>
             }
+        </div>
+        <div class="w-full h-20 bg-red-40 mt-10 mb-44">
+            <hr class="w-[90%] mx-auto bg-slate-500" />
+            <p class="mt-10 mb-5 font-bold text-center">Continue exploring new homes</p>
+            <div class="flex justify-center bg-red-40">
+                <button class="px-4 py-2 bg-black text-slate-200 rounded-md text-base">Show more</button>
+            </div>
         </div>
     </div>
 </div>

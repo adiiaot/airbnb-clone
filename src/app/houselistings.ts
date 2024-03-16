@@ -3,5 +3,6 @@ export interface HouseListings {
     location: string,
     starRating: string
     favorite: boolean,
-    price: string
+    price: string,
+    views: string
   }
