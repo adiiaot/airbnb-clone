@@ -22,15 +22,15 @@
             </div>
         </div>
         <!-- list items scroll container -->
-        <ul class="w-ful bg-red- overflow-scroll">
-            <swiper-container slides-per-view="5" speed="500" css-mode="true" auto-height="true" class="space-x-10">
+        <ul class="">
+            <swiper-container slides-per-view="5" speed="500" css-mode="true" auto-height="true" class="">
                 @for (i of views; track i) {
-                <swiper-slide >
+                <swiper-slide class="mx-2">
                     <div id="{{ i }}"
-                        class="relative border-b-2 w-40 bg-blue-300 pb-3 flex flex-col items-center justify-center">
-                        <div class="absolute bottom-0 w-[70%] left-[15%] h-2 bg-blue-400"></div>
-                        <div class="size-10 bg-red-400"></div>
-                        <p class="text-xs font-semibold">{{i.text}}</p>
+                        class="relative w-24 border-b-2 bg-blue-30 pb-3 flex flex-col justify-center items-center">
+                        <div class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
+                        <div class="size-10 bg-red-200"></div>
+                        <p class="text-xs font-semibold bg-red-30">{{i.text}}</p>
                     </div>
                 </swiper-slide>
                 }
