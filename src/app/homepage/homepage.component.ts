@@ -26,7 +26,26 @@ export class HomepageComponent {
   top = 0;
   hideMore = true;
   location: 'stays' | 'experiences' | 'online experiences' = 'stays';
-  items = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+  views = [
+    {icon: "", text: "Amazing views"},
+    {icon: "", text: "Surfing"},
+    {icon: "", text: "Trending"},
+    {icon: "", text: "New"},
+    {icon: "", text: "Earth homes"},
+    {icon: "", text: "Farms"},
+    {icon: "", text: "Islands"},
+    {icon: "", text: "Beachfront"},
+    {icon: "", text: "Design"},
+    {icon: "", text: "Cabins"},
+    {icon: "", text: "Campers"},
+    {icon: "", text: "Amazing pools"},
+    {icon: "", text: "OMG!"},
+    {icon: "", text: "Arctic"},
+    {icon: "", text: "Caves"},
+    {icon: "", text: "Tropical"},
+    {icon: "", text: "Rooms"},
+    {icon: "", text: "Lakes"},
+  ]
   totalprice = false
 
   constructor(private router: Router, private houses: HouselistingsService) { }
