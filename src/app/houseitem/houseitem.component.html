@@ -6,7 +6,7 @@
 
     </div>
     <swiper-container slides-per-view="1" speed="200" css-mode="true" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="false" class="w-full aspect-square overflow-hidden rounded-xl houseSwiper" el="houseSwiper" >
-        @for (i of house.photos; track i) {
+        @for (i of house.photos; track i) { 
         <swiper-slide>
            <img src="{{i}}" class="size-full object-cover" />
         </swiper-slide>
