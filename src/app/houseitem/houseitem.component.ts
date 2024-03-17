@@ -26,4 +26,5 @@ export class HouseitemComponent {
    this.housedetails.emit(this.houseId)
   }
 
+
 }
