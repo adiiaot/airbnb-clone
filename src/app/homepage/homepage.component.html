@@ -10,7 +10,7 @@
                 class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 px-4 py-2 flex items-center gap-3">
                 <div class="size-10 rounded-full bg-slate-100"></div>
                 <div>
-                    <p class="text-sm">Anywhere</p>
+                    <p class="text-sm font-semibold">Anywhere</p>
                     <p class="text-xs text-slate-500">Any week . Add guests</p>
                 </div>
             </div>
@@ -40,22 +40,27 @@
                     <div id="{{ i }}" (click)="filterViews(i.text)"
                         class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
                         <div [ngClass]="{'hidden': !(activeViews === i.text)}"
-                            class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
+                            class="absolute transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-black">
+                        </div>
                         <div class="relative size-10 bg-red-20 rounded-full flex items-center justify-center">
-                            <div [ngClass]="{'hidden': activeViews === i.text}" class="absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden"></div>
+                            <!-- white image layer -->
+                            <div [ngClass]="{'hidden': activeViews === i.text}"
+                                class="transition-all slow-resize absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden">
+                            </div>
                             <img src="{{i.icon}}" class="size-6" />
                         </div>
                         <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
-                            class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">{{i.text}}</p>
+                            class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">
+                            {{i.text}}</p>
                     </div>
                 </swiper-slide>
                 }
             </swiper-container>
         </ul>
-    </div> 
+    </div>
 
     <!-- desktop view header -->
-    <div class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 xl:px-0 hidden xl:block">
+    <div class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 xl:px-5 xl:pt-5 xl:pb-0 hidden xl:block">
         <!-- AirBNB logo: left -->
         <div class="float-left bg-blue-60 w-40 h-20">
             <img src="../../assets/images/airbnb.png" alt="logo" class="w-32 h-14 object-cover bg-red-300" />
@@ -125,14 +130,18 @@
             </div>
         </div>
         <div [ngClass]="{ '-mt-5': !showBottomNav }"
-            class="relative px-5 xl:px-0 py-2 bg-white border-t-2 border-slate-300 w-full mt-5 flex justify-between items-center">
+            class="relative px-5 xl:px-0 py-2 bg-red-60 border-t border-slate-200 w-full mt-5 flex justify-between items-center">
             <!-- scrollable location items -->
             <div id="items" class="relative w-[73%] h-full bg-red-30">
-                <div (click)="swipe('prev')" class="top-0 z-10 absolute h-full aspect-square rounded-full bg-white bg-opacity-90 flex items-center justify-center">
-                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">P</div>
+                <div (click)="swipe('prev')"
+                    class="top-0 z-10 absolute h-full aspect-square rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">P
+                    </div>
                 </div>
-                <div (click)="swipe('next')" class="top-0 z-10 absolute  h-full aspect-square right-0 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
-                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">N</div>
+                <div (click)="swipe('next')"
+                    class="top-0 z-10 absolute  h-full aspect-square right-0 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">N
+                    </div>
                 </div>
                 <swiper-container slides-per-view="9" speed="500" css-mode="true" class="ola">
                     <swiper-slide class="mx-2">
@@ -148,26 +157,44 @@
                         </div>
                     </swiper-slide>
                     @for (i of views; track i) {
-                        <swiper-slide class="mx-2">
-                            <div id="{{ i }}" (click)="filterViews(i.text)"
-                                class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                                <div [ngClass]="{'hidden': !(activeViews === i.text)}"
-                                    class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
-                                <div class="relative size-10 bg-red-20 rounded-full flex items-center justify-center">
-                                    <!-- inactive state cover  -->
-                                    <div [ngClass]="{'hidden': activeViews === i.text}" class="absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden"></div>
-                                    <img src="{{i.icon}}" class="size-6" />
+                    <swiper-slide class="mx-2">
+                        <div id="{{ i }}" (click)="filterViews(i.text)"
+                            class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
+                            <div [ngClass]="{'hidden': !(activeViews === i.text)}"
+                                class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
+                            <div class="relative size-10 bg-red-20 rounded-full flex items-center justify-center">
+                                <!-- inactive state cover  -->
+                                <div [ngClass]="{'hidden': activeViews === i.text}"
+                                    class="absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden">
                                 </div>
-                                <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
-                                    class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">{{i.text}}</p>
+                                <img src="{{i.icon}}" class="size-6" />
                             </div>
-                        </swiper-slide>
-                        }
+                            <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
+                                class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">
+                                {{i.text}}</p>
+                        </div>
+                    </swiper-slide>
+                    }
                 </swiper-container>
             </div>
-            <div class="w-[25%] h-full bg-red-40 flex justify-between">
-                <div class="w-[30%] h-12 border-2 rounded-md"></div>
-                <div class="w-[60%] h-12 border-2 rounded-md"></div>
+            <div class="w-[25%] h-full bg-red-40 flex justify-between pr-5">
+                <div class="w-[25%] h-12 border rounded-xl"></div>
+                <div class="w-[70%] h-12 border rounded-xl flex items-center justify-center bg-green-40">
+                    <div (click)="beforeTaxes = !beforeTaxes"
+                        class="w-full h-full p-3 flex justify-between items-center bg-red-40">
+                        <div class="space-y-1">
+                            <p class="text-xs font-medium text-black">Display total before taxes</p>
+                            
+                        </div>
+                        <!-- toggle switch -->
+                        <div [ngClass]="{'bg-stone-400': !beforeTaxes}" class="relative w-9 h-6 bg-black rounded-full">
+                            <div [ngClass]="{'right-0 border-slate-950': beforeTaxes}"
+                                class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-400 flex items-center justify-center">
+                                <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -193,16 +220,12 @@
     </div>
 
     <!-- desktop view hide more -->
-    <div class="hidden xl:block fixed w-full bg-red-80 bottom-0 transition-all">
-        <div class="h-10 w-24 mx-auto my-5 rounded-full bg-black hover:scale-105"></div>
+    <div class="hidden xl:block fixed z-40 w-full bg-red-80 bottom-0 transition-all">
+        <div class="h-12 w-32 mx-auto my-5 rounded-full bg-gray-900 hover:scale-105"></div>
     </div>
 
     <!-- main scrollable content -->
-    <div id="track" class="bg-white pt-44 xl:pt-60">
-
-<!-- <button (click)="swipeNext()">Click me</button> -->
-
-
+    <div id="track" class="bg-white pt-44 xl:pt-64">
         <!-- taxes toggle -->
         <div (click)="beforeTaxes = !beforeTaxes"
             class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5">
@@ -214,21 +237,21 @@
             <div [ngClass]="{'bg-stone-300': !beforeTaxes}" class="relative w-14 h-9 bg-black rounded-full">
                 <div [ngClass]="{'right-0 border-gray-950': beforeTaxes}"
                     class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
-                    <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-400"></div>
+                    <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
                 </div>
             </div>
         </div>
-        <div class="flex flex-wrap justify-evenly bg-white space-y-14 xl:space-y-0 xl:gap-y-16">
+        <div class="flex flex-wrap justify-between bg-red-40 space-y-14 xl:space-y-0 xl:gap-y-16">
             @for (house of houseListings; track house) {
-            <div
-                class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl">
+            <div class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl">
                 <!-- id: {{$index}}
                 count: {{$count}}
                 first : {{$first}}
                 last: {{$last}}
                 even: {{$even}}
                 odd: {{$odd}} -->
-                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index" [beforeTaxes]="beforeTaxes"></app-houseitem>
+                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index"
+                    [beforeTaxes]="beforeTaxes"></app-houseitem>
             </div>
             }
         </div>
