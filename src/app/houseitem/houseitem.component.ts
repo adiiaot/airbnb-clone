@@ -26,5 +26,18 @@ export class HouseitemComponent {
    this.housedetails.emit(this.houseId)
   }
 
+  swipe(nav: string) {
+    // if (nav === "prev") document.querySelectorAll("swiper-container")[3]?.swiper.slidePrev()
+    // if (nav === "next") document.querySelectorAll("swiper-container")[3]?.swiper.slideNext()
+
+    if (nav === "next") {
+      document.querySelectorAll("swiper-container").forEach(el => {
+        el.swiper.slideNext()
+      })
+    }
+
+ 
+  }
 
 }
+
