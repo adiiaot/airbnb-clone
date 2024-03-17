@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HouseListings } from './houselistings';
-// import house1 from '../assets/images/house1.jfif';
+import { HouseListings } from './houselistings'; 
+
 
 @Injectable({
   providedIn: 'root',
