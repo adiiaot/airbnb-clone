@@ -10,7 +10,7 @@ export class HouselistingsService {
     return [
       {
 photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/images/az3.jfif','../assets/images/az4.jfif','../assets/images/az5.jfif',] ,
-        location: 'Lagos',
+        location: 'Adomi, Ghana',
         starRating: '4.82',
         favorite: true,
         priceAfterTax: '116',
@@ -19,7 +19,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/surf1.jfif', '../assets/images/surf2.jfif','../assets/images/surf3.jpg','../assets/images/surf4.jfif','../assets/images/surf5.jfif',] ,
-        location: 'Ogun',
+        location: 'Beja, Portugal',
         starRating: '5.0',
         favorite: true,
         priceAfterTax: '1,568',
@@ -28,7 +28,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/trend1.jfif', '../assets/images/trend2.jfif','../assets/images/trend3.jfif','../assets/images/trend4.jfif','../assets/images/trend5.jfif',] ,
-        location: 'Awka',
+        location: 'Savusavu, Fiji',
         starRating: '4.88',
         favorite: false,
         priceAfterTax: '282',
@@ -37,7 +37,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/new1.jfif', '../assets/images/new2.jfif','../assets/images/new3.jfif','../assets/images/new4.jfif','../assets/images/new5.jfif',] ,
-        location: 'Lafenwa',
+        location: 'Ibiza, Spain',
         starRating: '4.94',
         favorite: false,
         priceAfterTax: '114',
@@ -46,7 +46,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/earth1.jfif', '../assets/images/earth2.jfif','../assets/images/earth3.jfif','../assets/images/earth4.jfif','../assets/images/earth5.jfif',] ,
-        location: 'Jigawa',
+        location: 'Fethiye, Turkey',
         starRating: '4.5',
         favorite: true,
         priceAfterTax: '271',
@@ -56,7 +56,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
 
       {
         photos: ['../assets/images/farm1.jfif', '../assets/images/farm2.jfif','../assets/images/farm3.jfif','../assets/images/farm4.jfif','../assets/images/farm5.jfif',] ,
-        location: 'Taraba',
+        location: 'Euboea, Greece',
         starRating: '4.0',
         favorite: true,
         priceAfterTax: '452',
@@ -115,7 +115,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
         photos: ['../assets/images/pool1.jfif', '../assets/images/pool2.jfif','../assets/images/pool3.jfif','../assets/images/pool4.jfif','../assets/images/pool5.jfif',] ,
         location: 'Agios Pavlos, Greece',
         starRating: '4.97',
-        favorite: false,
+        favorite: true,
         priceAfterTax: '381',
         priceBeforeTax: '352',
         views: 'amazing pools'
@@ -124,7 +124,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
         photos: ['../assets/images/alien1.jfif', '../assets/images/alien2.jfif','../assets/images/alien3.jfif','../assets/images/alien4.jfif','../assets/images/alien5.jfif',] ,
         location: 'Mertola, Portugal',
         starRating: '4.97',
-        favorite: false,
+        favorite: true,
         priceAfterTax: '1,250',
         priceBeforeTax: '1,100',
         views: 'omg!'
@@ -160,7 +160,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
         photos: ['../assets/images/room1.jfif', '../assets/images/room2.jfif','../assets/images/room3.jfif','../assets/images/room4.jfif','../assets/images/room5.jfif',] ,
         location: 'Vis, Croatia',
         starRating: '4.97',
-        favorite: false,
+        favorite: true,
         priceAfterTax: '2,580',
         priceBeforeTax: '2,514',
         views: 'rooms'
