@@ -4,6 +4,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HouseitemComponent } from '../houseitem/houseitem.component';
 import { HouseListings } from '../houselistings';
 import { HouselistingsService } from '../houselistings.service';
+import Swiper from 'swiper';
 // import logo from '../../assets/images/airbnb.png'
 
 
@@ -89,4 +90,13 @@ export class HomepageComponent {
     this.activeViews = view
     this.houseListings = this.houses.getHouses().filter(items => items.views.toLowerCase() === view.toLowerCase())
   }
+
+  swipe(nav: string) {
+   if (nav === "next") document.querySelectorAll('swiper-container')[1]?.swiper.slideNext()
+   if (nav === "prev") document.querySelectorAll('swiper-container')[1]?.swiper.slidePrev()
+   
+
+  }
+
+  
 }

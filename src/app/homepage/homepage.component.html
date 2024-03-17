@@ -22,7 +22,7 @@
         </div>
         <!-- list items scroll container -->
         <ul class="">
-            <swiper-container slides-per-view="5" speed="500" css-mode="true">
+            <swiper-container slides-per-view="5" speed="500" css-mode="true" class="mobileSwiper">
                 <swiper-slide class="mx-2">
                     <div id="all" (click)="filterViews('all')"
                         class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
@@ -55,7 +55,7 @@
     </div> 
 
     <!-- desktop view header -->
-    <div class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 hidden xl:block">
+    <div class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 xl:px-0 hidden xl:block">
         <!-- AirBNB logo: left -->
         <div class="float-left bg-blue-60 w-40 h-20">
             <img src="../../assets/images/airbnb.png" alt="logo" class="w-32 h-14 object-cover bg-red-300" />
@@ -125,10 +125,16 @@
             </div>
         </div>
         <div [ngClass]="{ '-mt-5': !showBottomNav }"
-            class="relative px-5 py-2 bg-white border-t-2 border-slate-300 w-full mt-5 flex justify-between items-center">
+            class="relative px-5 xl:px-0 py-2 bg-white border-t-2 border-slate-300 w-full mt-5 flex justify-between items-center">
             <!-- scrollable location items -->
             <div id="items" class="relative w-[73%] h-full bg-red-30">
-                <swiper-container slides-per-view="9" speed="500" css-mode="true" navigation="true">
+                <div (click)="swipe('prev')" class="top-0 z-10 absolute h-full aspect-square rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">P</div>
+                </div>
+                <div (click)="swipe('next')" class="top-0 z-10 absolute  h-full aspect-square right-0 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">N</div>
+                </div>
+                <swiper-container slides-per-view="9" speed="500" css-mode="true" class="ola">
                     <swiper-slide class="mx-2">
                         <div id="all" (click)="filterViews('all')"
                             class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
@@ -193,6 +199,10 @@
 
     <!-- main scrollable content -->
     <div id="track" class="bg-white pt-44 xl:pt-60">
+
+<!-- <button (click)="swipeNext()">Click me</button> -->
+
+
         <!-- taxes toggle -->
         <div (click)="beforeTaxes = !beforeTaxes"
             class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5">
