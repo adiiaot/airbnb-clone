@@ -13,7 +13,8 @@ export class HouselistingsService {
         location: 'Lagos',
         starRating: '4.82',
         favorite: true,
-        price: '116',
+        priceAfterTax: '116',
+        priceBeforeTax: '100',
         views: 'amazing views'
       },
       {
@@ -21,7 +22,8 @@ export class HouselistingsService {
         location: 'Ogun',
         starRating: '5.0',
         favorite: true,
-        price: '1,568',
+        priceAfterTax: '1,568',
+        priceBeforeTax: '1,450',
         views: 'surfing'
       },
       {
@@ -29,7 +31,8 @@ export class HouselistingsService {
         location: 'Awka',
         starRating: '4.88',
         favorite: false,
-        price: '282',
+        priceAfterTax: '282',
+        priceBeforeTax: '252',
         views: 'trending'
       },
       {
@@ -37,7 +40,8 @@ export class HouselistingsService {
         location: 'Lafenwa',
         starRating: '4.94',
         favorite: false,
-        price: '114',
+        priceAfterTax: '114',
+        priceBeforeTax: '110',
         views: 'new'
       },
       {
@@ -45,7 +49,8 @@ export class HouselistingsService {
         location: 'Jigawa',
         starRating: '4.5',
         favorite: true,
-        price: '271',
+        priceAfterTax: '271',
+        priceBeforeTax: '252',
         views: 'Earth homes'
       },
 
@@ -54,7 +59,8 @@ export class HouselistingsService {
         location: 'Taraba',
         starRating: '4.0',
         favorite: true,
-        price: '452',
+        priceAfterTax: '452',
+        priceBeforeTax: '445',
         views: 'farms'
       },
       {
@@ -62,7 +68,8 @@ export class HouselistingsService {
         location: 'Osun',
         starRating: '4.93',
         favorite: false,
-        price: '141',
+        priceAfterTax: '141',
+        priceBeforeTax: '111',
         views: 'islands'
       },
       {
@@ -70,7 +77,8 @@ export class HouselistingsService {
         location: 'Ibadan',
         starRating: '2.87',
         favorite: true,
-        price: '263',
+        priceAfterTax: '263',
+        priceBeforeTax: '255',
         views: 'beachfront'
       },
       {
@@ -78,7 +86,8 @@ export class HouselistingsService {
         location: 'Yobe',
         starRating: '5.0',
         favorite: true,
-        price: '1,126',
+        priceAfterTax: '1,126',
+        priceBeforeTax: '1,095',
         views: 'design'
       },
       {
@@ -86,7 +95,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '126',
+        priceBeforeTax: '100',
         views: 'cabins'
       },
 
@@ -97,7 +107,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '247',
+        priceBeforeTax: '240',
         views: 'campers'
       },
       {
@@ -105,7 +116,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '381',
+        priceBeforeTax: '352',
         views: 'amazing pools'
       },
       {
@@ -113,7 +125,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '1,250',
+        priceBeforeTax: '1,100',
         views: 'omg'
       },
       {
@@ -121,7 +134,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '475',
+        priceBeforeTax: '420',
         views: 'arctic'
       },
       {
@@ -129,7 +143,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '1,126',
+        priceBeforeTax: '1,100',
         views: 'caves'
       },
       {
@@ -137,7 +152,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '570',
+        priceBeforeTax: '520',
         views: 'tropical'
       },
       {
@@ -145,7 +161,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '2,580',
+        priceBeforeTax: '2,514',
         views: 'rooms'
       },
       {
@@ -153,7 +170,8 @@ export class HouselistingsService {
         location: 'Damaturu',
         starRating: '4.97',
         favorite: false,
-        price: '126',
+        priceAfterTax: '789',
+        priceBeforeTax: '750',
         views: 'lakes'
       },
     ];

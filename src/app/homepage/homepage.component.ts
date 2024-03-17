@@ -48,7 +48,7 @@ export class HomepageComponent {
     {icon: "../../assets/images/lake.jpg", text: "Lakes"},
   ]
   activeViews: string = "all";
-  totalprice = false
+  beforeTaxes = false
 
   constructor(private router: Router, private houses: HouselistingsService) { }
   // houseListings = inject(HouselistingsService);

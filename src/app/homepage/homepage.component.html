@@ -174,17 +174,17 @@
     <!-- main scrollable content -->
     <div id="track" class="bg-white pt-44 xl:pt-60">
         <!-- taxes toggle -->
-        <div (click)="totalprice = !totalprice"
+        <div (click)="beforeTaxes = !beforeTaxes"
             class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5">
             <div class="space-y-1">
                 <p class="text-sm font-bold text-gray-700">Display total price</p>
                 <p class="text-sm text-slate-400 font-normal">Include all fees, before taxes</p>
             </div>
             <!-- toggle switch -->
-            <div [ngClass]="{'bg-stone-300': !totalprice}" class="relative w-14 h-9 bg-black rounded-full">
-                <div [ngClass]="{'right-0 border-gray-950': totalprice}"
+            <div [ngClass]="{'bg-stone-300': !beforeTaxes}" class="relative w-14 h-9 bg-black rounded-full">
+                <div [ngClass]="{'right-0 border-gray-950': beforeTaxes}"
                     class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
-                    <div *ngIf="totalprice" class="size-5 rounded-full bg-red-400"></div>
+                    <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-400"></div>
                 </div>
             </div>
         </div>
@@ -198,7 +198,7 @@
                 last: {{$last}}
                 even: {{$even}}
                 odd: {{$odd}} -->
-                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index"></app-houseitem>
+                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index" [beforeTaxes]="beforeTaxes"></app-houseitem>
             </div>
             }
         </div>

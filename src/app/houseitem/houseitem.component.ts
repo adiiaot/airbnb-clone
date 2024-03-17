@@ -14,7 +14,8 @@ import { CommonModule } from '@angular/common';
 export class HouseitemComponent {
 
   @Input() house!: HouseListings ;
-  @Input() houseId!: number
+  @Input() houseId!: number;
+  @Input() beforeTaxes!: boolean;
   @Output() housedetails = new EventEmitter<number> ();
 
   constructor(private houses: HouselistingsService) {}
