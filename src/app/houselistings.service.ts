@@ -65,7 +65,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/island1.jfif', '../assets/images/island2.jfif','../assets/images/island3.jfif','../assets/images/island4.jfif','../assets/images/island5.jfif',] ,
-        location: 'Osun',
+        location: 'Taghazout, Morocco',
         starRating: '4.93',
         favorite: false,
         priceAfterTax: '141',
@@ -74,7 +74,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/beach1.jfif', '../assets/images/beach2.jfif','../assets/images/beach3.jfif','../assets/images/beach4.jfif','../assets/images/beach5.jfif',] ,
-        location: 'Ibadan',
+        location: 'La Costa, Spain',
         starRating: '2.87',
         favorite: true,
         priceAfterTax: '263',
@@ -83,7 +83,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/design1.jfif', '../assets/images/design2.jfif','../assets/images/design3.jfif','../assets/images/design4.jfif','../assets/images/design5.jfif',] ,
-        location: 'Yobe',
+        location: 'Adeje, Spain',
         starRating: '5.0',
         favorite: true,
         priceAfterTax: '1,126',
@@ -92,7 +92,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/cabin1.jfif', '../assets/images/cabin2.jfif','../assets/images/cabin3.jfif','../assets/images/cabin4.jfif','../assets/images/cabin5.jfif',] ,
-        location: 'Damaturu',
+        location: ' El Sauzal, Spain',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '126',
@@ -104,7 +104,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
 
       {
         photos: ['../assets/images/camp1.jfif', '../assets/images/camp2.jfif','../assets/images/camp3.jfif','../assets/images/camp4.jfif','../assets/images/camp5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Rio Marina, Italy',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '247',
@@ -113,7 +113,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/pool1.jfif', '../assets/images/pool2.jfif','../assets/images/pool3.jfif','../assets/images/pool4.jfif','../assets/images/pool5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Agios Pavlos, Greece',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '381',
@@ -122,7 +122,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/alien1.jfif', '../assets/images/alien2.jfif','../assets/images/alien3.jfif','../assets/images/alien4.jfif','../assets/images/alien5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Mertola, Portugal',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '1,250',
@@ -131,7 +131,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/arctic1.jfif', '../assets/images/arctic2.jfif','../assets/images/arctic3.jfif','../assets/images/arctic4.jfif','../assets/images/arctic5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Jinja, Uganda',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '475',
@@ -140,7 +140,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/cave1.jfif', '../assets/images/cave2.jfif','../assets/images/cave3.jfif','../assets/images/cave4.jfif','../assets/images/cave5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Otok Prisnjak, Croatia',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '1,126',
@@ -149,7 +149,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/tropic1.jfif', '../assets/images/tropic2.jfif','../assets/images/tropic3.jfif','../assets/images/tropic4.jfif','../assets/images/tropic5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Murter, Croatia',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '570',
@@ -158,7 +158,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/room1.jfif', '../assets/images/room2.jfif','../assets/images/room3.jfif','../assets/images/room4.jfif','../assets/images/room5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Vis, Croatia',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '2,580',
@@ -167,7 +167,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
       },
       {
         photos: ['../assets/images/lake1.jfif', '../assets/images/lake2.jfif','../assets/images/lake3.jfif','../assets/images/lake4.jfif','../assets/images/lake5.jfif',] ,
-        location: 'Damaturu',
+        location: 'Ytteran, Sweden',
         starRating: '4.97',
         favorite: false,
         priceAfterTax: '789',

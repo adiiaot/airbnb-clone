@@ -200,10 +200,10 @@
     </div>
 
     <!-- mobile view bottom nav bar -->
-    <div [ngClass]="{ '-bottom-16': !showBottomNav }"
-        class="xl:hidden slow-resize fixed z-50 w-full bg-red-80 bottom-0 transition-all">
+    <div [ngClass]="{ '-bottom-14': !showBottomNav }"
+        class="xl:hidden slow-resize fixed z-50 w-full bottom-0 transition-all">
         <div [ngClass]="{ 'hidden': hideMore }" class="h-10 w-20 mx-auto my-5 rounded-full bg-black"></div>
-        <div class="h-16 bg-slate-50 border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center">
+        <div class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center">
             <div class="size-10 bg-red-40 flex items-center justify-center">
                 <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"
                     class="text-blue-600 font-bold">E</a>
@@ -262,5 +262,10 @@
                 <button class="px-4 py-2 bg-black text-slate-200 rounded-md text-base">Show more</button>
             </div>
         </div>
+    </div>
+    <div id="footer" class="w-full h-40 bg-stone-100 text-center text-sm space-y-3 py-5 px-2">
+        <p class="text-slate-400">AirBNB Homepage features and functionalities clone.</p>
+        <p class="text-slate-600">Developed by <a href="https://olalekan-oladimeji-portfolio.vercel.app" target="_blank" class="text-blue-600 underline underline-offset-2">Olalekan Oladimeji</a></p>
+        <p class="font-medium">&#169; {{2024}}. All Rights Reserved.</p>
     </div>
 </div>

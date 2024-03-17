@@ -59,6 +59,9 @@ export class HomepageComponent {
   showElement(event: Event) {
     event.target?.addEventListener('scroll', () => {
       let el = document.getElementById('track');
+      let footer = document.getElementById("footer")?.getBoundingClientRect()
+      // if (footer)
+    
       if (!el) return;
 
       let top = el.getBoundingClientRect().top;
