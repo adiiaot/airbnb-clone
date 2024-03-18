@@ -1,0 +1,18 @@
+.perspective {
+    perspective: 100px;
+}
+
+.diary:hover .cover {
+    transform-style: preserve-3d;
+    transform: rotateY(-20deg);
+    animation: flap 1s ease-in-out;
+}
+
+@keyframes flap {
+    0% {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(-20deg);
+    }
+}
