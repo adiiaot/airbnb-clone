@@ -13,12 +13,16 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RoomsComponent implements OnInit {
-  room!: any;
+  
+
   constructor(
     private route: ActivatedRoute,
     private houses: HouselistingsService,
     private router: Router
   ) {}
+
+  room!: any;
+  showMore = false
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');

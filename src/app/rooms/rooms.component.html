@@ -1,4 +1,13 @@
 <div class="relative pb-20">
+  <div [ngClass]="{'h-[100%] py-10': showMore}" class="fixed bg-white left-0 right-0 rounded-t-3xl transition-all bottom-0 h-1 z-50 px-5">
+    <div (click)="showMore = false" class="size-8 rounded-full bg-red-400"></div>
+    <div class="mt-5 space-y-5">
+      <h2 class="text-2xl font-medium">About this space</h2>
+      <p class="text-slate-600 leading-7"> Welcome to AirBNB (clone) built by Olalekan Oladimeji. It was built using Angular, TypeScript and Tailwind CSS.
+        <br /><br/>This project started off as a friendly and healthy competition between I and my Dev friends until I took it too far and personal and decided to surpass my limit with this project.
+        <br /><br/>This is my first project built with Angular. I am a React Dev who is trying to learn Angular. My ReactJS skills is a solid 7/10 to be fair.</p>
+    </div>
+  </div>
   <div class="fixed z-20 bottom-0 w-full bg-white border-t border-slate-200 flex justify-between items-center p-5">
     <div>
         <p>$208 night</p>
@@ -21,81 +30,62 @@
     <!-- section1 -->
     <div class="py-6 border-b border-slate-200 space-y-3">
       <h1 class="font-medium text-3xl text-slate-900">
-        Linnéaholmen: Private island reached by footbridge
+        {{room.views}}
       </h1>
       <div class="space-y-1">
-        <p>Island in Ytterån, Sweden</p>
+        <p>Located in {{room.location}}</p>
         <p>10 guests . 6 bedrooms . 8 beds . 3 baths</p>
-        <p>4.83 24 reviews</p>
+        <p>{{room.starRating}} | 24 reviews</p>
       </div>
     </div>
     <!-- section2 -->
     <div class="py-6 border-b border-slate-200 flex items-center gap-5">
-      <div class="size-10 bg-slate-600 rounded-full"></div>
+      <div class="size-10 bg-slate-60 rounded-full">
+        <img src="../../assets/images/ola_dp.jpg" class="size-full object-cover rounded-full" />
+      </div>
       <div class="space-y-1">
-        <p>Hosted by Per-Henrik</p>
-        <p>5 years hosting</p>
+        <p class="font-normal">Hosted by Olalekan Oladimeji</p>
+        <p class="text-sm text-slate-500">Vercel hosting</p>
       </div>
     </div>
     <!-- section3 -->
     <div class="py-6 border-b border-slate-200 space-y-2">
-      <div class="flex items-center gap-5">
+      <div class="flex items-start gap-5">
         <div class="size-8 bg-slate-600 rounded-full"></div>
-        <div class="space-y-1">
-          <p>Free cancellation for 48 hours</p>
-          <!-- <p>5 years hosting</p> -->
+        <div class="">
+          <p class="font-normal">Free cancellation for 48 hours</p>
+          <p  class="text-sm text-slate-500">Check yourself in with the smartlock.</p>
         </div>
       </div>
-      <div class="flex items-center gap-5">
+      <div class="flex items-start gap-5">
         <div class="size-8 bg-slate-600 rounded-full"></div>
-        <div class="space-y-1">
-          <p>Self check-in</p>
-          <p>Check yourself in with the smartlock.</p>
+        <div class="">
+          <p class="font-normal">Self check-in</p>
+          <p  class="text-sm text-slate-500">Check yourself in with the smartlock.</p>
         </div>
       </div>
-      <div class="flex items-center gap-5">
+      <div class="flex items-start gap-5">
         <div class="size-8 bg-slate-600 rounded-full"></div>
-        <div class="space-y-1">
-          <p>Furry friends welcome</p>
-          <p>Bring your pets along for the stay.</p>
+        <div class="">
+          <p class="font-normal">Furry friends welcome</p>
+          <p  class="text-sm text-slate-500">Bring your pets along for the stay.</p>
         </div>
       </div>
     </div>
     <!-- section4 -->
     <div class="py-6 border-b border-slate-200">
-      <p class="line-clamp-6">
-        Welcome to Linnéaholmen – a unique place on a private island in
-        Storsjön. The island is accessible via a short footbridge from a private
-        parking area, which is prepared for charging an electric car (3-phase).
-        Linnéaholmen is perfect if you want the luxury of fantastic views, peace
-        and quiet, and a big charming house with room for up to 10 persons.
-        Linnéaholmen is located between Östersund (30 km) and Åre (60 km).
-        Åre-Östersund airport is only 20 km away, and Krokom train station is 15
-        km away. The space You get the whole island and the house with room for
-        up to 10 persons all to yourselves. The house is ca 250 square meters
-        big, has six bedrooms and four bathrooms, where two bathrooms are
-        equipped with showers. There are also two fully-equipped kitchens and
-        two living rooms. In the dining room, there is a large dinner table with
-        room for up to 12 persons. Currently, we can unfortunately not offer
-        bedsheets, since we live in Stockholm and do not have the opportunity to
-        do washing between guest stays. On Linnéaholmen, there are two dug
-        canals which are inspired by Venice. Apart from the big house, there is
-        also a sauna house with a shower and relax room, as well as a
-        magnificent panorama over Storsjön. Accompanying the sauna house is a
-        large patio with a table for the lovely summer dinners by the water. It
-        also has a ladder to the sea if you want to go for a swim. We can also
-        offer access to a canoe during your stay at Linnéaholmen. On the island,
-        there is also an old-fashioned baking house, which mainly has been used
-        for the local craft of baking thin-bread. There is also a beautiful
-        gazebo, which is currently under renovation. Guest access You get the
-        entire island of ca 5000 square meters all to yourselves. You are
-        welcome to use the canoe on the island.
+      <p class="line-clamp-6 text-slate-600 font-light leading-7">
+        Welcome to AirBNB (clone) built by Olalekan Oladimeji. It was built using Angular, TypeScript and Tailwind CSS.
+        This project started off as a friendly and healthy competitions between I and my Dev friends until I took it too far and personal and decided to surpass my limit with this project.
+        This is my first project built with Angular. I am a React Dev who is trying to learn Angular. My ReactJS skills is a solid 7/10 to be fair.
       </p>
-      <div>Show more</div>
+      <div class="mt-2">
+        <p (click)="showMore = true" class="underline">Show More</p>
+      </div>
     </div>
     <!-- section5 -->
     <div class="py-6 border-b border-slate-200">
-      <h2 class="text-2xl font-medium">Where you'll sleep</h2>
+      <h2 class="text-2xl font-medium mb-5" >Where you'll sleep</h2>
       <div class=" w-full bg-green-40">
         <swiper-container
           slides-per-view="2"
@@ -106,11 +96,13 @@
           @for (i of [1,2,3,4,5,6,7,8]; track i) {
 
           <swiper-slide class="">
-            <div>
-              <div class="w-40 h-24 bg-slate-600 rounded-lg"></div>
+            <div class="space-y-3">
+              <div class="w-40 h-24 bg-slate-60 rounded-lg">
+                <img src="../../assets/images/bedroom.jfif" class="size-full object-cover rounded-lg" />
+              </div>
               <div>
                 <p>Bedroom 1</p>
-                <p>1 single bed</p>
+                <p class="text-slate-500">1 single bed</p>
               </div>
             </div>
           </swiper-slide>
@@ -125,39 +117,39 @@
       <div class="space-y-3 mt-3">
         <div class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p>Free cancellation for 48 hours</p>
+          <p class="text-slate-800 font-light">Garden view</p>
         </div>
         <div class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p>Free cancellation for 48 hours</p>
+          <p class="text-slate-800 font-light">Sea view</p>
         </div>
         <div class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p>Free cancellation for 48 hours</p>
+          <p class="text-slate-800 font-light">Kitchen</p>
         </div>
         <div class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p>Free cancellation for 48 hours</p>
+          <p class="text-slate-800 font-light">Wifi</p>
         </div>
         <div class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p>Free cancellation for 48 hours</p>
+          <p class="text-slate-800 font-light">Dedicated workspace</p>
         </div>
       </div>
       <div class="mt-5">
-        <button class="py-3 text-center w-full border border-black rounded-lg">
+        <button class="py-2 text-center w-full border border-gray-700 rounded-lg">
           Show all amenities
         </button>
       </div>
     </div>
     <!-- section7 -->
     <div  class="py-6 border-b border-slate-200">
-      <h2 class="text-2xl font-medium">Where you will be</h2>
-      <div class="w-full h-44 bg-slate-300"></div>
-      <div>
-        <p>Ytterån, Jämtlands län, Sweden</p>
-        <p class="line-clamp-3">
-          Ytterån is a cozy little village close to nature. In the village you
+      <h2 class="text-2xl font-medium mb-5">Where you will be</h2>
+      <div class="w-full h-44 bg-slate-600 rounded-lg"></div>
+      <div class="space-y-3 mt-5">
+        <p class="font-semibold">{{room.location}}</p>
+        <p class="line-clamp-3 text-slate-500">
+          {{room.location.split(",")[0]}} is a cozy little village close to nature. In the village you
           will find Mus-Olles museum and two lakes. Linnéaholmen is situated in
           Storsjön, which is Sweden’s fifth largest lake. There are good
           opportunities for fishing in the summer, and nice cross-country skiing
@@ -170,7 +162,7 @@
           stop in Ytterån. From the road (E14) where the bus stop is, there is
           ca 750 m to Linnéaholmen.
         </p>
-        <p>See more</p>
+        <p class="underline">See more</p>
       </div>
     </div>
     <!-- section8 -->
