@@ -1,4 +1,5 @@
 <div class="relative pb-20">
+  <!-- see more component  -->
   <div [ngClass]="{'h-[100%] py-10': showMore}" class="fixed bg-white left-0 right-0 rounded-t-3xl transition-all bottom-0 h-1 z-50 px-5">
     <div (click)="showMore = false" class="size-8 rounded-full bg-red-400"></div>
     <div class="mt-5 space-y-5">
@@ -8,7 +9,8 @@
         <br /><br/>This is my first project built with Angular. I am a React Dev who is trying to learn Angular. My ReactJS skills is a solid 7/10 to be fair.</p>
     </div>
   </div>
-  <div class="fixed z-20 bottom-0 w-full bg-white border-t border-slate-200 flex justify-between items-center p-5">
+  <!-- fixed bottom component -> Reserve. -->
+  <div class="xl:hidden fixed z-20 bottom-0 w-full bg-white border-t border-slate-200 flex justify-between items-center p-5">
     <div>
         <p>$208 night</p>
         <p>Sep 9 - 14</p>
@@ -17,14 +19,47 @@
         <button  class="w-36 py-3 bg-pink-600 text-white rounded-lg">Reserve</button>
     </div>
   </div>
-  <div class="relative w-full h-60 bg-slate-600">
-    <div class="absolute top-3 px-3 w-full h-8 flex justify-between">
+  <div class="hidden py-5 px-28 xl:flex justify-between items-center bg-green-40 border border-slate-200">
+    <div class="w-[25%] h-10 bg-red-300"></div>
+    <div class="w-[25%] h-10 bg-red-300"></div>
+    <div class="w-[25%] h-10 bg-red-300"></div>
+  </div>
+  <div class="relative w-full h-60 xl:h-auto bg-slate-60 xl:px-28">
+    <!-- desktop header -->
+    
+    <!--mobile circle nav -->
+    <div class="xl:hidden absolute z-10 top-3 px-3 w-full h-8 flex justify-between">
       <div (click)="back()" class="size-8 rounded-full bg-white"></div>
       <div class="flex gap-3">
         <div class="size-8 rounded-full bg-white"></div>
         <div class="size-8 rounded-full bg-white"></div>
       </div>
     </div>
+    <p class="hidden xl:block py-5 text-3xl">{{room.views}}</p>
+    <swiper-container css-mode="true" class="size-full xl:hidden">
+      @for (photo of room.photos; track photo) {
+        <swiper-slide>
+          <img src="{{photo}}" class="size-full object-cover" />
+        </swiper-slide>
+      }
+    </swiper-container>
+
+
+    <div class="hidden xl:flex gap-2 justify-between w-full h-80 bg-red-10 text-white rounded-3xl overflow-hidden">
+      <div class="w-1/2 h-full bg-slate-600  flex items-center justify-center">1</div>
+      <div class="w-1/2 flex flex-col gap-2 justify-between  bg-red-40">
+        <div class="h-1/2 w-full flex gap-2 justify-between">
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">2</div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">3</div>
+        </div>
+        <div class="h-1/2 w-full flex gap-2 justify-between">
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">4</div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">5</div>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
   <div class="px-5">
     <!-- section1 -->
