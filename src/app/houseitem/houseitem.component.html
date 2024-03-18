@@ -1,32 +1,40 @@
-<div (click)="showmore(houseId)" class="relative size-full bg-red-80  xl:h-auto">
+<div id="{{houseId}}" (click)="showmore(houseId)" class="relative size-full bg-red-80  xl:h-auto">
     <div [ngClass]="{'hidden': !house.favorite}" class="absolute bg-red-40 z-10 top-3 left-3">
-        <p class="px-2 py-1 text-sm font-medium rounded-full bg-white border border-white text-gray-950">Guest favorite</p>
+        <p class="px-2 py-1 text-sm font-medium rounded-full bg-white border border-white text-gray-950">Guest favorite
+        </p>
     </div>
-   
+
 
     <div class="relative group">
-        <div (click)="$event.stopPropagation()" class="group-hover:flex absolute top-1/2 z-10 h-8 px-3 w-full bg-red-40 transition-all  hidden justify-between">
-            <div (click)="swipe('prev')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">P</div>
-            <div (click)="swipe('next')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">N</div>
+        <div (click)="$event.stopPropagation()"
+            class="group-hover:flex absolute top-1/2 z-10 h-8 px-3 w-full bg-red-40 transition-all  hidden justify-between">
+            <div (click)="swipe('prev')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">P
+            </div>
+            <div (click)="swipe('next')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">N
+            </div>
         </div>
-        <swiper-container slides-per-view="1" speed="200" css-mode="true" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="false" class="group relative w-full aspect-square overflow-hidden rounded-xl houseSwiper" el="houseSwiper" >
-       
-            @for (i of house.photos; track i) { 
+        <swiper-container slides-per-view="1" speed="200" css-mode="true" pagination="true"
+            pagination-dynamic-bullets="true" pagination-clickable="false"
+            class="group relative w-full aspect-square overflow-hidden rounded-xl houseSwiper" el="houseSwiper">
+
+            @for (i of house.photos; track i) {
             <swiper-slide>
-               <img src="{{i}}" class="size-full object-cover" />
+                <img src="{{i}}" class="size-full object-cover" />
             </swiper-slide>
             }
         </swiper-container>
     </div>
-   
-   
+
+
     <div class="flex justify-between mt-2">
         <div class="space-y-1">
             <p class="text-base font-medium">{{house.location}}</p>
             <p class="text-sm font-light text-slate-500">Ocean and Sea Views</p>
             <p class="text-sm font-light text-slate-500">Sep 18 - 23</p>
-            <p *ngIf="!beforeTaxes" class="text-base font-medium xl:font-normal text-slate-800"> <span class="text-base font-medium text-black">${{house.priceAfterTax}}</span> night</p>
-            <p *ngIf="beforeTaxes" class="text-base font-medium xl:font-normal text-slate-800"> <span class="text-base font-medium text-black">${{house.priceBeforeTax}}</span> total before taxes </p>
+            <p *ngIf="!beforeTaxes" class="text-base font-medium xl:font-normal text-slate-800"> <span
+                    class="text-base font-medium text-black">${{house.priceAfterTax}}</span> night</p>
+            <p *ngIf="beforeTaxes" class="text-base font-medium xl:font-normal text-slate-800"> <span
+                    class="text-base font-medium text-black">${{house.priceBeforeTax}}</span> total before taxes </p>
         </div>
         <div>
             <p class="text-base font-medium">{{house.starRating}}</p>

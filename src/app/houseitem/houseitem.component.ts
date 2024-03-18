@@ -27,8 +27,10 @@ export class HouseitemComponent {
   }
 
   swipe(nav: string) {
-    if (nav === "prev") document.querySelectorAll("swiper-container")[this.houseId + 2]?.swiper.slidePrev()
-    if (nav === "next") document.querySelectorAll("swiper-container")[this.houseId + 2]?.swiper.slideNext()
+    let el = document.getElementById(`${this.houseId}`)
+    if (!el) return
+    if (nav === "prev") el.querySelector("swiper-container")?.swiper.slidePrev()
+    if (nav === "next") el.querySelector("swiper-container")?.swiper.slideNext()
   }
 }
 

@@ -1,4 +1,182 @@
-<p>rooms works!</p>
-<p class="text-4xl">{{room.location}}</p>
-<img src="{{room.photos[0]}}" />
-<p>ll</p>
+<div class="relative pb-20">
+  <div class="fixed z-20 bottom-0 w-full bg-white border-t border-slate-200 flex justify-between items-center p-5">
+    <div>
+        <p>$208 night</p>
+        <p>Sep 9 - 14</p>
+    </div>
+    <div>
+        <button  class="w-36 py-3 bg-pink-600 text-white rounded-lg">Reserve</button>
+    </div>
+  </div>
+  <div class="relative w-full h-60 bg-slate-600">
+    <div class="absolute top-3 px-3 w-full h-8 flex justify-between">
+      <div (click)="back()" class="size-8 rounded-full bg-white"></div>
+      <div class="flex gap-3">
+        <div class="size-8 rounded-full bg-white"></div>
+        <div class="size-8 rounded-full bg-white"></div>
+      </div>
+    </div>
+  </div>
+  <div class="px-5">
+    <!-- section1 -->
+    <div class="py-6 border-b border-slate-200 space-y-3">
+      <h1 class="font-medium text-3xl text-slate-900">
+        Linnéaholmen: Private island reached by footbridge
+      </h1>
+      <div class="space-y-1">
+        <p>Island in Ytterån, Sweden</p>
+        <p>10 guests . 6 bedrooms . 8 beds . 3 baths</p>
+        <p>4.83 24 reviews</p>
+      </div>
+    </div>
+    <!-- section2 -->
+    <div class="py-6 border-b border-slate-200 flex items-center gap-5">
+      <div class="size-10 bg-slate-600 rounded-full"></div>
+      <div class="space-y-1">
+        <p>Hosted by Per-Henrik</p>
+        <p>5 years hosting</p>
+      </div>
+    </div>
+    <!-- section3 -->
+    <div class="py-6 border-b border-slate-200 space-y-2">
+      <div class="flex items-center gap-5">
+        <div class="size-8 bg-slate-600 rounded-full"></div>
+        <div class="space-y-1">
+          <p>Free cancellation for 48 hours</p>
+          <!-- <p>5 years hosting</p> -->
+        </div>
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="size-8 bg-slate-600 rounded-full"></div>
+        <div class="space-y-1">
+          <p>Self check-in</p>
+          <p>Check yourself in with the smartlock.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="size-8 bg-slate-600 rounded-full"></div>
+        <div class="space-y-1">
+          <p>Furry friends welcome</p>
+          <p>Bring your pets along for the stay.</p>
+        </div>
+      </div>
+    </div>
+    <!-- section4 -->
+    <div class="py-6 border-b border-slate-200">
+      <p class="line-clamp-6">
+        Welcome to Linnéaholmen – a unique place on a private island in
+        Storsjön. The island is accessible via a short footbridge from a private
+        parking area, which is prepared for charging an electric car (3-phase).
+        Linnéaholmen is perfect if you want the luxury of fantastic views, peace
+        and quiet, and a big charming house with room for up to 10 persons.
+        Linnéaholmen is located between Östersund (30 km) and Åre (60 km).
+        Åre-Östersund airport is only 20 km away, and Krokom train station is 15
+        km away. The space You get the whole island and the house with room for
+        up to 10 persons all to yourselves. The house is ca 250 square meters
+        big, has six bedrooms and four bathrooms, where two bathrooms are
+        equipped with showers. There are also two fully-equipped kitchens and
+        two living rooms. In the dining room, there is a large dinner table with
+        room for up to 12 persons. Currently, we can unfortunately not offer
+        bedsheets, since we live in Stockholm and do not have the opportunity to
+        do washing between guest stays. On Linnéaholmen, there are two dug
+        canals which are inspired by Venice. Apart from the big house, there is
+        also a sauna house with a shower and relax room, as well as a
+        magnificent panorama over Storsjön. Accompanying the sauna house is a
+        large patio with a table for the lovely summer dinners by the water. It
+        also has a ladder to the sea if you want to go for a swim. We can also
+        offer access to a canoe during your stay at Linnéaholmen. On the island,
+        there is also an old-fashioned baking house, which mainly has been used
+        for the local craft of baking thin-bread. There is also a beautiful
+        gazebo, which is currently under renovation. Guest access You get the
+        entire island of ca 5000 square meters all to yourselves. You are
+        welcome to use the canoe on the island.
+      </p>
+      <div>Show more</div>
+    </div>
+    <!-- section5 -->
+    <div class="py-6 border-b border-slate-200">
+      <h2 class="text-2xl font-medium">Where you'll sleep</h2>
+      <div class=" w-full bg-green-40">
+        <swiper-container
+          slides-per-view="2"
+          space-between="50"
+          speed="200"
+          css-mode="true"
+        >
+          @for (i of [1,2,3,4,5,6,7,8]; track i) {
+
+          <swiper-slide class="">
+            <div>
+              <div class="w-40 h-24 bg-slate-600 rounded-lg"></div>
+              <div>
+                <p>Bedroom 1</p>
+                <p>1 single bed</p>
+              </div>
+            </div>
+          </swiper-slide>
+
+          }
+        </swiper-container>
+      </div>
+    </div>
+    <!-- section6 -->
+    <div class="py-6 border-b border-slate-200">
+      <h2 class="text-2xl font-medium">What this place offers</h2>
+      <div class="space-y-3 mt-3">
+        <div class="flex items-center gap-5">
+          <div class="size-8 bg-slate-600 rounded-full"></div>
+          <p>Free cancellation for 48 hours</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="size-8 bg-slate-600 rounded-full"></div>
+          <p>Free cancellation for 48 hours</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="size-8 bg-slate-600 rounded-full"></div>
+          <p>Free cancellation for 48 hours</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="size-8 bg-slate-600 rounded-full"></div>
+          <p>Free cancellation for 48 hours</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="size-8 bg-slate-600 rounded-full"></div>
+          <p>Free cancellation for 48 hours</p>
+        </div>
+      </div>
+      <div class="mt-5">
+        <button class="py-3 text-center w-full border border-black rounded-lg">
+          Show all amenities
+        </button>
+      </div>
+    </div>
+    <!-- section7 -->
+    <div  class="py-6 border-b border-slate-200">
+      <h2 class="text-2xl font-medium">Where you will be</h2>
+      <div class="w-full h-44 bg-slate-300"></div>
+      <div>
+        <p>Ytterån, Jämtlands län, Sweden</p>
+        <p class="line-clamp-3">
+          Ytterån is a cozy little village close to nature. In the village you
+          will find Mus-Olles museum and two lakes. Linnéaholmen is situated in
+          Storsjön, which is Sweden’s fifth largest lake. There are good
+          opportunities for fishing in the summer, and nice cross-country skiing
+          tracks during the snowy winters. The vicinity to both Åre and
+          Östersund provide ideal opportunities for a wide range of vacation
+          activities. Read more Getting around As is usually the case in the
+          countryside, access to a car for getting around is recommenden. There
+          are private parking spots by the short footbridge that takes you to
+          Linnéaholmen. There are also buses between Järpen and Östersund which
+          stop in Ytterån. From the road (E14) where the bus stop is, there is
+          ca 750 m to Linnéaholmen.
+        </p>
+        <p>See more</p>
+      </div>
+    </div>
+    <!-- section8 -->
+    <div  class="py-6 border-b border-slate-200">
+       <h3>5 nights in Ytteran</h3>
+       <p>Sep 9, 2024 - Sep 14, 2024</p>
+      </div>
+  </div>
+</div>

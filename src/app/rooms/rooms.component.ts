@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HouselistingsService } from '../houselistings.service';
 import { HouseListings } from '../houselistings';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RoomsComponent implements OnInit {
   room!: any;
   constructor(
     private route: ActivatedRoute,
-    private houses: HouselistingsService
+    private houses: HouselistingsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -25,4 +28,12 @@ export class RoomsComponent implements OnInit {
       this.room = '';
     }
   }
+
+  back() {
+    this.router.navigateByUrl("/home")
+  }
+
+  // getPos(e: Event) {
+  //   const {clientX, clientY} = e.
+  // }
 }

@@ -200,8 +200,8 @@
     </div>
 
     <!-- mobile view bottom nav bar -->
-    <div [ngClass]="{ '-bottom-14': !showBottomNav }"
-        class="xl:hidden slow-resize fixed z-50 w-full bottom-0 transition-all">
+    <div [ngClass]="{'-bottom-14': !showBottomNav }"
+        class="xl:hidden slow-resize fixed z-40 w-full bottom-0 transition-all">
         <div [ngClass]="{ 'hidden': hideMore }" class="h-10 w-20 mx-auto my-5 rounded-full bg-black flex items-center justify-center">
         <p class="text-slate-50 text-sm">Map</p></div>
         <div class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center">
@@ -256,7 +256,7 @@
             </div>
             }
         </div>
-        <div class="w-full h-20 bg-red-40 mt-10 mb-44">
+        <div class="w-full h-20 bg-red-40 mt-10 mb-20">
             <hr class="w-[90%] mx-auto bg-slate-500" />
             <p class="mt-10 mb-5 font-bold text-center">Continue exploring new homes</p>
             <div class="flex justify-center bg-red-40">
@@ -264,9 +264,9 @@
             </div>
         </div>
     </div>
-    <div id="footer" class="w-full h-40 bg-stone-100 text-center text-sm space-y-3 py-5 px-2">
+    <div id="footer" class="relative z-50 w-full h-40 bg-stone-100 text-center text-sm space-y-3 py-5 px-2">
         <p class="text-slate-400">AirBNB Homepage features and functionalities clone.</p>
-        <p class="text-slate-600">Developed by <a href="https://olalekan-oladimeji-portfolio.vercel.app" target="_blank" class="text-blue-600 underline underline-offset-2">Olalekan Oladimeji</a></p>
+        <p class="text-slate-500">Developed by <a href="https://olalekan-oladimeji-portfolio.vercel.app" target="_blank" class="text-blue-600 underline underline-offset-2">Olalekan Oladimeji</a></p>
         <p class="font-medium">&#169; {{2024}}. All Rights Reserved.</p>
     </div>
 </div>
