@@ -6,6 +6,10 @@
 
 
     <div class="relative group">
+        <div class="absolute bottom-2 left-2 z-10 size-16 bg-blue-400 flex items-center  justify-center">
+            <div class="w-12 h-14 bg-yellow-500"></div>
+        </div>
+        
         <div (click)="$event.stopPropagation()"
             class="group-hover:flex absolute top-1/2 z-10 h-8 px-3 w-full bg-red-40 transition-all  hidden justify-between">
             <div (click)="swipe('prev')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">P

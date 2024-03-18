@@ -21,7 +21,9 @@
   </div>
   <div class="hidden py-5 px-28 xl:flex justify-between items-center bg-green-40 border border-slate-200">
     <div class="w-[25%] h-10 bg-red-300"></div>
-    <div class="w-[25%] h-10 bg-red-300"></div>
+    <div class="w-[25%] h-10 bg-red-300">
+
+    </div>
     <div class="w-[25%] h-10 bg-red-300"></div>
   </div>
   <div class="relative w-full h-60 xl:h-auto bg-slate-60 xl:px-28">
@@ -35,7 +37,10 @@
         <div class="size-8 rounded-full bg-white"></div>
       </div>
     </div>
-    <p class="hidden xl:block py-5 text-3xl">{{room.views}}</p>
+    <div class="hidden xl:block py-5 text-3xl">
+      <p class="text-3xl">{{room.views}}</p>
+    </div>
+    
     <swiper-container css-mode="true" class="size-full xl:hidden">
       @for (photo of room.photos; track photo) {
         <swiper-slide>
@@ -45,32 +50,43 @@
     </swiper-container>
 
 
-    <div class="hidden xl:flex gap-2 justify-between w-full h-80 bg-red-10 text-white rounded-3xl overflow-hidden">
-      <div class="w-1/2 h-full bg-slate-600  flex items-center justify-center">1</div>
+    <div class="hidden xl:flex gap-2 justify-between w-full h-80 bg-red-10 text-white rounded-xl overflow-hidden">
+      <div class="w-1/2 h-full bg-slate-600  flex items-center justify-center">
+        <img src="{{room.photos[0]}}" class="size-full object-cover"/>
+      </div>
       <div class="w-1/2 flex flex-col gap-2 justify-between  bg-red-40">
         <div class="h-1/2 w-full flex gap-2 justify-between">
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">2</div>
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">3</div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+            <img src="{{room.photos[1]}}" class="size-full object-cover"/>
+          </div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+            <img src="{{room.photos[2]}}" class="size-full object-cover"/>
+          </div>
         </div>
         <div class="h-1/2 w-full flex gap-2 justify-between">
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">4</div>
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">5</div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+            <img src="{{room.photos[3]}}" class="size-full object-cover"/>
+          </div>
+          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+            <img src="{{room.photos[4]}}" class="size-full object-cover"/>
+          </div>
         </div>
       </div>
     </div>
 
     
   </div>
-  <div class="px-5">
+  <div class="px-5 xl:px-28 xl:flex">
+    <div class="xl:w-1/2">
     <!-- section1 -->
     <div class="py-6 border-b border-slate-200 space-y-3">
-      <h1 class="font-medium text-3xl text-slate-900">
+      <h1 class="xl:hidden font-medium text-3xl text-slate-900">
         {{room.views}}
       </h1>
       <div class="space-y-1">
-        <p>Located in {{room.location}}</p>
-        <p>10 guests . 6 bedrooms . 8 beds . 3 baths</p>
-        <p>{{room.starRating}} | 24 reviews</p>
+        <p class="xl:text-3xl">Located in {{room.location}}</p>
+        <p class="xl:text-slate-950 xl:font-light">10 guests . 6 bedrooms . 8 beds . 3 baths</p>
+        <p class="xl:font-normal">{{room.starRating}} | 24 reviews</p>
       </div>
     </div>
     <!-- section2 -->
@@ -205,5 +221,9 @@
        <h3>5 nights in Ytteran</h3>
        <p>Sep 9, 2024 - Sep 14, 2024</p>
       </div>
+    </div>
+    <div class="hidden xl:block w-1/2 bg-red-500">
+
+    </div>
   </div>
 </div>
