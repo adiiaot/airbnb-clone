@@ -7,6 +7,9 @@
     transform: rotateY(-20deg);
     animation: flap 1s ease-in-out;
 }
+.fadeIn {
+    animation: fadeIn .2s ease-in;
+}
 
 @keyframes flap {
     0% {
@@ -14,5 +17,11 @@
     }
     25% {
         transform: rotateY(-20deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 }

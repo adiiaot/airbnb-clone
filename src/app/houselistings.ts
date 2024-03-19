@@ -5,5 +5,6 @@ export interface HouseListings {
     favorite: boolean,
     priceAfterTax: string,
     priceBeforeTax: string,
-    views: string
+    views: string,
+    houseId: string
   }

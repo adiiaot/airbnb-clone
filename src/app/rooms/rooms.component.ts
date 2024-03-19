@@ -26,8 +26,9 @@ export class RoomsComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
+    // alert(typeof id)
     if (typeof id === 'string') {
-      this.room = this.houses.getHouses()[parseInt(id)];
+      this.room = this.houses.getHouses().filter(house => house.houseId === id )[0];
     } else {
       this.room = '';
     }
@@ -37,7 +38,7 @@ export class RoomsComponent implements OnInit {
     this.router.navigateByUrl("/home")
   }
 
-  // getPos(e: Event) {
-  //   const {clientX, clientY} = e.
-  // }
+ reveal(e: Event) {
+  alert("l")
+ }
 }

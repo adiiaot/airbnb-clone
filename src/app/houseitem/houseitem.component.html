@@ -6,6 +6,7 @@
 
 
     <div class="relative group diary">
+        <!-- open-close flap diary component -->
         <div class="absolute group-hover:-rotate-3 bottom-2 left-2  z-10 size-16 bg-transparent flex items-center perspective">
             <div class="absolute transition-all group-hover:-top-2 group-hover:left-6 group-hover:h-[3.8rem] left-0 w-14 group-hover:w-10 h-16 bg-slate-300 rounded-r-md"></div>
             <div class="group absolute transition-all group-hover:-top-2 group w-14 h-16 bg-slate-100 rounded-r-md flex items-center justify-center cover shadow-sm shadow-slate-800">
@@ -16,8 +17,9 @@
             </div>
         </div>
         
+        <!-- hover navigation P/N bubbles -->
         <div (click)="$event.stopPropagation()"
-            class="group-hover:flex absolute top-1/2 z-10 h-8 px-3 w-full bg-red-40 transition-all  hidden justify-between">
+            class="group-hover:flex absolute top-1/2 z-10 h-8 px-3 w-full bg-red-40 transition-all  hidden justify-between fadeIn">
             <div (click)="swipe('prev')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">P
             </div>
             <div (click)="swipe('next')" class="size-8 rounded-full bg-white z-10 flex items-center justify-center">N

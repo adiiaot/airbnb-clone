@@ -14,15 +14,15 @@ import { CommonModule } from '@angular/common';
 export class HouseitemComponent {
 
   @Input() house!: HouseListings ;
-  @Input() houseId!: number;
+  @Input() houseId!: string;
   @Input() beforeTaxes!: boolean;
-  @Output() housedetails = new EventEmitter<number> ();
+  @Output() housedetails = new EventEmitter<string> ();
 
   constructor(private houses: HouselistingsService) {}
 
   houseListings = this.houses.getHouses()
 
-  showmore(id: number) {
+  showmore(id: string) {
    this.housedetails.emit(this.houseId)
   }
 

@@ -80,7 +80,7 @@ export class HomepageComponent {
     });
   }
 
-  roomNavigate(roomId: number) {
+  roomNavigate(roomId: string) {
     this.router.navigateByUrl(`/rooms/${roomId}`)
   }
 

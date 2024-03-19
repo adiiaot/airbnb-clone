@@ -251,7 +251,7 @@
                 last: {{$last}}
                 even: {{$even}}
                 odd: {{$odd}} -->
-                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="$index"
+                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="house.houseId"
                     [beforeTaxes]="beforeTaxes"></app-houseitem>
             </div>
             }
