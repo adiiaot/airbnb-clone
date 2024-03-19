@@ -26,7 +26,8 @@ export class HouseitemComponent {
    this.housedetails.emit(this.houseId)
   }
 
-  swipe(nav: string) {
+  swipe(e: Event, nav: string) {
+    e.stopPropagation()
     let el = document.getElementById(`${this.houseId}`)
     if (!el) return
     if (nav === "prev") el.querySelector("swiper-container")?.swiper.slidePrev()

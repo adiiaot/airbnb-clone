@@ -23,6 +23,7 @@ export class RoomsComponent implements OnInit {
 
   room!: any;
   showMore = false
+  secHeader = false
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
@@ -39,7 +40,12 @@ export class RoomsComponent implements OnInit {
   }
 
  reveal(e: Event) {
-  alert("l")
+  let pos = document.getElementById("room")
+  if (pos?.scrollTop && (pos.scrollTop >= 560)) {
+    this.secHeader = true
+  } else {
+    this.secHeader = false
+  }
  }
  
 }

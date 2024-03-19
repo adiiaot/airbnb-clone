@@ -1,4 +1,13 @@
-<div id="room" class="relative pb-20">
+<div (scroll)="reveal($event)" id="room" class="relative pb-20 h-full bg-green-40 overflow-scroll">
+  <div *ngIf="secHeader" class="hidden xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-20 px-28">
+    @for (item of ["Photos", "Amenities", "Reviews", "Location"]; track item) {
+      <div class="group relative py-7">
+        <div class="absolute z-10 w-full h-1 bottom-0 bg-gray-950 hidden group-hover:block transition-all"></div>
+        <p class="text-sm text-slate-700 font-medium">{{item}}</p>
+      </div>
+    }
+
+  </div>
   <!-- see more component  -->
   <div [ngClass]="{'h-[100%] py-10': showMore}" class="fixed bg-white left-0 right-0 rounded-t-3xl transition-all bottom-0 h-1 z-50 px-5">
     <div (click)="showMore = false" class="size-8 rounded-full bg-red-400"></div>
@@ -27,7 +36,6 @@
     <div class="w-[25%] h-10 bg-red-300"></div>
   </div>
   <div class="relative w-full h-60 xl:h-auto bg-slate-60 xl:px-28">
-    <!-- desktop header -->
     
     <!--mobile circle nav -->
     <div class="xl:hidden absolute z-10 top-3 px-3 w-full h-8 flex justify-between">
@@ -222,8 +230,8 @@
        <p>Sep 9, 2024 - Sep 14, 2024</p>
       </div>
     </div>
-    <div class="hidden xl:block w-1/2 bg-red-500 sticky top-80">
-jkhjh
+    <div class="hidden p-6 xl:flex w-1/2 bg-red-40 sticky top-80 justify-center">
+      <div [ngClass]="{'sticky top-28': secHeader}" class="h-[40rem] w-2/3 mx-auto bg-green-500 rounded-2xl"></div>
     </div>
   </div>
 </div>
