@@ -1,272 +1,460 @@
 <!-- <h1 class="font-bold text-red-500 text-5xl my-10">Home Page</h1>
 <li><a routerLink="/wishlist" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-600 font-bold">Wishlist</a></li>
 <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="text-blue-600 font-bold">Login</a></li> -->
-<div id="home" (scroll)="showElement($event)" class="relative overflow-scroll h-screen">
-    <!-- mobile view header -->
-    <div class="fixed z-40 bg-white w-full shadow-sm shadow-stone-100 top-0 xl:hidden">
-        <div class="flex justify-evenly p-3 items-center mt-1 xl:hidden">
-            <!-- search box -->
+<div
+  id="home"
+  (scroll)="showElement($event)"
+  class="relative overflow-scroll h-screen"
+>
+  <!-- mobile view header -->
+  <div
+    class="fixed z-40 bg-white w-full shadow-sm shadow-stone-100 top-0 xl:hidden"
+  >
+    <div class="flex justify-evenly p-3 items-center mt-1 xl:hidden">
+      <!-- search box -->
+      <div
+        class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 px-4 py-2 flex items-center gap-3"
+      >
+        <div class="size-10 rounded-full bg-slate-100"></div>
+        <div>
+          <p class="text-sm font-medium">Anywhere</p>
+          <p class="text-xs text-slate-500">Any week . Add guests</p>
+        </div>
+      </div>
+      <!-- rounded filter -->
+      <div class="w-[20%] bg-yellow-40 flex items-center justify-center">
+        <div
+          class="max-w-10 w-2/3 aspect-square rounded-full border border-stone-300 bg-white"
+        ></div>
+      </div>
+    </div>
+    <!-- list items scroll container mobile -->
+    <ul class="bg-red-40">
+      <swiper-container
+        slides-per-view="6"
+        space-between="60"
+        speed="500"
+        css-mode="true"
+        class="mobileSwiper"
+      >
+        <swiper-slide class="mx-2">
+          <div
+            id="all"
+            (click)="filterViews('all')"
+            class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center"
+          >
             <div
-                class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 px-4 py-2 flex items-center gap-3">
-                <div class="size-10 rounded-full bg-slate-100"></div>
-                <div>
-                    <p class="text-sm font-medium">Anywhere</p>
-                    <p class="text-xs text-slate-500">Any week . Add guests</p>
-                </div>
+              [ngClass]="{ hidden: !(activeViews === 'all') }"
+              class="absolute z-10 bottom-0 w-[50%] left-[25%] h-[2px] bg-black"
+            ></div>
+            <div
+              class="hidden group-hover:block absolute transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-slate-300"
+            ></div>
+            <div
+              class="size-8 bg-red-20 rounded-full flex items-center justify-center"
+            >
+              <!-- <img src="{{i.icon}}" class="size-6" /> -->
             </div>
-            <!-- rounded filter -->
-            <div class="w-[20%] bg-yellow-40 flex items-center justify-center">
-                <div class="max-w-10 w-2/3 aspect-square rounded-full border border-stone-300 bg-white">
-                </div>
+            <p
+              [ngClass]="{ 'text-slate-950 font-bold': activeViews === 'all' }"
+              class="text-xs font-medium text-slate-500 group-hover:text-slate-950 group-hover:font-medium"
+            >
+              All
+            </p>
+          </div>
+        </swiper-slide>
+        @for (i of views; track i) {
+        <swiper-slide class="mx-2">
+          <div
+            id="{{ i }}"
+            (click)="filterViews(i.text)"
+            class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center"
+          >
+            <div
+              [ngClass]="{ 'hidden ': !(activeViews === i.text) }"
+              class="absolute z-10 transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-black"
+            ></div>
+            <div
+              class="hidden group-hover:block absolute transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-slate-300"
+            ></div>
+            <div
+              class="relative size-8 bg-red-20 rounded-full flex items-center justify-center"
+            >
+              <!-- white image layer -->
+              <div
+                [ngClass]="{ hidden: activeViews === i.text }"
+                class="transition-all slow-resize absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden"
+              ></div>
+              <img src="{{ i.icon }}" class="size-5" />
             </div>
-        </div>
-        <!-- list items scroll container -->
-        <ul class="">
-            <swiper-container slides-per-view="6" space-between="60" speed="500" css-mode="true" class="mobileSwiper">
-                <swiper-slide class="mx-2">
-                    <div id="all" (click)="filterViews('all')"
-                        class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                        <div [ngClass]="{'hidden': !(activeViews === 'all')}"
-                            class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
-                        <div class="size-10 bg-red-20 rounded-full flex items-center justify-center">
-                            <!-- <img src="{{i.icon}}" class="size-6" /> -->
-                        </div>
-                        <p [ngClass]="{'text-slate-950 font-bold': activeViews === 'all'}"
-                            class="text-xs font-medium bg-red-30 text-slate-500">All</p>
-                    </div>
-                </swiper-slide>
-                @for (i of views; track i) {
-                <swiper-slide class="mx-2">
-                    <div id="{{ i }}" (click)="filterViews(i.text)"
-                        class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                        <div [ngClass]="{'hidden': !(activeViews === i.text)}"
-                            class="absolute transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-black">
-                        </div>
-                        <div class="relative size-10 bg-red-20 rounded-full flex items-center justify-center">
-                            <!-- white image layer -->
-                            <div [ngClass]="{'hidden': activeViews === i.text}"
-                                class="transition-all slow-resize absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden">
-                            </div>
-                            <img src="{{i.icon}}" class="size-6" />
-                        </div>
-                        <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
-                            class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">
-                            {{i.text}}</p>
-                    </div>
-                </swiper-slide>
-                }
-            </swiper-container>
-        </ul>
-    </div>
+            <p
+              [ngClass]="{ 'text-slate-950 font-bold': activeViews === i.text }"
+              class="text-xs font-medium text-slate-500 group-hover:text-slate-950 group-hover:font-medium"
+            >
+              {{ i.text }}
+            </p>
+          </div>
+        </swiper-slide>
+        }
+      </swiper-container>
+    </ul>
+  </div>
 
-    <!-- desktop view header -->
-    <div class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 xl:px-5 xl:pt-5 xl:pb-0 hidden xl:block">
-        <!-- AirBNB logo: left -->
-        <div class="float-left bg-blue-60 w-40 h-20">
-            <img src="../../assets/images/airbnb.png" alt="logo" class="w-32 h-14 object-cover bg-red-300" />
+  <!-- desktop view header -->
+  <div
+    class="fixed z-40 transition-all w-full bg-white top-0 py-5 px-10 xl:px-5 xl:pt-5 xl:pb-0 hidden xl:block"
+  >
+    <!-- AirBNB logo: left -->
+    <div class="float-left bg-blue-60 w-40 h-20">
+      <img
+        src="../../assets/images/airbnb.png"
+        alt="logo"
+        class="w-32 h-14 object-cover bg-red-300"
+      />
+    </div>
+    <!-- Web - AirBNB your home: right -->
+    <div class="float-right bg-blue-60 flex gap-3 items-center">
+      <div>
+        <a class="text-base font-medium">Airbnb your home</a>
+      </div>
+      <div class="size-5 rounded-full bg-red-400"></div>
+      <div
+        class="w-20 aspect-video rounded-full border border-slate-300 hover:shadow-md shadow-slate-300"
+      ></div>
+    </div>
+    <!-- middle locations: middle -->
+    <div
+      [ngClass]="{ 'scale-x-50 scale-y-75 -top-5 relative': !showBottomNav }"
+      class="transition-all slow-resize w-2/3 mx-auto space-y-5 bg-green-30"
+    >
+      <!-- locations items links-->
+      <div
+        [ngClass]="{ hidden: !showBottomNav }"
+        class="h-10 w-2/3 mx-auto bg-green-40 flex justify-center items-center gap-1"
+      >
+        <div
+          (click)="location = 'stays'"
+          [ngClass]="{ 'font-bold text-slate-950': location === 'stays' }"
+          class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400"
+        >
+          <p class="">Stays</p>
         </div>
-        <!-- Web - AirBNB your home: right -->
-        <div class="float-right bg-blue-60 flex gap-3 items-center">
-            <div>
-                <a class="text-base font-medium">Airbnb your home</a>
-            </div>
-            <div class="size-5 rounded-full bg-red-400"></div>
-            <div class="w-20 aspect-video rounded-full border border-slate-300 hover:shadow-md shadow-slate-300"></div>
+        <div
+          (click)="location = 'experiences'"
+          [ngClass]="{ 'font-bold text-slate-950': location === 'experiences' }"
+          class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400"
+        >
+          <p class="">Experiences</p>
         </div>
-        <!-- middle locations: middle -->
-        <div [ngClass]="{ 'scale-x-50 scale-y-75 -top-5 relative': !showBottomNav }"
-            class="transition-all slow-resize w-2/3 mx-auto space-y-5 bg-green-30">
-            <!-- locations items links-->
-            <div [ngClass]="{ hidden: !showBottomNav }"
-                class="h-10 w-2/3 mx-auto bg-green-40 flex justify-center items-center gap-1">
-                <div (click)="location = 'stays'" [ngClass]="{ 'font-bold text-slate-950': location === 'stays' }"
-                    class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
-                    <p class="">Stays</p>
-                </div>
-                <div (click)="location = 'experiences'"
-                    [ngClass]="{ 'font-bold text-slate-950': location === 'experiences' }"
-                    class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
-                    <p class="">Experiences</p>
-                </div>
-                <div (click)="location = 'online experiences'" [ngClass]="{
+        <div
+          (click)="location = 'online experiences'"
+          [ngClass]="{
             'font-bold text-slate-950': location === 'online experiences'
-          }" class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400">
-                    <p class="">Online Experiences</p>
-                </div>
-            </div>
-            <!-- location collapsible search bar -->
-            <div [ngClass]="{
+          }"
+          class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-25 hover:text-slate-700 rounded-full text-slate-400"
+        >
+          <p class="">Online Experiences</p>
+        </div>
+      </div>
+      <!-- location collapsible search bar -->
+      <div
+        [ngClass]="{
           'w-full absolute aspect-video top-0 h-10': !showBottomNav
-        }" class="h-16 w-full mx-auto bg-white rounded-full border border-slate-200 shadow-md shadow-slate-200 flex">
-                @if (showBottomNav) {
-                <div
-                    class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-8 py-2 flex flex-col items-start justify-center">
-                    <p class="text-slate-900 text-xs font-medium">Where</p>
-                    <p class="text-slate-400 text-sm font-normal">Search destinations</p>
-                </div>
-                <div
-                    class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center">
-                    <p class="text-slate-900 text-xs font-medium">Check in</p>
-                    <p class="text-slate-400 text-sm font-normal">Add dates</p>
-                </div>
-                <div
-                    class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center">
-                    <p class="text-slate-900 text-xs font-medium">Check out</p>
-                    <p class="text-slate-400 text-sm font-normal">Add dates</p>
-                </div>
-                <div
-                    class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 pl-8 pr-2 py-2 flex items-center justify-between">
-                    <div>
-                        <p class="text-slate-900 text-xs font-medium">Who</p>
-                        <p class="text-slate-400 text-sm font-normal">Add guestd</p>
-                    </div>
-                    <div class="h-full aspect-square rounded-full bg-[#ff385c]"></div>
-                </div>
-                } @else {
-                <p class="text-center font-bold text-4xl flex items-center justify-center bg-red-40 w-full">
-                    Another Item: Olalekan
-                </p>
-                }
-            </div>
+        }"
+        class="h-16 w-full mx-auto bg-white rounded-full border border-slate-200 shadow-md shadow-slate-200 flex"
+      >
+        @if (showBottomNav) {
+        <div
+          class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-8 py-2 flex flex-col items-start justify-center"
+        >
+          <p class="text-slate-900 text-xs font-medium">Where</p>
+          <p class="text-slate-400 text-sm font-normal">Search destinations</p>
         </div>
-        <div [ngClass]="{ '-mt-5': !showBottomNav }"
-            class="relative px-5 xl:px-0 py-2 bg-red-60 border-t border-slate-200 w-full mt-5 flex justify-between items-center">
-            <!-- scrollable location items -->
-            <div id="items" class="relative w-[73%] h-full bg-red-30">
-                <div (click)="swipe('prev')"
-                    class="top-0 z-10 absolute h-full aspect-square rounded-full bg-white bg-opacity-90 flex items-center justify-center">
-                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">P
-                    </div>
-                </div>
-                <div (click)="swipe('next')"
-                    class="top-0 z-10 absolute  h-full aspect-square right-0 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
-                    <div class="size-8 rounded-full bg-white border border-black flex items-center justify-center">N
-                    </div>
-                </div>
-                <swiper-container slides-per-view="9" speed="500" css-mode="true" class="ola">
-                    <swiper-slide class="mx-2">
-                        <div id="all" (click)="filterViews('all')"
-                            class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                            <div [ngClass]="{'hidden': !(activeViews === 'all')}"
-                                class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
-                            <div class="size-10 bg-red-20 rounded-full flex items-center justify-center">
-                                <!-- <img src="{{i.icon}}" class="size-6" /> -->
-                            </div>
-                            <p [ngClass]="{'text-slate-950 font-bold': activeViews === 'all'}"
-                                class="text-xs font-medium bg-red-30 text-slate-500">All</p>
-                        </div>
-                    </swiper-slide>
-                    @for (i of views; track i) {
-                    <swiper-slide class="mx-2">
-                        <div id="{{ i }}" (click)="filterViews(i.text)"
-                            class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center">
-                            <div [ngClass]="{'hidden': !(activeViews === i.text)}"
-                                class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"></div>
-                            <div class="relative size-10 bg-red-20 rounded-full flex items-center justify-center">
-                                <!-- inactive state cover  -->
-                                <div [ngClass]="{'hidden': activeViews === i.text}"
-                                    class="absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden">
-                                </div>
-                                <img src="{{i.icon}}" class="size-6" />
-                            </div>
-                            <p [ngClass]="{'text-slate-950 font-bold': activeViews === i.text}"
-                                class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold">
-                                {{i.text}}</p>
-                        </div>
-                    </swiper-slide>
-                    }
-                </swiper-container>
-            </div>
-            <div class="w-[25%] h-full bg-red-40 flex justify-between pr-5">
-                <div class="w-[25%] h-12 border rounded-xl"></div>
-                <div class="w-[70%] h-12 border rounded-xl flex items-center justify-center bg-green-40">
-                    <div (click)="beforeTaxes = !beforeTaxes"
-                        class="w-full h-full p-3 flex justify-between items-center bg-red-40">
-                        <div class="space-y-1">
-                            <p class="text-xs font-medium text-black">Display total before taxes</p>
-                            
-                        </div>
-                        <!-- toggle switch -->
-                        <div [ngClass]="{'bg-stone-400': !beforeTaxes}" class="relative w-9 h-6 bg-black rounded-full">
-                            <div [ngClass]="{'right-0 border-slate-950': beforeTaxes}"
-                                class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-400 flex items-center justify-center">
-                                <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div
+          class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center"
+        >
+          <p class="text-slate-900 text-xs font-medium">Check in</p>
+          <p class="text-slate-400 text-sm font-normal">Add dates</p>
         </div>
-    </div>
-
-    <!-- mobile view bottom nav bar -->
-    <div [ngClass]="{'-bottom-12': !showBottomNav }"
-        class="xl:hidden slow-resize fixed z-40 w-full bottom-0 transition-all">
-        <div [ngClass]="{ 'hidden': hideMore }" class="h-10 w-20 mx-auto my-5 rounded-full bg-black flex items-center justify-center">
-        <p class="text-slate-50 text-sm">Map</p></div>
-        <div class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center">
-            <div class="size-10 bg-red-40 flex items-center justify-center">
-                <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    class="text-blue-600 font-bold">E</a>
-            </div>
-            <div class="size-10 bg-red-40 flex items-center justify-center">
-                <a routerLink="/wishlist" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    class="text-blue-600 font-bold">W</a>
-            </div>
-            <div class="size-10 bg-red-40 flex items-center justify-center">
-                <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    class="text-blue-600 font-bold">L</a>
-            </div>
+        <div
+          class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center"
+        >
+          <p class="text-slate-900 text-xs font-medium">Check out</p>
+          <p class="text-slate-400 text-sm font-normal">Add dates</p>
         </div>
+        <div
+          class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 pl-8 pr-2 py-2 flex items-center justify-between"
+        >
+          <div>
+            <p class="text-slate-900 text-xs font-medium">Who</p>
+            <p class="text-slate-400 text-sm font-normal">Add guestd</p>
+          </div>
+          <div class="h-full aspect-square rounded-full bg-[#ff385c]"></div>
+        </div>
+        } @else {
+        <p
+          class="text-center font-bold text-4xl flex items-center justify-center bg-red-40 w-full"
+        >
+          Another Item: Olalekan
+        </p>
+        }
+      </div>
     </div>
-
-    <!-- desktop view hide more -->
-    <div class="hidden xl:block fixed z-40 w-full bg-red-80 bottom-0 transition-all">
-        <div class="h-12 w-32 mx-auto my-5 rounded-full bg-gray-900 hover:scale-105"></div>
-    </div>
-
-    <!-- main scrollable content -->
-    <div id="track" class="bg-white pt-[10.5rem] xl:pt-64">
-        <!-- taxes toggle -->
-        <div (click)="beforeTaxes = !beforeTaxes"
-            class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5">
+    <div
+      [ngClass]="{ '-mt-5': !showBottomNav }"
+      class="relative px-5 xl:px-0 py-2 bg-red-60 border-t border-slate-200 w-full mt-5 flex justify-between items-center"
+    >
+      <!-- scrollable location items -->
+      <div id="items" class="relative w-[73%] h-full bg-red-30">
+        <div
+          (click)="swipe('prev')"
+          class="top-0 z-10 absolute h-full aspect-square rounded-full bg-white bg-opacity-90 flex items-center justify-center"
+        >
+          <div
+            class="size-8 rounded-full bg-white border border-black flex items-center justify-center"
+          >
+            P
+          </div>
+        </div>
+        <div
+          (click)="swipe('next')"
+          class="top-0 z-10 absolute h-full aspect-square right-0 rounded-full bg-white bg-opacity-90 flex items-center justify-center"
+        >
+          <div
+            class="size-8 rounded-full bg-white border border-black flex items-center justify-center"
+          >
+            N
+          </div>
+        </div>
+        <swiper-container
+          slides-per-view="9"
+          speed="500"
+          css-mode="true"
+          class="ola"
+        >
+          <swiper-slide class="mx-2">
+            <div
+              id="all"
+              (click)="filterViews('all')"
+              class="relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center"
+            >
+              <div
+                [ngClass]="{ hidden: !(activeViews === 'all') }"
+                class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"
+              ></div>
+              <div
+                class="size-10 bg-red-20 rounded-full flex items-center justify-center"
+              >
+                <!-- <img src="{{i.icon}}" class="size-6" /> -->
+              </div>
+              <p
+                [ngClass]="{
+                  'text-slate-950 font-bold': activeViews === 'all'
+                }"
+                class="text-xs font-medium bg-red-30 text-slate-500"
+              >
+                All
+              </p>
+            </div>
+          </swiper-slide>
+          @for (i of views; track i) {
+          <swiper-slide class="mx-2">
+            <div
+              id="{{ i }}"
+              (click)="filterViews(i.text)"
+              class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center"
+            >
+              <div
+                [ngClass]="{ hidden: !(activeViews === i.text) }"
+                class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"
+              ></div>
+              <div
+                class="relative size-10 bg-red-20 rounded-full flex items-center justify-center"
+              >
+                <!-- inactive state cover  -->
+                <div
+                  [ngClass]="{ hidden: activeViews === i.text }"
+                  class="absolute size-full bg-white rounded-full bg-opacity-50 group-hover:hidden"
+                ></div>
+                <img src="{{ i.icon }}" class="size-6" />
+              </div>
+              <p
+                [ngClass]="{
+                  'text-slate-950 font-bold': activeViews === i.text
+                }"
+                class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold"
+              >
+                {{ i.text }}
+              </p>
+            </div>
+          </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+      <div class="w-[25%] h-full bg-red-40 flex justify-between pr-5">
+        <div class="w-[25%] h-12 border rounded-xl"></div>
+        <div
+          class="w-[70%] h-12 border rounded-xl flex items-center justify-center bg-green-40"
+        >
+          <div
+            (click)="beforeTaxes = !beforeTaxes"
+            class="w-full h-full p-3 flex justify-between items-center bg-red-40"
+          >
             <div class="space-y-1">
-                <p class="text-sm font-medium text-gray-700">Display total price</p>
-                <p class="text-sm text-slate-400 font-normal">Include all fees, before taxes</p>
+              <p class="text-xs font-medium text-black">
+                Display total before taxes
+              </p>
             </div>
             <!-- toggle switch -->
-            <div [ngClass]="{'bg-stone-300': !beforeTaxes}" class="relative w-12 h-8 bg-black rounded-full">
-                <div [ngClass]="{'right-0 border-gray-950': beforeTaxes}"
-                    class="transition-all  slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center">
-                    <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
-                </div>
+            <div
+              [ngClass]="{ 'bg-stone-400': !beforeTaxes }"
+              class="relative w-9 h-6 bg-black rounded-full"
+            >
+              <div
+                [ngClass]="{ 'right-0 border-slate-950': beforeTaxes }"
+                class="transition-all slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-400 flex items-center justify-center"
+              >
+                <div
+                  *ngIf="beforeTaxes"
+                  class="size-5 rounded-full bg-red-40"
+                ></div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="flex flex-wrap justify-between bg-red-40 space-y-14 xl:space-y-0 xl:gap-y-16">
-            @for (house of houseListings; track house) {
-            <div class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl">
-                <!-- id: {{$index}}
+      </div>
+    </div>
+  </div>
+
+  <!-- mobile view bottom nav bar -->
+  <div
+    [ngClass]="{ '-bottom-12': !showBottomNav }"
+    class="xl:hidden slow-resize fixed z-40 w-full bottom-0 transition-all"
+  >
+    <div
+      [ngClass]="{ hidden: hideMore }"
+      class="h-10 w-20 mx-auto my-5 rounded-full bg-black flex items-center justify-center"
+    >
+      <p class="text-slate-50 text-sm">Map</p>
+    </div>
+    <div
+      class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center"
+    >
+      <div class="size-10 bg-red-40 flex items-center justify-center">
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="text-blue-600 font-bold"
+          >E</a
+        >
+      </div>
+      <div class="size-10 bg-red-40 flex items-center justify-center">
+        <a
+          routerLink="/wishlist"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="text-blue-600 font-bold"
+          >W</a
+        >
+      </div>
+      <div class="size-10 bg-red-40 flex items-center justify-center">
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="text-blue-600 font-bold"
+          >L</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- desktop view hide more -->
+  <div
+    class="hidden xl:block fixed z-40 w-full bg-red-80 bottom-0 transition-all"
+  >
+    <div
+      class="h-12 w-32 mx-auto my-5 rounded-full bg-gray-900 hover:scale-105"
+    ></div>
+  </div>
+
+  <!-- main scrollable content -->
+  <div id="track" class="bg-white pt-[10.5rem] xl:pt-64">
+    <!-- taxes toggle -->
+    <div
+      (click)="beforeTaxes = !beforeTaxes"
+      class="xl:hidden w-[90%] mx-auto rounded-xl border border-stone-200 p-3 flex justify-between items-center mb-5"
+    >
+      <div class="space-y-1">
+        <p class="text-sm font-medium text-gray-700">Display total price</p>
+        <p class="text-sm text-slate-400 font-normal">
+          Include all fees, before taxes
+        </p>
+      </div>
+      <!-- toggle switch -->
+      <div
+        [ngClass]="{ 'bg-stone-300': !beforeTaxes }"
+        class="relative w-12 h-8 bg-black rounded-full"
+      >
+        <div
+          [ngClass]="{ 'right-0 border-gray-950': beforeTaxes }"
+          class="transition-all slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center"
+        >
+          <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-wrap justify-between bg-red-40 space-y-14 xl:space-y-0 xl:gap-y-16"
+    >
+      @for (house of houseListings; track house) {
+      <div
+        class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl"
+      >
+        <!-- id: {{$index}}
                 count: {{$count}}
                 first : {{$first}}
                 last: {{$last}}
                 even: {{$even}}
                 odd: {{$odd}} -->
-                <app-houseitem (housedetails)="roomNavigate($event)" [house]="house" [houseId]="house.houseId"
-                    [beforeTaxes]="beforeTaxes"></app-houseitem>
-            </div>
-            }
-        </div>
-        <div class="w-full h-20 bg-red-40 mt-10 mb-20">
-            <hr class="w-[90%] mx-auto bg-slate-500" />
-            <p class="mt-10 mb-5 font-bold text-center">Continue exploring new homes</p>
-            <div class="flex justify-center bg-red-40">
-                <button class="px-4 py-2 bg-black text-slate-200 rounded-md text-base">Show more</button>
-            </div>
-        </div>
+        <app-houseitem
+          (housedetails)="roomNavigate($event)"
+          [house]="house"
+          [houseId]="house.houseId"
+          [beforeTaxes]="beforeTaxes"
+        ></app-houseitem>
+      </div>
+      }
     </div>
-    <div id="footer" class="relative z-50 w-full h-40 bg-stone-100 text-center text-sm space-y-3 py-5 px-2">
-        <p class="text-slate-400">AirBNB Homepage features and functionalities clone.</p>
-        <p class="text-slate-500">Developed by <a href="https://olalekan-oladimeji-portfolio.vercel.app" target="_blank" class="text-blue-600 underline underline-offset-2">Olalekan Oladimeji</a></p>
-        <p class="font-medium">&#169; {{2024}}. All Rights Reserved.</p>
+    <div class="w-full h-20 bg-red-40 mt-10 mb-20">
+      <hr class="w-[90%] mx-auto bg-slate-500" />
+      <p class="mt-10 mb-5 font-bold text-center">
+        Continue exploring new homes
+      </p>
+      <div class="flex justify-center bg-red-40">
+        <button class="px-4 py-2 bg-black text-slate-200 rounded-md text-base">
+          Show more
+        </button>
+      </div>
     </div>
+  </div>
+  <div
+    id="footer"
+    class="relative z-50 w-full h-40 bg-stone-100 text-center text-sm space-y-3 py-5 px-2"
+  >
+    <p class="text-slate-400">
+      AirBNB Homepage features and functionalities clone.
+    </p>
+    <p class="text-slate-500">
+      Developed by
+      <a
+        href="https://olalekan-oladimeji-portfolio.vercel.app"
+        target="_blank"
+        class="text-blue-600 underline underline-offset-2"
+        >Olalekan Oladimeji</a
+      >
+    </p>
+    <p class="font-medium">&#169; {{ 2024 }}. All Rights Reserved.</p>
+  </div>
 </div>

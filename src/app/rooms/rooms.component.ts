@@ -41,4 +41,5 @@ export class RoomsComponent implements OnInit {
  reveal(e: Event) {
   alert("l")
  }
+ 
 }
