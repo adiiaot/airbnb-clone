@@ -41,7 +41,7 @@ export class RoomsComponent implements OnInit {
 
  reveal(e: Event) {
   let pos = document.getElementById("room")
-  if (pos?.scrollTop && (pos.scrollTop >= 560)) {
+  if (pos?.scrollTop && (pos.scrollTop >= 450)) {
     this.secHeader = true
   } else {
     this.secHeader = false

@@ -1,5 +1,6 @@
 <div (scroll)="reveal($event)" id="room" class="relative pb-20 h-full bg-green-40 overflow-scroll">
-  <div *ngIf="secHeader" class="hidden xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-20 px-28">
+  <!-- secondary scoll-point desktop header -->
+  <div *ngIf="secHeader" class="hidden transition-all xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-20 px-28">
     @for (item of ["Photos", "Amenities", "Reviews", "Location"]; track item) {
       <div class="group relative py-7">
         <div class="absolute z-10 w-full h-1 bottom-0 bg-gray-950 hidden group-hover:block transition-all"></div>
@@ -37,7 +38,7 @@
   </div>
   <div class="relative w-full h-60 xl:h-auto bg-slate-60 xl:px-28">
     
-    <!--mobile circle nav -->
+    <!--mobile circle top 3 nav -->
     <div class="xl:hidden absolute z-10 top-3 px-3 w-full h-8 flex justify-between">
       <div (click)="back()" class="size-8 rounded-full bg-white"></div>
       <div class="flex gap-3">
@@ -59,23 +60,28 @@
 
 
     <div class="hidden xl:flex gap-2 justify-between w-full h-80 bg-red-10 text-white rounded-xl overflow-hidden">
-      <div class="w-1/2 h-full bg-slate-600  flex items-center justify-center">
+      <div class="relative w-1/2 h-full bg-slate-600  flex items-center justify-center group">
+        <div class="hidden group-hover:block absolute size-full bg-black bg-opacity-10"></div>
         <img src="{{room.photos[0]}}" class="size-full object-cover"/>
       </div>
       <div class="w-1/2 flex flex-col gap-2 justify-between  bg-red-40">
         <div class="h-1/2 w-full flex gap-2 justify-between">
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+          <div class="group relative w-1/2 bg-slate-600 flex items-center justify-center">
+            <div class="hidden group-hover:block absolute size-full bg-black bg-opacity-10"></div>
             <img src="{{room.photos[1]}}" class="size-full object-cover"/>
           </div>
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+          <div class="group relative w-1/2 bg-slate-600 flex items-center justify-center">
+            <div class="hidden group-hover:block absolute size-full bg-black bg-opacity-10"></div>
             <img src="{{room.photos[2]}}" class="size-full object-cover"/>
           </div>
         </div>
         <div class="h-1/2 w-full flex gap-2 justify-between">
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+          <div class="group relative w-1/2 bg-slate-600 flex items-center justify-center">
+            <div class="hidden group-hover:block absolute size-full bg-black bg-opacity-10"></div>
             <img src="{{room.photos[3]}}" class="size-full object-cover"/>
           </div>
-          <div class="w-1/2 bg-slate-600 flex items-center justify-center">
+          <div class="group relative w-1/2 bg-slate-600 flex items-center justify-center">
+            <div class="hidden group-hover:block absolute size-full bg-black bg-opacity-10"></div>
             <img src="{{room.photos[4]}}" class="size-full object-cover"/>
           </div>
         </div>
@@ -84,10 +90,10 @@
 
     
   </div>
-  <div class="relative px-5 xl:px-28 xl:flex">
+  <div class="relative  xl:flex">
     <div class="xl:w-1/2">
     <!-- section1 -->
-    <div class="py-6 border-b border-slate-200 space-y-3">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200 space-y-3">
       <h1 class="xl:hidden font-medium text-3xl text-slate-900">
         {{room.views}}
       </h1>
@@ -98,7 +104,7 @@
       </div>
     </div>
     <!-- section2 -->
-    <div class="py-6 border-b border-slate-200 flex items-center gap-5">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200 flex items-center gap-5">
       <div class="size-10 bg-slate-60 rounded-full">
         <img src="../../assets/images/ola_dp.jpg" class="size-full object-cover rounded-full" />
       </div>
@@ -108,7 +114,7 @@
       </div>
     </div>
     <!-- section3 -->
-    <div class="py-6 border-b border-slate-200 space-y-2">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200 space-y-2">
       <div class="flex items-start gap-5">
         <div class="size-8 bg-slate-600 rounded-full"></div>
         <div class="">
@@ -131,8 +137,67 @@
         </div>
       </div>
     </div>
+    <!-- section -->
+    <div class="py-6 px-5 xl:px-28 bg-stone-300 bg-opacity-50 w-full">
+      <h2 class="text-2xl font-medium text-slate-900">Meet the Developer</h2>
+      <div class="flex flex-col p-5 mt-5 bg-white rounded-2xl shadow-md shadow-slate-400">
+        <div class="w-full flex flex-col items-center justify-center bg-red-40">
+          <div class="relative">
+            <div class="size-6 rounded-full bg-pink-600 absolute z-10 bottom-0 right-0"></div>
+            <div class="size-24 rounded-full bg-slate-60">
+              <img src="../../assets/images/ola_dp.jpg" class="size-full object-cover rounded-full"/>
+            </div>
+          </div>
+          <p class="font-semibold text-2xl text-slate-950 tracking-wider">Olalekan</p>
+          <p class="font-semibold text-2xl text-slate-900 tracking-wider ">Oladimeji</p>
+          <p class="font-normal text-sm text-slate-700">Full-Stack Developer</p>
+          
+        </div>
+        <div class="w-full flex items-start justify-between bg-red-40">
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+            <p class="text-xl font-medium text-gray-700">10+</p>
+            <p class="text-xs text-slate-400">Projects</p>
+          </div>
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+            <p class="text-xl font-medium text-gray-700">4.94</p>
+            <p class="text-xs text-slate-400">Rating</p>
+          </div>
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+            <p class="text-xl font-medium text-gray-700">2</p>
+            <p class="text-xs text-slate-400">YOE</p>
+          </div>
+        </div>
+      </div>
+      <div class="font-light mt-10 space-y-3">
+        <div class="flex gap-3 items-start">
+          <div class="w-[10%]">
+            <div class="size-5 bg-red-400"></div>
+          </div>
+          <p class="bg-green-40 w-[90%]">Born in the 2000s</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <div class="w-[10%]">
+            <div class="size-5 bg-red-400"></div>
+          </div>
+          <p class="w-[90%]"><a href="https://olalekan-oladimeji-portfolio.vercel.app" target="_blank" class="underline underline-offset-2">Portfolio Website</a></p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <div class="w-[10%]">
+            <div class="size-5 bg-red-400"></div>
+          </div>
+          <p class="w-[90%]">Interests/Hobbies: Reading, Playing games, Watching Animes, Coding</p>
+        </div>
+        <div class="flex gap-3 items-start">
+          <div class="w-[10%]">
+            <div class="size-5 bg-red-400"></div>
+          </div>
+          <p class="w-[90%]">Nigerian</p>
+        </div>
+      </div>
+    </div>
     <!-- section4 -->
-    <div class="py-6 border-b border-slate-200">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200">
+      <h2 class="text-2xl font-medium mb-5" >About this project</h2>
       <p class="line-clamp-6 text-slate-600 font-light leading-7">
         Welcome to AirBNB (clone) built by Olalekan Oladimeji. It was built using Angular, TypeScript and Tailwind CSS.
         This project started off as a friendly and healthy competitions between I and my Dev friends until I took it too far and personal and decided to surpass my limit with this project.
@@ -143,7 +208,7 @@
       </div>
     </div>
     <!-- section5 -->
-    <div class="py-6 border-b border-slate-200">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200">
       <h2 class="text-2xl font-medium mb-5" >Where you'll sleep</h2>
       <div class=" w-full bg-green-40">
         <swiper-container
@@ -171,7 +236,7 @@
       </div>
     </div>
     <!-- section6 -->
-    <div class="py-6 border-b border-slate-200">
+    <div class="py-6 px-5 xl:px-28 border-b border-slate-200">
       <h2 class="text-2xl font-medium">What this place offers</h2>
       <div class="space-y-3 mt-3">
         <div class="flex items-center gap-5">
@@ -202,7 +267,7 @@
       </div>
     </div>
     <!-- section7 -->
-    <div  class="py-6 border-b border-slate-200">
+    <div  class="py-6 px-5 xl:px-28 border-b border-slate-200">
       <h2 class="text-2xl font-medium mb-5">Where you will be</h2>
       <div class="w-full h-44 bg-slate-600 rounded-lg"></div>
       <div class="space-y-3 mt-5">
@@ -225,13 +290,15 @@
       </div>
     </div>
     <!-- section8 -->
-    <div  class="py-6 border-b border-slate-200">
+    <div  class="py-6 px-5 xl:px-28 border-b border-slate-200">
        <h3>5 nights in Ytteran</h3>
        <p>Sep 9, 2024 - Sep 14, 2024</p>
       </div>
     </div>
-    <div class="hidden p-6 xl:flex w-1/2 bg-red-40 sticky top-80 justify-center">
-      <div [ngClass]="{'sticky top-28': secHeader}" class="h-[40rem] w-2/3 mx-auto bg-green-500 rounded-2xl"></div>
+    <div class="hidden py-8 xl:flex w-1/2 bg-red-400 sticky top-80 justify-center">
+      <div [ngClass]="{'sticky top-24': secHeader}" class="bg-white rounded-2xl p-10">
+        <p>${{room.priceAfterTax}}</p>
+      </div>
     </div>
   </div>
 </div>

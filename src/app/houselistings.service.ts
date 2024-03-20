@@ -70,7 +70,7 @@ photos: ['../assets/images/az1.jpg', '../assets/images/az2.jfif','../assets/imag
         houseId: "7"
       },
       {
-        photos: ['../assets/images/island1.jfif', '../assets/images/island2.jfif','../assets/images/island3.jfif','../assets/images/island4.jfif','../assets/images/island5.jfif',] ,
+        photos: ['../assets/images/island2.jfif', '../assets/images/island1.jfif','../assets/images/island3.jfif','../assets/images/island4.jfif','../assets/images/island5.jfif',] ,
         location: 'Taghazout, Morocco',
         starRating: '4.93',
         favorite: false,
