@@ -47,5 +47,9 @@ export class RoomsComponent implements OnInit {
     this.secHeader = false
   }
  }
+
+ _parseInt(str: string) {
+  return parseInt(str)
+ }
  
 }
