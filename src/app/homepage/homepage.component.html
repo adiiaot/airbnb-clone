@@ -13,9 +13,11 @@
     <div class="flex justify-evenly p-3 items-center mt-1 xl:hidden">
       <!-- search box -->
       <div
-        class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 px-4 py-2 flex items-center gap-3"
+        class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 p-2 flex items-center gap-1"
       >
-        <div class="size-10 rounded-full bg-slate-100"></div>
+        <div class="size-10 rounded-full bg-white flex items-center justify-center">
+            <img src="../../assets/images/searchicon.png" />
+        </div>
         <div>
           <p class="text-sm font-medium">Anywhere</p>
           <p class="text-xs text-slate-500">Any week . Add guests</p>
@@ -24,8 +26,10 @@
       <!-- rounded filter -->
       <div class="w-[20%] bg-yellow-40 flex items-center justify-center">
         <div
-          class="max-w-10 w-2/3 aspect-square rounded-full border border-stone-300 bg-white"
-        ></div>
+          class="max-w-10 w-2/3 aspect-square rounded-full border border-stone-300 bg-white flex items-center justify-center"
+        >
+        <img src="../../assets/images/filtericon.png" class="size-5" />
+    </div>
       </div>
     </div>
     <!-- list items scroll container mobile -->
@@ -117,7 +121,9 @@
       <div>
         <a class="text-base font-medium">Airbnb your home</a>
       </div>
-      <div class="size-5 rounded-full bg-red-400"></div>
+      <div class="size-5 rounded-full bg-red-40 flex items-center justify-center">
+        <img src="../../assets/images/webicon.png" />
+      </div>
       <div
         class="w-20 aspect-video rounded-full border border-slate-300 hover:shadow-md shadow-slate-300"
       ></div>
@@ -213,7 +219,7 @@
           <div
             class="size-8 rounded-full bg-white border border-black flex items-center justify-center"
           >
-            P
+          <img src="../../assets/images/backicon.png" />
           </div>
         </div>
         <div
@@ -223,7 +229,7 @@
           <div
             class="size-8 rounded-full bg-white border border-black flex items-center justify-center"
           >
-            N
+          <img src="../../assets/images/fronticon.png" />
           </div>
         </div>
         <swiper-container
@@ -316,8 +322,10 @@
               >
                 <div
                   *ngIf="beforeTaxes"
-                  class="size-5 rounded-full bg-red-40"
-                ></div>
+                  class="size-5 rounded-full bg-red-40 flex items-center justify-center"
+                >
+                <img src="../../assets/images/doneicon.png" class="size-3" />
+            </div>
               </div>
             </div>
           </div>
@@ -336,6 +344,9 @@
       class="h-10 w-20 mx-auto my-5 rounded-full bg-black flex items-center justify-center"
     >
       <p class="text-slate-50 text-sm">Map</p>
+      <div>
+        <img src="../../assets/images/mapicon.png" />
+      </div>
     </div>
     <div
       class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center"
@@ -398,10 +409,11 @@
         class="relative w-12 h-8 bg-black rounded-full"
       >
         <div
-          [ngClass]="{ 'right-0 border-gray-950': beforeTaxes }"
-          class="transition-all slow-resize absolute h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center"
+          [ngClass]="{ 'left-4 border-gray-950': beforeTaxes }"
+          class="transition-all slow-resize absolute left-0 h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center"
         >
-          <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40"></div>
+          <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40">
+            <img src="../../assets/images/doneicon.png" /></div>
         </div>
       </div>
     </div>

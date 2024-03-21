@@ -42,15 +42,15 @@
     <!-- prev/next button hover bubble on houseitem  -->
     <div
       (click)="swipe($event, 'prev')"
-      class="hidden group-hover:flex absolute top-1/2 left-3 size-8 rounded-full bg-white z-20 items-center justify-center"
+      class="hidden group-hover:flex absolute top-1/2 left-3 size-8 rounded-full bg-white bg-opacity-90 transition-all z-20 items-center justify-center"
     >
-      P
+    <img src="../../assets/images/backicon.png" />
     </div>
     <div
       (click)="swipe($event, 'next')"
-      class="hidden group-hover:flex absolute top-1/2 right-3 size-8 rounded-full bg-white z-20 items-center justify-center"
+      class="hidden group-hover:flex absolute top-1/2 right-3 size-8 rounded-full bg-white bg-opacity-90 transition-all z-20 items-center justify-center"
     >
-      N
+    <img src="../../assets/images/fronticon.png" />
     </div>
      <!-- prev/next button hover bubble on houseitem  -->
 

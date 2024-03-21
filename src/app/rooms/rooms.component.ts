@@ -24,6 +24,7 @@ export class RoomsComponent implements OnInit {
   room!: any;
   showMore = false
   secHeader = false
+  pickDates = false
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
@@ -50,6 +51,11 @@ export class RoomsComponent implements OnInit {
 
  _parseInt(str: string) {
   return parseInt(str)
+ }
+
+ _pickDates(e: Event, state: boolean) {
+  e.stopPropagation()
+  this.pickDates = state
  }
  
 }
