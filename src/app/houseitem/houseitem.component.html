@@ -82,7 +82,7 @@
         class="text-base font-medium xl:font-normal text-slate-800"
       >
         <span class="text-base font-medium text-black"
-          >${{ house.priceAfterTax }}</span
+          >${{ house.pricing.priceAfterTax }}</span
         >
         night
       </p>
@@ -91,13 +91,13 @@
         class="text-base font-medium xl:font-normal text-slate-800"
       >
         <span class="text-base font-medium text-black"
-          >${{ house.priceBeforeTax }}</span
+          >${{ house.pricing.priceBeforeTax }}</span
         >
         total before taxes
       </p>
     </div>
     <div>
-      <p class="text-base font-medium">{{ house.starRating }}</p>
+      <p class="text-base font-medium">{{ house.reviews.starRating }}</p>
     </div>
   </div>
 </div>
