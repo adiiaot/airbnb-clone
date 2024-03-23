@@ -22,7 +22,7 @@
   <!-- fixed bottom component -> Reserve. -->
   <div class="xl:hidden fixed z-20 bottom-0 w-full bg-white border-t border-slate-200 flex justify-between items-center p-5">
     <div>
-        <p>$208 night</p>
+        <p>{{room.pricing.priceAfterTax}} night</p>
         <p>Sep 9 - 14</p>
     </div>
     <div>
@@ -102,13 +102,29 @@
     <div class="xl:w-[60%]">
     <!-- section1 -->
     <div class="py-6 px-5 xl:px-0 border-b border-slate-200 space-y-3">
-      <h1 class="xl:hidden font-medium text-3xl text-slate-900">
-        {{room.views}}
+      <h1 class="xl:hidden font-semibold text-2xl text-slate-900">
+        {{room.title}}
       </h1>
       <div class="space-y-1">
-        <p class="xl:text-3xl">Located in {{room.location}}</p>
-        <p class="xl:text-slate-950 xl:font-light">10 guests . 6 bedrooms . 8 beds . 3 baths</p>
-        <p class="xl:font-normal">{{room.starRating}} | 24 reviews</p>
+        <p class="xl:text-3xl font-medium">Located in {{room.location.split(",")[0]}}</p>
+        <div class="flex items-center gap-2 font-light">
+          <p class="xl:text-slate-950 xl:font-light">{{room.accommodation.guests}} {{room.accommodation.guests === 1 ? "guest" : "guests" }}</p>
+          <div class="size-[2px] rounded-full bg-black"></div>
+          <p class="xl:text-slate-950 xl:font-light">{{room.accommodation.bedrooms}} {{room.accommodation.bedrooms === 1 ? "bedroom" : "bedrooms" }}</p>
+          <div class="size-[2px] rounded-full bg-black"></div>
+          <p class="xl:text-slate-950 xl:font-light">{{room.accommodation.bathrooms}} {{room.accommodation.bathrooms === 1 ? "bathroom" : "bathrooms" }}</p>
+        </div>
+        <!-- <p class="xl:text-slate-950 xl:font-light">{{room.accommodation.guests}} {{room.accommodation.guests === 1 ? "guest" : "guests" }} . 6 bedrooms . 8 beds . 3 baths</p> -->
+        <div class="xl:font-normal flex gap-2 items-center text-sm">
+          <div class="flex items-center gap-1">
+            <div>
+              <img src="../../assets/images/star.png" class="size-4" />
+            </div>
+            <p class="text-sm"> {{room.reviews.starRating}}</p>
+          </div>
+          <div class="w-[1px] h-3 bg-slate-700"></div>
+          <p class="underline"> {{room.reviews.guestReviews.length}} {{room.reviews.guestReviews.length === 1 ? "review" : "reviews" }}</p>
+         </div>
       </div>
     </div>
     <!-- section2 -->
@@ -123,42 +139,33 @@
     </div>
     <!-- section3 -->
     <div class="py-6 px-5 xl:px-0 border-b border-slate-200 xl:border-transparent space-y-2">
-      <div class="flex items-start gap-5">
+      <div *ngFor="let items of room.houseRules" class="flex items-center gap-5">
         <div class="size-8 bg-slate-600 rounded-full"></div>
         <div class="">
-          <p class="font-normal">Free cancellation for 48 hours</p>
-          <p  class="text-sm text-slate-500">Check yourself in with the smartlock.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-5">
-        <div class="size-8 bg-slate-600 rounded-full"></div>
-        <div class="">
-          <p class="font-normal">Self check-in</p>
-          <p  class="text-sm text-slate-500">Check yourself in with the smartlock.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-5">
-        <div class="size-8 bg-slate-600 rounded-full"></div>
-        <div class="">
-          <p class="font-normal">Furry friends welcome</p>
-          <p  class="text-sm text-slate-500">Bring your pets along for the stay.</p>
+          <p class="font-normal text-slate-800">{{items}}</p>
         </div>
       </div>
     </div>
     <!-- section -->
     <div class="py-6 px-5 xl:px-5 bg-stone-300 bg-opacity-50 xl:rounded-3xl w-full">
-      <h2 class="text-2xl font-medium text-slate-900 xl:text-center">Meet the Developer</h2>
+      <h2 class="text-2xl font-medium text-slate-900 xl:text-center">Meet the Host</h2>
       <div class="xl:w-2/3 xl:mx-auto flex flex-col xl:flex-row p-5 mt-5 bg-white rounded-2xl shadow-md shadow-slate-400">
         <div class="w-full flex flex-col items-center justify-center bg-red-40">
           <div class="relative">
             <div class="size-6 rounded-full bg-pink-600 absolute z-10 bottom-0 right-0"></div>
             <div class="size-24 rounded-full bg-slate-60">
-              <img src="../../assets/images/ola_dp.jpg" class="size-full object-cover rounded-full"/>
+              <img src="{{room.host.profilePicture}}" alt="host picture" class="size-full object-cover rounded-full"/>
             </div>
           </div>
-          <p class="font-semibold text-2xl text-slate-950 tracking-wider">Olalekan</p>
-          <p class="font-semibold text-2xl text-slate-900 tracking-wider ">Oladimeji</p>
-          <p class="font-normal text-sm text-slate-700">Full-Stack Developer</p>
+          <p class="font-semibold text-2xl text-slate-950 tracking-wider">{{room.host.name}}</p>
+          <!-- <p class="font-semibold text-2xl text-slate-900 tracking-wider ">Oladimeji</p> -->
+          <div class="flex gap-1 items-center">
+            <p class="font-normal text-sm text-slate-700">*{{room.host.responseRate}}</p>
+            <div *ngIf="room.host.superhostStatus">
+              <img src="../../assets/images/badge.png" class="size-3" />
+            </div>
+          </div>
+         
           
         </div>
         <div class="w-full flex xl:flex-col items-start justify-between bg-red-40">
@@ -247,25 +254,13 @@
     <div class="py-6 px-5 xl:px-0 border-b border-slate-200">
       <h2 class="text-2xl font-medium">What this place offers</h2>
       <div class="space-y-3 mt-3">
-        <div class="flex items-center gap-5">
+        <div *ngFor="let items of room.amenities.essential" class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p class="text-slate-800 font-light">Garden view</p>
+          <p class="text-slate-800 font-light">{{items}}</p>
         </div>
-        <div class="flex items-center gap-5">
+        <div *ngFor="let items of room.amenities.outdoor" class="flex items-center gap-5">
           <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p class="text-slate-800 font-light">Sea view</p>
-        </div>
-        <div class="flex items-center gap-5">
-          <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p class="text-slate-800 font-light">Kitchen</p>
-        </div>
-        <div class="flex items-center gap-5">
-          <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p class="text-slate-800 font-light">Wifi</p>
-        </div>
-        <div class="flex items-center gap-5">
-          <div class="size-8 bg-slate-600 rounded-full"></div>
-          <p class="text-slate-800 font-light">Dedicated workspace</p>
+          <p class="text-slate-800 font-light">{{items}}</p>
         </div>
       </div>
       <div class="mt-5">
@@ -279,20 +274,13 @@
       <h2 class="text-2xl font-medium mb-5">Where you will be</h2>
       <div class="w-full h-44 bg-slate-600 rounded-lg"></div>
       <div class="space-y-3 mt-5">
-        <p class="font-semibold">{{room.location}}</p>
+        <div>
+          <p class="font-semibold">{{room.location}}</p>
+          <p class="font-normal text-slate-600 text-sm">{{room.layout}}</p>
+        </div>
+        
         <p class="line-clamp-3 text-slate-500">
-          {{room.location.split(",")[0]}} is a cozy little village close to nature. In the village you
-          will find Mus-Olles museum and two lakes. Linnéaholmen is situated in
-          Storsjön, which is Sweden’s fifth largest lake. There are good
-          opportunities for fishing in the summer, and nice cross-country skiing
-          tracks during the snowy winters. The vicinity to both Åre and
-          Östersund provide ideal opportunities for a wide range of vacation
-          activities. Read more Getting around As is usually the case in the
-          countryside, access to a car for getting around is recommenden. There
-          are private parking spots by the short footbridge that takes you to
-          Linnéaholmen. There are also buses between Järpen and Östersund which
-          stop in Ytterån. From the road (E14) where the bus stop is, there is
-          ca 750 m to Linnéaholmen.
+          {{room.description}} {{room.additionalInfo}} 
         </p>
         <p class="underline">See more</p>
       </div>

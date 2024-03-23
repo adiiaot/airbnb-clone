@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HouseListings } from './houselistings';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -68,7 +69,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'John Smith',
-          profilePicture: 'john_smith.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description: 'Experienced host with a passion for hospitality.',
           responseRate: 'Responds within an hour',
           superhostStatus: true,
@@ -146,7 +147,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Jane Doe',
-          profilePicture: 'host_jane_doe.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description: 'Experienced host with a passion for hospitality.',
           responseRate: 'Responds within a few hours',
           superhostStatus: true,
@@ -225,7 +226,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'John Smith',
-          profilePicture: 'host_john_smith.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description: 'Friendly host who loves sharing our home with guests.',
           responseRate: 'Responds within a day',
           superhostStatus: false,
@@ -303,7 +304,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Yuki Tanaka',
-          profilePicture: 'host_yuki_tanaka.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Passionate bartender with years of experience in mixology.',
           responseRate: 'Responds within a few hours',
@@ -389,7 +390,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Sophie Anderson',
-          profilePicture: 'host_sophie_anderson.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Nature lover and outdoor enthusiast dedicated to providing memorable experiences for guests.',
           responseRate: 'Responds within a day',
@@ -472,7 +473,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Sophie Martin',
-          profilePicture: 'host_sophie_martin.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Experienced sailor and passionate host dedicated to providing exceptional experiences.',
           responseRate: 'Responds within a day',
@@ -554,7 +555,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Emma Wilson',
-          profilePicture: 'host_emma_wilson.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Passionate innkeeper dedicated to providing a memorable stay for guests.',
           responseRate: 'Responds within a few hours',
@@ -636,7 +637,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Mark Johnson',
-          profilePicture: 'host_mark_johnson.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Passionate about sustainable living and sharing the beauty of the desert with guests.',
           responseRate: 'Responds within a day',
@@ -718,7 +719,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Giulia Rossi',
-          profilePicture: 'host_giulia_rossi.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             "Passionate about preserving Italy's cultural heritage and sharing it with guests.",
           responseRate: 'Responds within a few hours',
@@ -799,7 +800,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Erik van der Meer',
-          profilePicture: 'host_erik_van_der_meer.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Proud Amsterdammer and passionate host dedicated to providing memorable experiences for guests.',
           responseRate: 'Responds within a day',
@@ -880,7 +881,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Erik van der Meer',
-          profilePicture: 'host_erik_van_der_meer.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Proud Amsterdammer and passionate host dedicated to providing memorable experiences for guests.',
           responseRate: 'Responds within a day',
@@ -962,7 +963,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Sarah Miller',
-          profilePicture: 'host_sarah_miller.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Nature enthusiast and experienced camper dedicated to providing memorable outdoor experiences.',
           responseRate: 'Responds within a day',
@@ -1044,7 +1045,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Wayan Putra',
-          profilePicture: 'host_wayan_putra.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Local host and nature lover dedicated to providing authentic experiences for guests.',
           responseRate: 'Responds within a day',
@@ -1126,7 +1127,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Emily Harris',
-          profilePicture: 'host_emily_harris.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Nature lover and outdoor enthusiast dedicated to providing memorable experiences for guests.',
           responseRate: 'Responds within a day',
@@ -1208,7 +1209,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'William MacLeod',
-          profilePicture: 'host_william_macleod.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Proud owner of the castle and dedicated to preserving its history and heritage.',
           responseRate: 'Responds within a day',
@@ -1294,7 +1295,7 @@ export class HouselistingsService {
         },
         host: {
           name: 'Sophie Anderson',
-          profilePicture: 'host_sophie_anderson.jpg',
+           profilePicture: '../assets/images/avatar.png',
           description:
             'Nature lover and outdoor enthusiast dedicated to providing memorable experiences for guests.',
           responseRate: 'Responds within a day',
