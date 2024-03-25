@@ -4,8 +4,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HouseitemComponent } from '../houseitem/houseitem.component';
 import { HouseListings } from '../houselistings';
 import { HouselistingsService } from '../houselistings.service';
-import Swiper from 'swiper';
-// import logo from '../../assets/images/airbnb.png'
+
 
 
 
@@ -88,7 +87,7 @@ export class HomepageComponent {
     if (view === "all") {
       this.activeViews = "all"
       this.houseListings = this.houses.getHouses()
-      return 
+      return
     }
     this.activeViews = view
     this.houseListings = this.houses.getHouses().filter(items => items.views.toLowerCase() === view.toLowerCase())
