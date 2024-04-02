@@ -51,6 +51,7 @@ export class HomepageComponent {
   activeViews: string = "all";
   beforeTaxes = false;
   destination: "none" | "where" | "check-in" | "check-out" | "who" = "none";
+  destinationActive = false
 
   constructor(private router: Router, private houses: HouselistingsService) { }
   houseListings = this.houses.getHouses()
@@ -61,7 +62,13 @@ export class HomepageComponent {
 
   setDestination(e: Event, destination: "none" | "where" | "check-in" | "check-out" | "who" ) {
     e.stopPropagation();
+    if (destination === "none") {
+      this.destinationActive = false
+    } else {
+      this.destinationActive = true
+    }
     this.destination = destination
+    // alert(destination)
   }
 
   showElement(event: Event) {

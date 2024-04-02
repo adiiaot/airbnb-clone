@@ -2,7 +2,12 @@
     transition: all .3s ease-in;
 }
 
-#check-in:hover #where:has(input) {
-    background-color: red;
-    color: red;
+#check-in.extend-left:hover::before {
+    content: '';
+    z-index: 10;
+    position: absolute;
+    right: 100%;
+    width: 40px;
+    height: 100%;
+    background-color: rgba(148, 163, 184, 0.35)
 }
