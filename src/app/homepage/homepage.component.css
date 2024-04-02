@@ -1,3 +1,8 @@
 .slow-resize{
     transition: all .3s ease-in;
 }
+
+#check-in:hover #where:has(input) {
+    background-color: red;
+    color: red;
+}

@@ -47,13 +47,22 @@ export class HomepageComponent {
     {icon: "../../assets/images/rooms.jpg", text: "Rooms"},
     {icon: "../../assets/images/lake.jpg", text: "Lakes"},
   ]
+
   activeViews: string = "all";
-  beforeTaxes = false
+  beforeTaxes = false;
+  destination: "none" | "where" | "check-in" | "check-out" | "who" = "none";
 
   constructor(private router: Router, private houses: HouselistingsService) { }
-  // houseListings = inject(HouselistingsService);
-  // houseListings = this.houseListings?.getHouses()
   houseListings = this.houses.getHouses()
+
+  resetDestination() {
+    this.destination = "none"
+  }
+
+  setDestination(e: Event, destination: "none" | "where" | "check-in" | "check-out" | "who" ) {
+    e.stopPropagation();
+    this.destination = destination
+  }
 
   showElement(event: Event) {
     event.target?.addEventListener('scroll', () => {
@@ -96,9 +105,5 @@ export class HomepageComponent {
   swipe(nav: string) {
    if (nav === "next") document.querySelectorAll('swiper-container')[1]?.swiper.slideNext()
    if (nav === "prev") document.querySelectorAll('swiper-container')[1]?.swiper.slidePrev()
-   
-
   }
-
-  
 }
