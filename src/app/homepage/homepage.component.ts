@@ -58,16 +58,17 @@ export class HomepageComponent {
 
   resetDestination() {
     this.destination = "none"
+    this.destinationActive = false
   }
 
-  setDestination(e: Event, destination: "none" | "where" | "check-in" | "check-out" | "who" ) {
+  setDestination(e: Event, dest: "none" | "where" | "check-in" | "check-out" | "who" ) {
     e.stopPropagation();
-    if (destination === "none") {
+    if (dest === "none") {
       this.destinationActive = false
     } else {
       this.destinationActive = true
     }
-    this.destination = destination
+    this.destination = dest
     // alert(destination)
   }
 
