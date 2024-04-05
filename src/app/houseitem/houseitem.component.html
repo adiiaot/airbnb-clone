@@ -83,7 +83,7 @@
     </swiper-container>
   </div>
 
-  <div class="flex justify-between mt-2">
+  <div class="flex justify-between items-start mt-2">
     <div class="space-y-1">
       <p class="text-base font-medium">{{ house.location }}</p>
       <p class="text-sm font-light text-slate-500">Ocean and Sea Views</p>
@@ -93,7 +93,7 @@
         class="text-base font-medium xl:font-normal text-slate-800"
       >
         <span class="text-base font-medium text-black"
-          >${{ house.pricing.priceAfterTax }}</span
+          >{{ house.pricing.priceAfterTax }}</span
         >
         night
       </p>
@@ -102,13 +102,16 @@
         class="text-base font-medium xl:font-normal text-slate-800"
       >
         <span class="text-base font-medium text-black"
-          >${{ house.pricing.priceBeforeTax }}</span
+          >{{ house.pricing.priceBeforeTax }}</span
         >
         total before taxes
       </p>
     </div>
-    <div>
-      <p class="text-base font-medium">{{ house.reviews.starRating }}</p>
+    <div class="flex items-center gap-1 bg-red-60">
+      <div class="flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><g><path d="M0 0h24v24H0V0z" fill="none"/><path d="M0 0h24v24H0V0z" fill="none"/></g><g><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></g></svg>
+      </div>
+      <p class="text-base font-medium text-slate-800">{{ house.reviews.starRating }}</p>
     </div>
   </div>
 </div>

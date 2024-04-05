@@ -107,9 +107,9 @@ export class HouselistingsService {
           outdoor: ['Smart TV', 'Netflix', 'Board games'],
         },
         photos: [
+          '../assets/images/surf3.jpg',
           '../assets/images/surf1.jfif',
           '../assets/images/surf2.jfif',
-          '../assets/images/surf3.jpg',
           '../assets/images/surf4.jfif',
           '../assets/images/surf5.jfif',
         ],

@@ -16,8 +16,10 @@
       <div
         class="w-[80%] rounded-full border border-stone-100 bg-white shadow-md shadow-stone-200 p-2 flex items-center gap-1"
       >
-        <div class="size-10 rounded-full bg-white flex items-center justify-center">
-            <img src="../../assets/images/searchicon.png" />
+        <div
+          class="size-10 rounded-full bg-white flex items-center justify-center"
+        >
+          <img src="../../assets/images/searchicon.png" />
         </div>
         <div>
           <p class="text-sm font-medium">Anywhere</p>
@@ -29,8 +31,8 @@
         <div
           class="max-w-10 w-2/3 aspect-square rounded-full border border-stone-300 bg-white flex items-center justify-center"
         >
-        <img src="../../assets/images/filtericon.png" class="size-5" />
-    </div>
+          <img src="../../assets/images/filtericon.png" class="size-5" />
+        </div>
       </div>
     </div>
     <!-- list items scroll container mobile -->
@@ -122,7 +124,9 @@
       <div>
         <a class="text-base font-medium">Airbnb your home</a>
       </div>
-      <div class="size-5 rounded-full bg-red-40 flex items-center justify-center">
+      <div
+        class="size-5 rounded-full bg-red-40 flex items-center justify-center"
+      >
         <img src="../../assets/images/webicon.png" />
       </div>
       <div
@@ -148,7 +152,9 @@
         </div>
         <div
           (click)="location = 'experiences'"
-          [ngClass]="{ 'font-medium text-slate-950': location === 'experiences' }"
+          [ngClass]="{
+            'font-medium text-slate-950': location === 'experiences'
+          }"
           class="px-4 py-2 hover:bg-slate-300 hover:bg-opacity-15 hover:text-slate-700 rounded-full text-slate-400"
         >
           <p class="text-sm">Experiences</p>
@@ -168,63 +174,95 @@
         [ngClass]="{
           'w-full absolute aspect-video top-0 h-10': !showBottomNav
         }"
-        [ngClass]="{'bg-stone-500 bg-opacity-10': destinationActive }"
-
+        [ngClass]="{ 'bg-stone-500 bg-opacity-10': destinationActive }"
         class="h-16 w-full bg-white overflow-hidden mx-auto rounded-full border border-slate-200 shadow-md shadow-slate-200 flex"
       >
         @if (showBottomNav) {
-        <div (click)="setDestination($event, 'where')"
-        id="where"
-        [ngClass]="{'bg-white hover:bg-stone-50 z-20 ': destination === 'where'}"
-        [ngClass]="{'hover:bg-gray-500 rounded-none hover:rounded-r-full hover:bg-opacity-10 extend-right': (destinationActive && destination === 'check-in' )}"
-        class="relative w-[30%] hover:bg-stone-500 hover:bg-opacity-15 rounded-full h-full px-8 py-2 flex flex-col items-start justify-center"
+        <div
+          (click)="setDestination($event, 'where')"
+          id="where"
+          [ngClass]="{
+            'bg-white hover:bg-stone-50 z-20 ': destination === 'where'
+          }"
+          [ngClass]="{
+            'hover:bg-gray-500 rounded-none hover:rounded-r-full hover:bg-opacity-10 extend-right':
+              destinationActive && destination === 'check-in'
+          }"
+          class="relative w-[30%] hover:bg-stone-500 hover:bg-opacity-15 rounded-full h-full px-8 py-2 flex flex-col items-start justify-center"
         >
           <p class="text-slate-900 text-xs font-medium">Where</p>
           <div>
             @if (destination === "where") {
-              <input autofocus placeholder="Search destinationsp" class="outline-none bg-transparent placeholder:text-sm placeholder:font-normal placeholder:text-slate-400" />
-             } @else {
-               <p  class="text-slate-400 text-sm font-normal">Search destinations</p>
-             }
+            <input
+              autofocus
+              placeholder="Search destinationsp"
+              class="outline-none bg-transparent placeholder:text-sm placeholder:font-normal placeholder:text-slate-400"
+            />
+            } @else {
+            <p class="text-slate-400 text-sm font-normal">
+              Search destinations
+            </p>
+            }
           </div>
-         
-          
         </div>
         <div
-        (click)="setDestination($event, 'check-in')"
-        id="check-in"
-        [ngClass]="{'bg-white hover:bg-stone-50 z-20 ': destination === 'check-in'}"
-        
-        [ngClass]="{'hover:bg-gray-500 rounded-none hover:rounded-r-full hover:bg-opacity-10 extend-left': (destinationActive && destination === 'where' )}"
+          (click)="setDestination($event, 'check-in')"
+          id="check-in"
+          [ngClass]="{
+            'bg-white hover:bg-stone-50 z-20 ': destination === 'check-in'
+          }"
+          [ngClass]="{
+            'hover:bg-gray-500 rounded-none hover:rounded-r-full hover:bg-opacity-10 extend-left':
+              destinationActive && destination === 'where'
+          }"
           class="relative w-[20%] hover:bg-stone-100 rounded-full h-full px-5 py-2 flex flex-col items-start justify-center"
         >
           <p class="text-slate-900 text-xs font-medium">Check in</p>
           <p class="text-slate-400 text-sm font-normal">Add dates</p>
         </div>
         <div
-        (click)="setDestination($event, 'check-out')"
-        id="check-out"
-        [ngClass]="{'bg-red-400': destination === 'check-out'}"
-        [ngClass]="{'hover:bg-stone-500 hover:bg-opacity-10 rounded-full': !destinationActive}"
+          (click)="setDestination($event, 'check-out')"
+          id="check-out"
+          [ngClass]="{ 'bg-red-400': destination === 'check-out' }"
+          [ngClass]="{
+            'hover:bg-stone-500 hover:bg-opacity-10 rounded-full':
+              !destinationActive
+          }"
           class="w-[20%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 px-5 py-2 flex flex-col items-start justify-center"
         >
           <p class="text-slate-900 text-xs font-medium">Check out</p>
           <p class="text-slate-400 text-sm font-normal">Add dates</p>
         </div>
         <div
-        (click)="setDestination($event, 'who')"
-        [ngClass]="{'bg-red-400': destination === 'who'}"
-        [ngClass]="{'hover:bg-stone-500 hover:bg-opacity-10 rounded-full': !destinationActive}"
+          (click)="setDestination($event, 'who')"
+          [ngClass]="{ 'bg-red-400': destination === 'who' }"
+          [ngClass]="{
+            'hover:bg-stone-500 hover:bg-opacity-10 rounded-full':
+              !destinationActive
+          }"
           class="w-[30%] h-full hover:rounded-full hover:bg-slate-300 hover:bg-opacity-35 pl-8 pr-2 py-2 flex items-center justify-between"
         >
           <div>
             <p class="text-slate-900 text-xs font-medium">Who</p>
             <p class="text-slate-400 text-sm font-normal">Add guestd</p>
           </div>
-          <div class="h-full aspect-square rounded-full bg-[#ff385c] flex items-center justify-center">
-           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-           </div>
+          <div
+            class="h-full aspect-square rounded-full bg-[#ff385c] flex items-center justify-center"
+          >
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#FFFFFF"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
         } @else {
@@ -249,7 +287,7 @@
           <div
             class="size-7 rounded-full bg-white border border-gray-400 flex items-center justify-center"
           >
-          <img src="../../assets/images/backicon.png" class="size-5" />
+            <img src="../../assets/images/backicon.png" class="size-5" />
           </div>
         </div>
         <div
@@ -259,7 +297,10 @@
           <div
             class="size-7 rounded-full bg-white border border-gray-400 flex items-center justify-center"
           >
-          <img src="../../assets/images/fronticon.png" class="size-5 bg-red-40 flex items-center justify-center"  />
+            <img
+              src="../../assets/images/fronticon.png"
+              class="size-5 bg-red-40 flex items-center justify-center"
+            />
           </div>
         </div>
         <swiper-container
@@ -354,8 +395,8 @@
                   *ngIf="beforeTaxes"
                   class="size-5 rounded-full bg-red-40 flex items-center justify-center"
                 >
-                <img src="../../assets/images/doneicon.png" class="size-3" />
-            </div>
+                  <img src="../../assets/images/doneicon.png" class="size-3" />
+                </div>
               </div>
             </div>
           </div>
@@ -366,7 +407,7 @@
 
   <!-- mobile view bottom nav bar -->
   <div
-    [ngClass]="{ '-bottom-12': !showBottomNav }"
+    [ngClass]="{ '-bottom-16': !showBottomNav }"
     class="xl:hidden slow-resize fixed z-40 w-full bottom-0 transition-all"
   >
     <div
@@ -379,15 +420,21 @@
       </div>
     </div>
     <div
-      class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-5 justify-center items-center"
+      class="h-16 bg-white border-t-2 border-slate-200 w-full flex gap-8 justify-center items-center"
     >
       <div class="size-10 bg-red-40 flex items-center justify-center">
         <a
           routerLink="/home"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          class="text-blue-600 font-bold"
-          >E</a
+          class="text-blue-600 font-bold flex flex-col items-center justify-center"
+          >
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#E81948"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </div>
+         
+          <span class="text-xs font-medium text-[#E81948]">Explore</span>
+          </a
         >
       </div>
       <div class="size-10 bg-red-40 flex items-center justify-center">
@@ -395,8 +442,13 @@
           routerLink="/wishlist"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          class="text-blue-600 font-bold"
-          >W</a
+          class="text-blue-600 font-bold flex flex-col items-center justify-center"
+          >
+          <div class="bg-gray-30 ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 24px; width: 24px; stroke: rgba(0, 0, 0, 0.5); stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
+          </div>
+          <span class="text-xs font-medium text-slate-400">Wishlists</span>
+          </a
         >
       </div>
       <div class="size-10 bg-red-40 flex items-center justify-center">
@@ -404,8 +456,13 @@
           routerLink="/login"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          class="text-blue-600 font-bold"
-          >L</a
+          class="text-blue-600 font-bold flex flex-col items-center justify-center"
+          >
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#a1a1a1"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.35 18.5C8.66 17.56 10.26 17 12 17s3.34.56 4.65 1.5c-1.31.94-2.91 1.5-4.65 1.5s-3.34-.56-4.65-1.5zm10.79-1.38C16.45 15.8 14.32 15 12 15s-4.45.8-6.14 2.12C4.7 15.73 4 13.95 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.95-.7 3.73-1.86 5.12z"/><path d="M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></g></g></svg>
+          </div>
+          <span class="text-xs font-medium text-slate-400">Log In</span>
+          </a
         >
       </div>
     </div>
@@ -443,7 +500,8 @@
           class="transition-all slow-resize absolute left-0 h-full aspect-square rounded-full bg-white border-2 border-stone-300 flex items-center justify-center"
         >
           <div *ngIf="beforeTaxes" class="size-5 rounded-full bg-red-40">
-            <img src="../../assets/images/doneicon.png" /></div>
+            <img src="../../assets/images/doneicon.png" />
+          </div>
         </div>
       </div>
     </div>
