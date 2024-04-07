@@ -269,33 +269,28 @@
           </div>
         </div>
         } @else {
-          <div class="absolute flex items-center justify-center top-5 w-full">
-            <div class="flex gap-5 items-center p-4 border border-red-400 rounded-full shadow-sm shadow-slate-200 h-10 text-2xl ">
-              <div>
+          <div class="absolute flex items-center justify-center top-2 w-full">
+            <div class="flex items-center px-5 h-14 w-[45rem] border border-stone-300 rounded-full shadow-sm shadow-slate-200 text-2xl ">
+              <div class="px-5 w-[30%] h-full bg-red-40">
                 <p>Any where</p>
                </div>
-               <div>
+               <div class="px-5 w-[30%] bg-red-60">
                 <p>Any week</p>
                </div>
-               <div class="flex">
+               <div class="flex justify-between items-center h-full w-[40%] bg-red-80">
                 <p>Any guest</p>
-                <div class="h-full aspect-square bg-red-400"></div>
+                <div class="h-[70%] aspect-square bg-red-400 rounded-full"></div>
                </div>
             </div>
           
 
           </div>
-        <!-- <p
-          class="text-center font-bold text-4xl flex items-center justify-center bg-red-40 w-full"
-        >
-          Another Item: Olalekan
-        </p> -->
         }
       </div>
     </div>
     <div
       [ngClass]="{ '-mt-5': !showBottomNav }"
-      class="relative px-5 xl:px-0 py-2 bg-red-60 border-t border-slate-200 w-full mt-5 flex justify-between items-center"
+      class="relative px-5 xl:pl-5 xl:pr-10 py-2 bg-red-60 border-t border-slate-200 w-full mt-5 flex justify-between items-center"
     >
       <!-- scrollable location items -->
       <div id="items" class="relative w-[73%] h-full bg-red-30">
@@ -323,12 +318,12 @@
           </div>
         </div>
         <swiper-container
-          slides-per-view="9"
+          slides-per-view="10"
           speed="500"
           css-mode="true"
           class="ola"
         >
-          <swiper-slide class="mx-2">
+          <swiper-slide class="">
             <div
               id="all"
               (click)="filterViews('all')"
@@ -354,16 +349,19 @@
             </div>
           </swiper-slide>
           @for (i of views; track i) {
-          <swiper-slide class="mx-2">
+          <swiper-slide class=" bg-red-30">
             <div
               id="{{ i }}"
               (click)="filterViews(i.text)"
-              class="group relative w-24 bg-blue-30 pb-3 flex flex-col justify-center items-center"
+              class="group relative w- bg-blue-30 pb-3 flex flex-col justify-center items-center"
             >
               <div
                 [ngClass]="{ hidden: !(activeViews === i.text) }"
                 class="absolute bottom-0 w-[50%] left-[25%] h-[2px] bg-black"
               ></div>
+              <div
+              class="hidden group-hover:block absolute transition-all slow-resize bottom-0 w-[50%] left-[25%] h-[2px] bg-slate-300"
+            ></div>
               <div
                 class="relative size-10 bg-red-20 rounded-full flex items-center justify-center"
               >
@@ -378,7 +376,7 @@
                 [ngClass]="{
                   'text-slate-950 font-bold': activeViews === i.text
                 }"
-                class="text-xs font-medium bg-red-30 text-slate-500 group-hover:text-slate-950 group-hover:font-bold"
+                class="text-xs font-medium text-slate-500 group-hover:text-slate-950 group-hover:font-medium"
               >
                 {{ i.text }}
               </p>
@@ -387,13 +385,17 @@
           }
         </swiper-container>
       </div>
-      <div class="w-[25%] h-full bg-red-40 flex justify-between pr-5">
-        <div class="w-[25%] h-12 border rounded-xl"></div>
+      <div class="w-[25%] h-full bg-red-40 flex justify-between">
+        <div class="relative cursor-pointer transition-all group w-[25%] h-12 border rounded-xl hover:border-black">
+          <div class="hidden transition-all group-hover:block absolute w-full h-full rounded-xl bg-black bg-opacity-5"></div>
+        </div>
         <div
-          class="w-[70%] h-12 border rounded-xl flex items-center justify-center bg-green-40"
+        (click)="beforeTaxes = !beforeTaxes"
+          class="relative cursor-pointer transition-all group w-[70%] h-12 border hover:border-black rounded-xl flex items-center justify-center bg-green-40 "
         >
+        <div class="hidden transition-all group-hover:block absolute w-full h-full rounded-xl bg-black bg-opacity-5"></div>
           <div
-            (click)="beforeTaxes = !beforeTaxes"
+           
             class="w-full h-full p-3 flex justify-between items-center bg-red-40"
           >
             <div class="space-y-1">
@@ -571,11 +573,11 @@
       </div>
     </div>
     <div
-      class="flex flex-wrap justify-between bg-red-40 space-y-14 xl:space-y-0 xl:gap-y-16"
+      class="flex flex-wrap justify-between space-y-14 xl:space-y-0 xl:px-10 xl:gap-y-16"
     >
       @for (house of houseListings; track house) {
       <div
-        class="w-[90%] xl:w-[22%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl"
+        class="w-[90%] xl:w-[23%] xl:aspect-square xl:h-auto mx-auto rounded-xl font-bold text-xl"
       >
         <!-- id: {{$index}}
                 count: {{$count}}

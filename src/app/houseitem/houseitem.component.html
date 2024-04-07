@@ -28,24 +28,27 @@
   <div class="relative group diary">
     <!-- open-close flap diary component -->
     <div
-      class="absolute group-hover:-rotate-3 bottom-2 left-2 z-10 size-16 bg-transparent flex items-center perspective"
+      class="absolute group-hover:-rotate-3 bottom-1 left-3 z-10 size-16 bg-transparent flex items-center perspective"
     >
+      <!-- down flap -->
       <div
-        class="absolute transition-all group-hover:-top-2 group-hover:left-6 group-hover:h-[3.8rem] left-0 w-14 group-hover:w-10 h-16 bg-slate-300 rounded-r-md"
+        class="absolute transition-all group-hover:top-1 group-hover:left-1 group-hover:h-11 left-0 w-10 group-hover:w-10 h-12 bg-slate-300 border border-slate-800 rounded-r-md"
       ></div>
+      <!-- top flap -->
       <div
-        class="group absolute transition-all group-hover:-top-2 group w-14 h-16 bg-slate-100 rounded-r-md flex items-center justify-center cover shadow-sm shadow-slate-800"
+        class="group absolute transition-all group-hover:top-0 group w-10 h-12 bg-slate-100 rounded-r-md flex items-center justify-center cover shadow-sm shadow-slate-800"
       >
         <div
-          class="size-8 rounded-full bg-white group-hover:skew-x group-hover:skew-y-6"
+          class="size-6 rounded-full bg-white group-hover:skew-x group-hover:skew-y-6"
         >
           <img
             src="../../assets/images/ola_dp.jpg"
             class="size-full object-cover rounded-full"
           />
         </div>
+        <!-- book binding  -->
         <div
-          class="absolute -left-1 -top-[.1rem] w-2 h-[4.2rem] border-[.2px] border-slate-400 bg-slate-100 rounded-xl"
+          class="absolute -left-1 -top-[1px] w-1 h-[50px] border-[.2px] border-slate-400 bg-slate-100 rounded-xl"
         ></div>
       </div>
     </div>
@@ -84,8 +87,8 @@
   </div>
 
   <div class="flex justify-between items-start mt-2">
-    <div class="space-y-1">
-      <p class="text-base font-medium">{{ house.location }}</p>
+    <div class="">
+      <p class="text-base font-medium text-slate-800">{{ house.location }}</p>
       <p class="text-sm font-light text-slate-500">Ocean and Sea Views</p>
       <p class="text-sm font-light text-slate-500">Sep 18 - 23</p>
       <p
@@ -99,7 +102,7 @@
       </p>
       <p
         *ngIf="beforeTaxes"
-        class="text-base font-medium xl:font-normal text-slate-800"
+        class="text-base font-medium xl:font-normal text-slate-800 underline"
       >
         <span class="text-base font-medium text-black"
           >{{ house.pricing.priceBeforeTax }}</span
@@ -109,9 +112,9 @@
     </div>
     <div class="flex items-center gap-1 bg-red-60">
       <div class="flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><g><path d="M0 0h24v24H0V0z" fill="none"/><path d="M0 0h24v24H0V0z" fill="none"/></g><g><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="14px" viewBox="0 0 24 24" width="14px" fill="#000000"><g><path d="M0 0h24v24H0V0z" fill="none"/><path d="M0 0h24v24H0V0z" fill="none"/></g><g><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></g></svg>
       </div>
-      <p class="text-base font-medium text-slate-800">{{ house.reviews.starRating }}</p>
+      <p class="text-base font-normal text-slate-700">{{ house.reviews.starRating }}</p>
     </div>
   </div>
 </div>
