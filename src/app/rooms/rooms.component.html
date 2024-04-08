@@ -1,6 +1,6 @@
 <div (scroll)="reveal($event)" id="room" class="relative pb-20 h-full bg-green-40 overflow-scroll">
   <!-- secondary scoll-point desktop header -->
-  <div *ngIf="secHeader" class="hidden transition-all xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-20 px-28">
+  <div *ngIf="secHeader" class="hidden transition-all xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-30 px-28">
     @for (item of ["Photos", "Amenities", "Reviews", "Location"]; track item) {
       <div class="group relative py-7">
         <div class="absolute z-10 w-full h-1 bottom-0 bg-gray-950 hidden group-hover:block transition-all"></div>
@@ -29,12 +29,63 @@
         <button  class="w-36 py-3 bg-pink-600 text-white rounded-lg">Reserve</button>
     </div>
   </div>
-  <div class="hidden py-5 px-28 xl:flex justify-between items-center bg-green-40 border border-slate-200">
-    <div class="w-[25%] h-10 bg-red-300"></div>
-    <div class="w-[25%] h-10 bg-red-300">
-
+  <div class="hidden py-2 px-20 xl:flex justify-between items-center bg-green-40 border border-slate-200">
+    <div class="float-left bg-blue-60 h-16 flex items-center justify-center">
+      <img
+        src="../../assets/images/airbnb.png"
+        alt="logo"
+        class="w-32 h-14 object-cover bg-red-30"
+      />
     </div>
-    <div class="w-[25%] h-10 bg-red-300"></div>
+
+    <div class="relative w-full mx-auto h-10 bg-red-30">
+      <div class="h-10 w-[40%] ml-[35%] flex justify-between px-2 items-center rounded-full bg-white border border-slate-300 shadow-sm shadow-slate-300">
+        <div class="h-full flex items-center px-2">
+          <p class="text-sm">Anywhere</p>
+        </div>
+        <div class="h-full flex items-center">
+          <p class="text-sm">Any week</p>
+        </div>
+        <div class="h-full flex items-center gap-3">
+          <div>
+            <p class="text-sm">Add guests</p>
+          </div>
+          <div class="h-[70%] aspect-square rounded-full bg-[#ff385c] flex items-center justify-center">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="16px"
+                viewBox="0 0 24 24"
+                width="16px"
+                fill="#FFFFFF"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Web - AirBNB your home: right -->
+    <div class="float-right bg-transparent w-96 h-16 flex items-center justify-center">
+      <div class="float-right bg-blue-60 flex gap-3 items-center">
+        <div>
+          <a class="text-base font-medium">Airbnb your home</a>
+        </div>
+        <div
+          class="size-5 rounded-full bg-red-40 flex items-center justify-center"
+        >
+          <img src="../../assets/images/webicon.png" />
+        </div>
+        <div
+          class="w-20 aspect-video rounded-full border border-slate-300 hover:shadow-md shadow-slate-300"
+        ></div>
+      </div>
+    </div>
+    
   </div>
   <div class="relative w-full h-60 xl:h-auto bg-slate-60 xl:px-28">
     
@@ -52,8 +103,22 @@
         </div>
       </div>
     </div>
-    <div class="hidden xl:block py-5 text-3xl">
+    <div class="hidden xl:flex justify-between items-end py-5 text-3xl">
       <p class="text-3xl">{{room.views}}</p>
+      <div class="flex gap-5">
+        <div class="flex items-center gap-2">
+          <div class="size-5 rounded-full bg-white flex items-center justify-center">
+            <img src="../../assets/images/uploadicon.png" />
+          </div>
+          <p class="underline text-sm">Share</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="size-5 rounded-full bg-white flex items-center justify-center">
+            <img src="../../assets/images/hearticon.png" class="size-5"/>
+          </div>
+          <p class="underline text-sm">Save</p>
+        </div>
+      </div>
     </div>
     
     <swiper-container css-mode="true" class="size-full xl:hidden">
@@ -106,7 +171,7 @@
         {{room.title}}
       </h1>
       <div class="space-y-1">
-        <p class="xl:text-3xl font-medium">Located in {{room.location.split(",")[0]}}</p>
+        <p class="xl:text-3xl">Located in {{room.location.split(",")[0]}}</p>
         <div class="flex items-center gap-2 font-light">
           <p class="xl:text-slate-950 xl:font-light">{{room.accommodation.guests}} {{room.accommodation.guests === 1 ? "guest" : "guests" }}</p>
           <div class="size-[2px] rounded-full bg-black"></div>
@@ -146,21 +211,21 @@
         </div>
       </div>
     </div>
-    <!-- section -->
-    <div class="py-6 px-5 xl:px-5 bg-stone-300 bg-opacity-50 xl:rounded-3xl w-full">
-      <h2 class="text-2xl font-medium text-slate-900 xl:text-center">Meet the Host</h2>
+    <!-- section: Meet the Host -->
+    <div class="py-6 px-5 xl:px-5 bg-stone-200 bg-opacity-50 xl:rounded-3xl w-full">
+      <h2 class="text-2xl font-medium text-slate-900 xl:text-center">Meet the Developer</h2>
       <div class="xl:w-2/3 xl:mx-auto flex flex-col xl:flex-row p-5 mt-5 bg-white rounded-2xl shadow-md shadow-slate-400">
         <div class="w-full flex flex-col items-center justify-center bg-red-40">
           <div class="relative">
             <div class="size-6 rounded-full bg-pink-600 absolute z-10 bottom-0 right-0"></div>
             <div class="size-24 rounded-full bg-slate-60">
-              <img src="{{room.host.profilePicture}}" alt="host picture" class="size-full object-cover rounded-full"/>
+              <img src="../../assets/images/ola_dp.jpg" alt="host picture" class="size-full object-cover rounded-full"/>
             </div>
           </div>
-          <p class="font-semibold text-2xl text-slate-950 tracking-wider">{{room.host.name}}</p>
+          <p class="font-medium text-lg text-slate-950">Olalekan Oladimeji</p>
           <!-- <p class="font-semibold text-2xl text-slate-900 tracking-wider ">Oladimeji</p> -->
           <div class="flex gap-1 items-center">
-            <p class="font-normal text-sm text-slate-700">*{{room.host.responseRate}}</p>
+            <p class="font-normal text-xs text-slate-700 w-[90%] bg-red-3">*Responds swiftly</p>
             <div *ngIf="room.host.superhostStatus">
               <img src="../../assets/images/badge.png" class="size-3" />
             </div>
@@ -168,16 +233,16 @@
          
           
         </div>
-        <div class="w-full flex xl:flex-col items-start justify-between bg-red-40">
-          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+        <div class="w-full flex xl:flex-col xl:items-center items-start justify-between bg-red-20">
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center xl:items-start">
             <p class="text-xl font-medium text-gray-700">10+</p>
             <p class="text-xs text-slate-400">Projects</p>
           </div>
-          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center xl:items-start">
             <p class="text-xl font-medium text-gray-700">4.94</p>
             <p class="text-xs text-slate-400">Rating</p>
           </div>
-          <div class="py-3 w-1/3 flex flex-col items-center justify-center">
+          <div class="py-3 w-1/3 flex flex-col items-center justify-center xl:items-start">
             <p class="text-xl font-medium text-gray-700">2</p>
             <p class="text-xs text-slate-400">YOE</p>
           </div>
@@ -287,16 +352,24 @@
     </div>
     <!-- section8 -->
     <div  class="py-6 px-5 xl:px-0 border-b border-slate-200">
-       <h3>5 nights in Ytteran</h3>
-       <p>Sep 9, 2024 - Sep 14, 2024</p>
+       <h3>{{room.availability.bookedDates.length}} nights in Ytteran</h3>
+       <p>{{formatDates(room.availability.bookedDates[0])}} - Sep 14, 2024</p>
       </div>
+
+      <!-- <div  class="py-6 px-5 xl:px-0 border-b border-slate-200">
+        <h3>5 nights in Ytteran</h3>
+        <p>Sep 9, 2024 - Sep 14, 2024</p>
+       </div> -->
     </div>
 
+ 
+
     <!-- 2nd part -->
+    <!-- guest date -->
     <div class="hidden px-6 py-8 xl:flex w-[35%] bg-red-40 sticky z-20 top-80 justify-center">
       <div [ngClass]="{'sticky top-24 z-20': secHeader}" class="h-[40rem] mx-auto bg-green-40 rounded-2xl">
         <div class="w-[23rem] rounded-lg p-5 space-y-5 border border-gray-200 shadow-md shadow-slate-300">
-          <p class="font-normal"> <span class="font-medium text-xl">${{room.priceBeforeTax}}</span> night</p>
+          <p class="font-normal"> <span class="font-medium text-xl">${{room.pricing.priceBeforeTax.slice(1)}}</span> night</p>
           <div class="rounded-lg border border-gray-400">
             <div (click)="_pickDates($event, true)" class="relative peer flex box-border border-2 hover:border-black border-transparent rounded-lg">
               <div *ngIf="pickDates" class="absolute z-50 -top-5 -right-10 w-[40rem] h-[25rem] bg-white border border-slate-300 shadow-md shadow-slate-300 rounded-xl px-10 py-4">
@@ -348,12 +421,12 @@
           </div>
           <p class="font-light text-sm text-center">You won't be charged yet</p>
           <div class="flex justify-between font-light">
-            <div class="underline">${{room.priceBeforeTax}} X 2 nights</div>
-            <div>${{ (_parseInt(room.priceBeforeTax)*2).toLocaleString("en-GB") }}</div>
+            <div class="underline">${{room.pricing.priceBeforeTax.slice(1)}} X {{room.availability.bookedDates.length}} nights</div>
+            <div>${{ ((_parseInt(room.pricing.priceBeforeTax.slice(1)) * room.availability.bookedDates.length) + _parseInt(room.pricing.cleaningFee.slice(1) ) ).toLocaleString("en-GB") }}</div>
           </div>
           <div class="flex justify-between font-medium text-gray-800 pt-5 border-t">
             <div class="">Total before taxes</div>
-            <div>${{ (_parseInt(room.priceBeforeTax)*2).toLocaleString("en-GB") }}</div>
+            <div>${{ (_parseInt(room.pricing.priceBeforeTax.slice(1)) * room.availability.bookedDates.length ).toLocaleString("en-GB") }}</div>
           </div>
         </div>
       </div>

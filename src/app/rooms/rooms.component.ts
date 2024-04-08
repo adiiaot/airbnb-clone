@@ -57,5 +57,13 @@ export class RoomsComponent implements OnInit {
   e.stopPropagation()
   this.pickDates = state
  }
- 
+
+ formatDates(date: string) {
+    // '2024-04-03' -> Apr 03,2024
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" ]
+  let [year, month, day] = date.split("-")
+  month = MONTHS[parseInt(month) - 1]
+  return `${month} ${day},${year}`
+ }
+
 }

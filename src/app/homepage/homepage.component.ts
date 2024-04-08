@@ -20,7 +20,7 @@ import { HouselistingsService } from '../houselistings.service';
 export class HomepageComponent {
 
 
-  @Output() house = new EventEmitter<HouseListings> ();
+@Output() house = new EventEmitter<HouseListings> ();
 
 
   showBottomNav = true;
@@ -52,6 +52,7 @@ export class HomepageComponent {
   beforeTaxes = false;
   destination: "none" | "where" | "check-in" | "check-out" | "who" = "none";
   destinationActive = false
+  showPrevBtn = 0
 
   constructor(private router: Router, private houses: HouselistingsService) { }
   houseListings = this.houses.getHouses()
@@ -111,7 +112,13 @@ export class HomepageComponent {
   }
 
   swipe(nav: string) {
-   if (nav === "next") document.querySelectorAll('swiper-container')[1]?.swiper.slideNext()
-   if (nav === "prev") document.querySelectorAll('swiper-container')[1]?.swiper.slidePrev()
+   if (nav === "next") {
+      document.querySelectorAll('swiper-container')[1]?.swiper.slideNext()
+      this.showPrevBtn += 1
+   }
+   if (nav === "prev") {
+      document.querySelectorAll('swiper-container')[1]?.swiper.slidePrev()
+      this.showPrevBtn -= 1
+   }
   }
 }
