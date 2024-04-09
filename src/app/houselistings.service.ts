@@ -37,7 +37,7 @@ export class HouselistingsService {
         ],
         availability: {
           calendar: 'Available dates for booking',
-          bookedDates: ['2024-04-01', '2024-04-02', '2024-04-03'],
+          bookedDates: ['2024-04-04', '2024-04-05', '2024-04-06', '2024-04-07', '2024-04-08'],
         },
         pricing: {
           priceAfterTax: '$116',
@@ -115,7 +115,7 @@ export class HouselistingsService {
         ],
         availability: {
           calendar: 'Available dates for booking',
-          bookedDates: ['2024-04-01', '2024-04-02', '2024-04-03'],
+          bookedDates: ['2024-04-03', '2024-04-04', '2024-04-05'],
         },
         pricing: {
           priceAfterTax: '$1,568',
@@ -194,7 +194,7 @@ export class HouselistingsService {
         ],
         availability: {
           calendar: 'Available dates for booking',
-          bookedDates: ['2024-05-01', '2024-05-02', '2024-05-03'],
+          bookedDates: ['2024-05-10', '2024-05-11', '2024-05-12', '2024-05-15'],
         },
         pricing: {
           priceAfterTax: '$282',

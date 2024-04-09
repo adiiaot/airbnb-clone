@@ -66,18 +66,41 @@ export class RoomsComponent implements OnInit {
   return `${month} ${day},${year}`
  }
 
-//  generateDates(month: "Jan" |"Feb" | "Mar" | "Apr" |"May"| "Jun"| "Jul"| "Aug"| "Sept" | "Oct"| "Nov"| "Dec" ) {
 
-  generateDates(month: "Jan" |"Feb" | "Mar" | "Apr" |"May"| "Jun"| "Jul"| "Aug"| "Sept" | "Oct"| "Nov"| "Dec" ) {
+
+generateNumbersArray(length: number) {
+  let numArr = Array(length + 1).fill(0).map((_, id) => id).slice(1);
+  return numArr;
+}
+generateDaysArray(arr: string[]) {
+  let daysArr = []
+ for (let date of arr) {
+  let day = parseInt(date.split("-")[2])
+  daysArr.push(day)
+ }
+ return daysArr;
+}
+
+generateDates(month: string, opt = "" ) {
   const monthDays: any = {
     Apr: 30,
-    May: 31
+    May: 31,
+    Jun: 30
+  }
+  let copyMonth = month
+  if (opt === "next") {
+    let months = Object.keys(monthDays)
+    let currMonthId = months.indexOf(copyMonth)
+    if (currMonthId === months.length - 1) {
+      copyMonth = "Jan"
+    } else {
+      copyMonth = months[currMonthId + 1]
+    }
   }
 
-  let days = Array(monthDays[month] + 1).fill(0).map((_, id) => id)
-  return days.slice(1);
 
-
- }
+  let days = this.generateNumbersArray(monthDays[copyMonth])
+  return days;
+}
 
 }

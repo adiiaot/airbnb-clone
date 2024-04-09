@@ -1,6 +1,6 @@
 <div (scroll)="reveal($event)" id="room" class="relative pb-20 h-full bg-green-40 overflow-scroll">
   <!-- secondary scoll-point desktop header -->
-  <div *ngIf="secHeader" class="hidden transition-all xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-30 px-28">
+  <div *ngIf="secHeader" class="hidden transition-all xl:flex gap-5 w-full bg-white border-b border-slate-200 sticky top-0 z-30 px-20">
     @for (item of ["Photos", "Amenities", "Reviews", "Location"]; track item) {
       <div class="group relative py-7">
         <div class="absolute z-10 w-full h-1 bottom-0 bg-gray-950 hidden group-hover:block transition-all"></div>
@@ -161,7 +161,7 @@
 
     
   </div>
-  <div class="relative  xl:flex xl:justify-between xl:px-28">
+  <div class="relative  xl:flex xl:justify-between xl:px-20">
 
     <!-- 1st part -->
     <div class="xl:w-[60%]">
@@ -352,14 +352,42 @@
     </div>
     <!-- section8 -->
     <div  class="py-6 px-5 xl:px-0 border-b border-slate-200">
-       <h3>{{room.availability.bookedDates.length}} nights in Ytteran</h3>
-       <p class="font-light text-slate-700 text-base">{{formatDates(room.availability.bookedDates[0])}} - {{formatDates(room.availability.bookedDates[room.availability.bookedDates.length - 1])}}</p>
-       <div class="">
-        <div class="flex justify-between">
+       <h3 class="text-xl font-medium">{{room.availability.bookedDates.length}} nights in Ytteran</h3>
+       <p class="mt-1 font-light text-slate-700 text-sm">{{formatDates(room.availability.bookedDates[0])}} - {{formatDates(room.availability.bookedDates[room.availability.bookedDates.length - 1])}}</p>
+       <div class="mt-5">
+        <div class="flex justify-between items-start gap-10">
           <div class="w-1/2">
-            <div class="flex items-center gap-7">
-              <div class="size-5 bg-red-400"></div>
-              <p class="text-base font-medium">April 2024</p>
+            <div class="flex ml-[3%] items-center gap-10">
+              <div class="size-5 flex items-center justify-center">
+                <img src="../../assets/images/backicon.png" />
+              </div>
+              <p class="text-base font-normal text-slate-700"> {{formatDates(room.availability.bookedDates[0]).split(" ")[0] }} 2024</p>
+            </div>  
+            <div class="flex w-full justify-betwee">
+              @for (days of ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]; track days) {
+                <div class="w-[14%] aspect-square flex items-center justify-center text-slate-700 font-normal text-sm bg-red-40" >{{days}}</div>
+              }
+            </div>
+            <div class="flex flex-wrap w-full justify-betwee">
+              @for (dates of generateDates(formatDates(room.availability.bookedDates[0]).split(" ")[0].slice(0,3)) ; track dates) {
+                <div [ngClass]="{'text-slate-900 font-medium hover:border-black cursor-pointer': generateDaysArray(room.availability.bookedDates).includes(dates), 'bg-slate-900 text-white cursor-pointer': [generateDaysArray(room.availability.bookedDates)[0], generateDaysArray(room.availability.bookedDates)[room.availability.bookedDates.length - 1]].includes(dates)}" class="group transition-all relative w-[14%] aspect-square text-slate-400 font-light text-sm rounded-full border-2 border-transparent flex items-center justify-center">
+                  <div *ngIf="dates === generateDaysArray(room.availability.bookedDates)[0] " class="absolute transition-all z-20 w-24 font-normal text-black text-xs bg-white p-2 bottom-[110%] hidden border rounded-sm group-hover:block"><p class="text-center">Check-in day</p></div>
+                  <div *ngIf="dates === generateDaysArray(room.availability.bookedDates)[room.availability.bookedDates.length - 1] " class="absolute transition-all z-20 w-24 font-normal text-black text-xs bg-white p-2 bottom-[110%] hidden border rounded-sm group-hover:block"><p class="text-center">Check-out day</p></div>
+                  <div *ngIf="!generateDaysArray(room.availability.bookedDates).includes(dates)" class="h-full w-full absolute z-10 flex items-center justify-center">
+                    <div class="w-[40%] mx-auto h-[1px] bg-slate-400"></div>
+                  </div>
+                  {{dates}}
+                </div>
+              }
+            </div>
+          </div>
+          <div class="w-1/2">
+            <div class="flex mr-[3%] items-center justify-end gap-10">
+             
+              <p class="text-base font-normal text-slate-700">May 2024</p>
+              <div class="size-5 flex items-center justify-center rotate-180">
+                <img src="../../assets/images/backicon.png" />
+              </div>
             </div>
             <div class="flex w-full justify-betwee">
               @for (days of ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]; track days) {
@@ -367,28 +395,19 @@
               }
             </div>
             <div class="flex flex-wrap w-full justify-betwee">
-              @for (dates of generateDates("Apr") ; track dates) {
-                <div [ngClass]="{'text-slate-900 font-medium hover:border-black cursor-pointer': [1,2,3].includes(dates), 'bg-slate-900 text-white cursor-pointer': [1,3].includes(dates)}" class="group relative w-[14%] aspect-square text-slate-400 font-light text-sm rounded-full border-2 border-transparent flex items-center justify-center">
-                  <div *ngIf="$first" class="absolute z-20 w-20 p-2 -top-2 hidden border rounded-sm group-hover:block">Check-in day</div>
-                  <div *ngIf="![1,2,3].includes(dates)" class="h-full w-full absolute z-10 flex items-center justify-center">
+              @for (dates of generateDates("May") ; track dates) {
+                <div class="group transition-all relative w-[14%] aspect-square text-slate-400 font-light text-sm rounded-full border-2 border-transparent flex items-center justify-center">
+                  <div class="h-full w-full absolute z-10 flex items-center justify-center">
                     <div class="w-[40%] mx-auto h-[1px] bg-slate-400"></div>
                   </div>
                   {{dates}}
                 </div>
               }
             </div>
-          
           </div>
-         
         </div>
-
        </div>
       </div>
-
-      <!-- <div  class="py-6 px-5 xl:px-0 border-b border-slate-200">
-        <h3>5 nights in Ytteran</h3>
-        <p>Sep 9, 2024 - Sep 14, 2024</p>
-       </div> -->
     </div>
 
  
