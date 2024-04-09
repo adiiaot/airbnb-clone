@@ -66,4 +66,18 @@ export class RoomsComponent implements OnInit {
   return `${month} ${day},${year}`
  }
 
+//  generateDates(month: "Jan" |"Feb" | "Mar" | "Apr" |"May"| "Jun"| "Jul"| "Aug"| "Sept" | "Oct"| "Nov"| "Dec" ) {
+
+  generateDates(month: "Jan" |"Feb" | "Mar" | "Apr" |"May"| "Jun"| "Jul"| "Aug"| "Sept" | "Oct"| "Nov"| "Dec" ) {
+  const monthDays: any = {
+    Apr: 30,
+    May: 31
+  }
+
+  let days = Array(monthDays[month] + 1).fill(0).map((_, id) => id)
+  return days.slice(1);
+
+
+ }
+
 }
